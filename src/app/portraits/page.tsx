@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import InquiryForm from '@/components/InquiryForm'
 
 export const metadata: Metadata = {
   title: 'Signature Portraits',
@@ -119,58 +120,13 @@ export default function PortraitsPage() {
 
       {/* ═══ INQUIRY ═══ */}
       <section className="section-pad bg-deep text-cream">
-        <div className="max-w-xl mx-auto text-center">
-          <h2 className="font-display text-section text-cream mb-4">Begin here.</h2>
-          <p className="font-body text-sm text-cream/50 mb-10">
-            Investments begin at $500. Inquire to begin.
-          </p>
-          <form
-            action="https://formspree.io/f/YOUR_FORM_ID"
-            method="POST"
-            className="space-y-6 text-left"
-          >
-            <div>
-              <label className="font-body text-xs text-cream/40 tracking-[0.1em] uppercase block mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                name="name"
-                required
-                className="w-full bg-transparent border-b border-cream/20 focus:border-cream/60 outline-none py-3 font-body text-sm text-cream transition-colors"
-              />
-            </div>
-            <div>
-              <label className="font-body text-xs text-cream/40 tracking-[0.1em] uppercase block mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                name="email"
-                required
-                className="w-full bg-transparent border-b border-cream/20 focus:border-cream/60 outline-none py-3 font-body text-sm text-cream transition-colors"
-              />
-            </div>
-            <div>
-              <label className="font-body text-xs text-cream/40 tracking-[0.1em] uppercase block mb-2">
-                Tell us about the portrait you envision
-              </label>
-              <textarea
-                name="message"
-                rows={4}
-                className="w-full bg-transparent border-b border-cream/20 focus:border-cream/60 outline-none py-3 font-body text-sm text-cream transition-colors resize-none"
-              />
-            </div>
-            <div className="text-center pt-4">
-              <button
-                type="submit"
-                className="btn-quiet text-cream border-cream/40 hover:border-cream"
-              >
-                Send inquiry &rarr;
-              </button>
-            </div>
-          </form>
-        </div>
+        <InquiryForm
+          source="Signature Portraits"
+          dark={true}
+          headline="Begin here."
+          subtext="Investments begin at $500. Inquire to begin."
+          messagePlaceholder="Tell us about the portrait you envision."
+        />
       </section>
     </>
   )
