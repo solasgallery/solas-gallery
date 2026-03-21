@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-cream text-charcoal font-body font-light;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  ::selection {
+    background-color: #C4AE8A;
+    color: #1C1C1A;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply font-display text-sm tracking-[0.15em] uppercase transition-colors duration-300;
+  }
+
+  .section-pad {
+    @apply px-6 md:px-12 lg:px-24 py-20 md:py-32;
+  }
+
+  .editorial-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8;
+  }
+
+  .btn-quiet {
+    @apply font-display text-sm tracking-[0.12em] uppercase border-b border-stone pb-1
+           hover:border-charcoal transition-colors duration-300;
+  }
+}
+
+/* Smooth image loading */
+img {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
