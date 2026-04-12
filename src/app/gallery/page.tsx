@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Gallery Tour',
+  title: 'Visit the Gallery',
   description:
     'Visit Solas Gallery on Main Street in Salado, Texas. Fine art, portraits, and events since 1995.',
 }
@@ -88,25 +88,24 @@ export default function GalleryPage() {
             <div className="space-y-6 font-body text-sm text-charcoal/70 leading-relaxed">
               <div>
                 <p className="text-xs text-stone tracking-[0.15em] uppercase mb-2">Hours</p>
-                <p>Thursday – Saturday, 10 am – 5 pm</p>
-                <p>Sunday, 12 – 4 pm</p>
+                <p>Tuesday – Saturday, 10 am – 5 pm</p>
                 <p className="text-charcoal/40 mt-1">And by appointment</p>
               </div>
               <div>
                 <p className="text-xs text-stone tracking-[0.15em] uppercase mb-2">Address</p>
-                <p>Main Street</p>
+                <p>2 Rock Creek Dr</p>
                 <p>Salado, Texas 76571</p>
               </div>
               <div>
                 <p className="text-xs text-stone tracking-[0.15em] uppercase mb-2">Contact</p>
                 <p>
-                  <a href="tel:+12549476700" className="hover:text-charcoal transition-colors">
-                    (254) 947-6700
+                  <a href="tel:+12549471881" className="hover:text-charcoal transition-colors">
+                    (254) 947-1881
                   </a>
                 </p>
-                <p>
-                  <a href="mailto:solasgallery@gmail.com" className="hover:text-charcoal transition-colors">
-                    solasgallery@gmail.com
+                <p className="mt-3">
+                  <a href="/portraits#inquiry" className="text-xs text-stone tracking-[0.1em] uppercase hover:text-charcoal transition-colors border-b border-stone/30 pb-0.5">
+                    Send an inquiry &rarr;
                   </a>
                 </p>
               </div>

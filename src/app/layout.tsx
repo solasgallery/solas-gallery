@@ -7,7 +7,7 @@ import './globals.css'
 export const metadata: Metadata = {
   title: {
     default: 'Solas Gallery — Fine Art & Portraits | Salado, Texas',
-    template: '%s | Solas Gallery',
+    template: '%s | Solas Gallery \u2014 Salado, TX',
   },
   description:
     'Fine art photography, signature portraits, and gallery events on Main Street in Salado, Texas. Established 1995.',

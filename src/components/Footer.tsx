@@ -15,9 +15,9 @@ export default function Footer() {
               <br />and gallery events since 1995.
             </p>
             <p className="font-body text-sm mt-4 leading-relaxed">
-              Main Street, Salado, Texas
+              2 Rock Creek Dr, Salado, Texas 76571
               <br />
-              <a href="tel:+12549476700" className="hover:text-cream transition-colors">(254) 947-6700</a>
+              <a href="tel:+12549471881" className="hover:text-cream transition-colors">(254) 947-1881</a>
             </p>
           </div>
 

@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import InquiryForm from '@/components/InquiryForm'
 
 export const metadata: Metadata = {
-  title: 'Wedding & Event Venue — Gallery Space Rental',
+  title: 'Wedding & Event Venue',
   description:
     'Host your wedding, reception, rehearsal dinner, or private event at Solas Gallery on Main Street in Salado, Texas. An intimate art gallery venue with warm light, original art, and thirty years of hospitality.',
 }
@@ -119,23 +120,14 @@ export default function VenueRentalPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="px-6 md:px-12 lg:px-24 py-20 bg-cream text-center">
-        <div className="max-w-xl mx-auto">
-          <h2 className="font-display text-3xl text-charcoal mb-4">
-            Inquire about your date.
-          </h2>
-          <p className="font-body text-sm text-charcoal/50 mb-8">
-            Venue rental pricing depends on the event, the evening, and the season.
-            Tell us what you are planning and we will tell you what is possible.
-          </p>
-          <a
-            href="mailto:solasgallery@gmail.com?subject=Event%20Venue%20Inquiry"
-            className="inline-block font-display text-sm tracking-[0.12em] uppercase border-b border-stone pb-1 text-charcoal hover:border-charcoal transition-colors"
-          >
-            Send an inquiry &rarr;
-          </a>
-        </div>
+      {/* CTA — Inquiry Form */}
+      <section className="px-6 md:px-12 lg:px-24 py-20 bg-cream">
+        <InquiryForm
+          source="venue-rental"
+          headline="Inquire about your date."
+          subtext="Venue rental pricing depends on the event, the evening, and the season. Tell us what you are planning and we will tell you what is possible."
+          messagePlaceholder="Describe your event — date, guest count, and anything else we should know."
+        />
       </section>
 
       {/* Local SEO */}

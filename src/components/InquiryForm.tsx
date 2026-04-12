@@ -133,7 +133,7 @@ export default function InquiryForm({
         </div>
         {status === 'error' && (
           <p className="font-body text-xs text-red-500 text-center mt-4">
-            Something went wrong. Please email us directly at solasgallery@gmail.com
+            Something went wrong. Please call us at (254) 947-1881 or try again shortly.
           </p>
         )}
       </form>

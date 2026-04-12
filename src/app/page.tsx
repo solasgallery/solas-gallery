@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import Script from 'next/script'
 
 /* ── Four Doors Data ── */
 const doors = [
@@ -64,9 +65,48 @@ const upcomingEvents = [
   },
 ]
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ArtGallery',
+  name: 'Solas Gallery',
+  image: 'https://solasgallery.com/og-image.jpg',
+  description:
+    'Fine art photography gallery, portrait studio, and event venue in Salado, Texas.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '2 Rock Creek Dr',
+    addressLocality: 'Salado',
+    addressRegion: 'TX',
+    postalCode: '76571',
+    addressCountry: 'US',
+  },
+  telephone: '(254) 947-1881',
+  email: 'info@solasgallery.com',
+  url: 'https://solasgallery.com',
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 30.9468,
+    longitude: -97.5395,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    opens: '10:00',
+    closes: '17:00',
+  },
+}
+
 export default function Home() {
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <Script
+        id="json-ld"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* ═══════════════ HERO ═══════════════ */}
       <section className="relative h-screen w-full overflow-hidden bg-deep">
         {/* Video Background */}

@@ -119,7 +119,7 @@ export default function EventsPage() {
               kind of atmosphere that makes an evening memorable.
             </p>
             <a
-              href="mailto:solasgallery@gmail.com?subject=Private%20Event%20Inquiry"
+              href="/events/venue-rental"
               className="btn-quiet text-cream border-cream/40 hover:border-cream"
             >
               Inquire about private events &rarr;
