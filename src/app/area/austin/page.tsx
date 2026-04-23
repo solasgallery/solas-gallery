@@ -6,6 +6,22 @@ export const metadata: Metadata = {
   title: 'Photographer Near Austin — Portraits, Headshots & Fine Art',
   description:
     'Solas Gallery in Salado, Texas — 45 minutes north of Austin. Professional portraits, executive headshots, fine art photography, and gallery events. Worth the drive from Austin, Round Rock, Pflugerville, and Cedar Park.',
+  alternates: {
+    canonical: '/area/austin',
+  },
+  openGraph: {
+    title: 'Photographer Near Austin — Portraits, Headshots & Fine Art | Solas Gallery — Salado, TX',
+    description: 'Solas Gallery in Salado, Texas — 45 minutes north of Austin. Professional portraits, executive headshots, fine art photography, and gallery events. Worth the drive from Austin, Round Rock, Pflugerville, and Cedar Park.',
+    url: 'https://solasgallery.com/area/austin',
+    type: 'website',
+    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Photographer Near Austin — Portraits, Headshots & Fine Art | Solas Gallery — Salado, TX',
+    description: 'Solas Gallery in Salado, Texas — 45 minutes north of Austin. Professional portraits, executive headshots, fine art photography, and gallery events. Worth the drive from Austin, Round Rock, Pflugerville, and Cedar Park.',
+    images: ['/og-default.jpg'],
+  },
 }
 
 export default function AustinAreaPage() {

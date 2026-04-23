@@ -5,6 +5,22 @@ export const metadata: Metadata = {
   title: 'Visit the Gallery',
   description:
     'Visit Solas Gallery on Main Street in Salado, Texas. Fine art, portraits, and events since 1995.',
+  alternates: {
+    canonical: '/gallery',
+  },
+  openGraph: {
+    title: 'Visit the Gallery | Solas Gallery — Salado, TX',
+    description: 'Visit Solas Gallery on Main Street in Salado, Texas. Fine art, portraits, and events since 1995.',
+    url: 'https://solasgallery.com/gallery',
+    type: 'website',
+    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Visit the Gallery | Solas Gallery — Salado, TX',
+    description: 'Visit Solas Gallery on Main Street in Salado, Texas. Fine art, portraits, and events since 1995.',
+    images: ['/og-default.jpg'],
+  },
 }
 
 const interiors = [

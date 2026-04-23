@@ -6,6 +6,22 @@ export const metadata: Metadata = {
   title: 'Wedding & Event Venue',
   description:
     'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue on Main Street in Salado, Texas. Up to 50 guests. Original art, warm light, thirty years of hospitality.',
+  alternates: {
+    canonical: '/events/venue-rental',
+  },
+  openGraph: {
+    title: 'Wedding & Event Venue | Solas Gallery — Salado, TX',
+    description: 'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue on Main Street in Salado, Texas. Up to 50 guests. Original art, warm light, thirty years of hospitality.',
+    url: 'https://solasgallery.com/events/venue-rental',
+    type: 'website',
+    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Wedding & Event Venue | Solas Gallery — Salado, TX',
+    description: 'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue on Main Street in Salado, Texas. Up to 50 guests. Original art, warm light, thirty years of hospitality.',
+    images: ['/og-default.jpg'],
+  },
 }
 
 const eventTypes = [

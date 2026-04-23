@@ -6,6 +6,22 @@ export const metadata: Metadata = {
   title: 'BabyFaces — Newborn & Child Portrait Photography',
   description:
     'BabyFaces newborn and child portrait photography at Solas Gallery in Salado, Texas. Heirloom-quality baby portraits, milestone sessions, and family photography by Tim Flanagan. Serving Austin, Temple, Georgetown, and Central Texas.',
+  alternates: {
+    canonical: '/portraits/babyfaces',
+  },
+  openGraph: {
+    title: 'BabyFaces — Newborn & Child Portrait Photography | Solas Gallery — Salado, TX',
+    description: 'BabyFaces newborn and child portrait photography at Solas Gallery in Salado, Texas. Heirloom-quality baby portraits, milestone sessions, and family photography by Tim Flanagan. Serving Austin, Temple, Georgetown, and Central Texas.',
+    url: 'https://solasgallery.com/portraits/babyfaces',
+    type: 'website',
+    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BabyFaces — Newborn & Child Portrait Photography | Solas Gallery — Salado, TX',
+    description: 'BabyFaces newborn and child portrait photography at Solas Gallery in Salado, Texas. Heirloom-quality baby portraits, milestone sessions, and family photography by Tim Flanagan. Serving Austin, Temple, Georgetown, and Central Texas.',
+    images: ['/og-default.jpg'],
+  },
 }
 
 export default function BabyFacesPage() {

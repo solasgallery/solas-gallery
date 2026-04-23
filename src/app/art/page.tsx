@@ -7,6 +7,22 @@ export const metadata: Metadata = {
   title: 'Art for Home Walls',
   description:
     'Fine art prints, original works, commissioned art, and large-format wall art by Tim Flanagan. A guide to choosing, sizing, and living with art. Solas Gallery, Salado, Texas.',
+  alternates: {
+    canonical: '/art',
+  },
+  openGraph: {
+    title: 'Art for Home Walls | Solas Gallery — Salado, TX',
+    description: 'Fine art prints, original works, commissioned art, and large-format wall art by Tim Flanagan. A guide to choosing, sizing, and living with art. Solas Gallery, Salado, Texas.',
+    url: 'https://solasgallery.com/art',
+    type: 'website',
+    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Art for Home Walls | Solas Gallery — Salado, TX',
+    description: 'Fine art prints, original works, commissioned art, and large-format wall art by Tim Flanagan. A guide to choosing, sizing, and living with art. Solas Gallery, Salado, Texas.',
+    images: ['/og-default.jpg'],
+  },
 }
 
 const categories = [

@@ -67,11 +67,14 @@ const upcomingEvents = [
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'ArtGallery',
+  '@type': ['ArtGallery', 'PhotographyBusiness'],
+  '@id': 'https://solasgallery.com/#business',
   name: 'Solas Gallery',
-  image: 'https://solasgallery.com/og-image.jpg',
+  image: 'https://solasgallery.com/og-default.jpg',
+  logo: 'https://solasgallery.com/logo.png',
   description:
-    'Fine art photography gallery, portrait studio, and event venue in Salado, Texas.',
+    'Fine art photography gallery, portrait studio, and event venue in Salado, Texas. Established 1995.',
+  foundingDate: '1995',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '2 Rock Creek Dr',
@@ -83,6 +86,7 @@ const jsonLd = {
   telephone: '(254) 947-1881',
   email: 'info@solasgallery.com',
   url: 'https://solasgallery.com',
+  priceRange: '$$$',
   geo: {
     '@type': 'GeoCoordinates',
     latitude: 30.9468,
@@ -94,6 +98,45 @@ const jsonLd = {
     opens: '10:00',
     closes: '17:00',
   },
+  // TODO Tim: paste real social profile URLs (Facebook, Instagram, etc.)
+  sameAs: [
+    // 'https://www.facebook.com/solasgallery',
+    // 'https://www.instagram.com/solasgallery',
+  ],
+  subOrganization: [
+    {
+      '@type': 'Organization',
+      name: 'Salado Village Framer',
+      url: 'https://saladovillageframer.com',
+      telephone: '(254) 613-6123',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '2 Rock Creek Dr Unit A',
+        addressLocality: 'Salado',
+        addressRegion: 'TX',
+        postalCode: '76571',
+        addressCountry: 'US',
+      },
+    },
+    {
+      '@type': 'Organization',
+      name: 'HUBSalado',
+      url: 'https://hubsalado.com',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '4 Rock Creek Dr',
+        addressLocality: 'Salado',
+        addressRegion: 'TX',
+        postalCode: '76571',
+        addressCountry: 'US',
+      },
+    },
+    {
+      '@type': 'Organization',
+      name: 'Village Lamplighter',
+      url: 'https://solasgallery.com/events',
+    },
+  ],
 }
 
 export default function Home() {

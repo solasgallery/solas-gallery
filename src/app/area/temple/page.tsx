@@ -6,6 +6,22 @@ export const metadata: Metadata = {
   title: 'Photographer Near Temple TX — Portraits, Headshots & Fine Art',
   description:
     'Solas Gallery in Salado, Texas — 17 minutes from Temple. Professional portraits, executive headshots, newborn photography, and fine art. Serving Temple, Belton, and Bell County.',
+  alternates: {
+    canonical: '/area/temple',
+  },
+  openGraph: {
+    title: 'Photographer Near Temple TX — Portraits, Headshots & Fine Art | Solas Gallery — Salado, TX',
+    description: 'Solas Gallery in Salado, Texas — 17 minutes from Temple. Professional portraits, executive headshots, newborn photography, and fine art. Serving Temple, Belton, and Bell County.',
+    url: 'https://solasgallery.com/area/temple',
+    type: 'website',
+    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Photographer Near Temple TX — Portraits, Headshots & Fine Art | Solas Gallery — Salado, TX',
+    description: 'Solas Gallery in Salado, Texas — 17 minutes from Temple. Professional portraits, executive headshots, newborn photography, and fine art. Serving Temple, Belton, and Bell County.',
+    images: ['/og-default.jpg'],
+  },
 }
 
 export default function TemplePage() {

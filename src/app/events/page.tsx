@@ -5,6 +5,22 @@ export const metadata: Metadata = {
   title: 'Events & Classes',
   description:
     'Live music, workshops, gallery openings, and private events at Solas Gallery on Main Street in Salado, Texas.',
+  alternates: {
+    canonical: '/events',
+  },
+  openGraph: {
+    title: 'Events & Classes | Solas Gallery — Salado, TX',
+    description: 'Live music, workshops, gallery openings, and private events at Solas Gallery on Main Street in Salado, Texas.',
+    url: 'https://solasgallery.com/events',
+    type: 'website',
+    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Events & Classes | Solas Gallery — Salado, TX',
+    description: 'Live music, workshops, gallery openings, and private events at Solas Gallery on Main Street in Salado, Texas.',
+    images: ['/og-default.jpg'],
+  },
 }
 
 const categories = ['Live Music', 'Classes & Workshops', 'Gallery Openings', 'Private Events']

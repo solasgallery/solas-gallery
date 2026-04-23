@@ -6,6 +6,22 @@ export const metadata: Metadata = {
   title: 'Photographer Near Round Rock — Portraits, Headshots & Fine Art',
   description:
     'Solas Gallery in Salado, Texas — 31 minutes from Round Rock. Professional portraits, executive headshots, newborn photography, and fine art. Serving Round Rock, Pflugerville, and Hutto.',
+  alternates: {
+    canonical: '/area/round-rock',
+  },
+  openGraph: {
+    title: 'Photographer Near Round Rock — Portraits, Headshots & Fine Art | Solas Gallery — Salado, TX',
+    description: 'Solas Gallery in Salado, Texas — 31 minutes from Round Rock. Professional portraits, executive headshots, newborn photography, and fine art. Serving Round Rock, Pflugerville, and Hutto.',
+    url: 'https://solasgallery.com/area/round-rock',
+    type: 'website',
+    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Photographer Near Round Rock — Portraits, Headshots & Fine Art | Solas Gallery — Salado, TX',
+    description: 'Solas Gallery in Salado, Texas — 31 minutes from Round Rock. Professional portraits, executive headshots, newborn photography, and fine art. Serving Round Rock, Pflugerville, and Hutto.',
+    images: ['/og-default.jpg'],
+  },
 }
 
 export default function RoundRockPage() {

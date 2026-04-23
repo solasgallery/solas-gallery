@@ -6,6 +6,22 @@ export const metadata: Metadata = {
   title: 'Photographer Near Georgetown — Portraits, Headshots & Fine Art',
   description:
     'Solas Gallery in Salado, Texas — 24 minutes from Georgetown. Professional portraits, executive headshots, baby photography, and fine art prints. Serving Georgetown, Jarrell, Florence, and Williamson County.',
+  alternates: {
+    canonical: '/area/georgetown',
+  },
+  openGraph: {
+    title: 'Photographer Near Georgetown — Portraits, Headshots & Fine Art | Solas Gallery — Salado, TX',
+    description: 'Solas Gallery in Salado, Texas — 24 minutes from Georgetown. Professional portraits, executive headshots, baby photography, and fine art prints. Serving Georgetown, Jarrell, Florence, and Williamson County.',
+    url: 'https://solasgallery.com/area/georgetown',
+    type: 'website',
+    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Photographer Near Georgetown — Portraits, Headshots & Fine Art | Solas Gallery — Salado, TX',
+    description: 'Solas Gallery in Salado, Texas — 24 minutes from Georgetown. Professional portraits, executive headshots, baby photography, and fine art prints. Serving Georgetown, Jarrell, Florence, and Williamson County.',
+    images: ['/og-default.jpg'],
+  },
 }
 
 export default function GeorgetownPage() {

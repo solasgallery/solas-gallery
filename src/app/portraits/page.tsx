@@ -6,6 +6,22 @@ export const metadata: Metadata = {
   title: 'Signature Portraits',
   description:
     'Signature portrait sessions by Tim Flanagan — thirty years of portraiture in Salado, Texas. Senior portraits, family portraits, headshots, and fine art commissions. Solas Gallery.',
+  alternates: {
+    canonical: '/portraits',
+  },
+  openGraph: {
+    title: 'Signature Portraits | Solas Gallery — Salado, TX',
+    description: 'Signature portrait sessions by Tim Flanagan — thirty years of portraiture in Salado, Texas. Senior portraits, family portraits, headshots, and fine art commissions. Solas Gallery.',
+    url: 'https://solasgallery.com/portraits',
+    type: 'website',
+    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Signature Portraits | Solas Gallery — Salado, TX',
+    description: 'Signature portrait sessions by Tim Flanagan — thirty years of portraiture in Salado, Texas. Senior portraits, family portraits, headshots, and fine art commissions. Solas Gallery.',
+    images: ['/og-default.jpg'],
+  },
 }
 
 const portraits = [

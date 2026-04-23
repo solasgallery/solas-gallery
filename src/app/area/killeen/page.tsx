@@ -6,6 +6,22 @@ export const metadata: Metadata = {
   title: 'Photographer Near Killeen — Portraits, Headshots & Fine Art',
   description:
     'Solas Gallery in Salado, Texas — 21 minutes from Killeen. Professional portraits, military family photography, executive headshots, and fine art. Serving Killeen, Fort Cavazos, Harker Heights, and Copperas Cove.',
+  alternates: {
+    canonical: '/area/killeen',
+  },
+  openGraph: {
+    title: 'Photographer Near Killeen — Portraits, Headshots & Fine Art | Solas Gallery — Salado, TX',
+    description: 'Solas Gallery in Salado, Texas — 21 minutes from Killeen. Professional portraits, military family photography, executive headshots, and fine art. Serving Killeen, Fort Cavazos, Harker Heights, and Copperas Cove.',
+    url: 'https://solasgallery.com/area/killeen',
+    type: 'website',
+    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Photographer Near Killeen — Portraits, Headshots & Fine Art | Solas Gallery — Salado, TX',
+    description: 'Solas Gallery in Salado, Texas — 21 minutes from Killeen. Professional portraits, military family photography, executive headshots, and fine art. Serving Killeen, Fort Cavazos, Harker Heights, and Copperas Cove.',
+    images: ['/og-default.jpg'],
+  },
 }
 
 export default function KilleenPage() {
