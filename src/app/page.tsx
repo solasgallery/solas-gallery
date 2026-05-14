@@ -49,18 +49,18 @@ const featuredArt = [
   },
 ]
 
-/* ── Upcoming Events (placeholder — replace with real events) ── */
+/* ── Upcoming Events ── */
 const upcomingEvents = [
   {
-    date: 'April 2026',
-    title: 'Gallery Opening Reception',
-    description: 'Spring exhibition featuring new fine art works.',
+    date: 'June 2026',
+    title: 'Gallery Opening: Summer Exhibition',
+    description: 'New fine art works from Tim Flanagan. Opening reception on the gallery floor.',
     link: '#',
   },
   {
-    date: 'May 2026',
-    title: 'JAM Night with Tim Flanagan',
-    description: 'Live music, stories, and laughter on Main Street.',
+    date: 'July 2026',
+    title: 'JAM Night — Live from Main Street',
+    description: 'An evening of original music, storytelling, and good company. No reservations needed.',
     link: '#',
   },
 ]
@@ -262,15 +262,29 @@ export default function Home() {
           />
         </div>
         <div className="relative z-10 section-pad max-w-4xl mx-auto text-center">
+          <p className="font-body text-xs text-stone tracking-[0.25em] uppercase mb-6">
+            Portrait Studio
+          </p>
           <h2 className="font-display text-section text-cream mb-6">
             Thirty years. One pursuit.
           </h2>
-          <p className="font-display text-xl md:text-2xl text-cream/70 italic mb-10 leading-relaxed">
+          <p className="font-display text-xl md:text-2xl text-cream/70 italic mb-4 leading-relaxed">
             The image that defines a life.
           </p>
-          <Link href="/portraits" className="btn-quiet text-cream border-cream/40 hover:border-cream">
-            Signature Portraits &rarr;
-          </Link>
+          <p className="font-body text-sm text-cream/50 max-w-md mx-auto mb-12 leading-relaxed">
+            Signature portraits, family sittings, and headshots — made the way they were meant to be made. In person. Without rushing.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/portraits" className="btn-quiet text-cream border-cream/40 hover:border-cream">
+              View portrait work &rarr;
+            </Link>
+            <Link
+              href="/portraits#reserve"
+              className="inline-flex items-center justify-center px-8 py-3 bg-cream text-deep font-body text-xs tracking-[0.15em] uppercase hover:bg-stone transition-colors duration-300"
+            >
+              Schedule a sitting &rarr;
+            </Link>
+          </div>
         </div>
       </section>
 
