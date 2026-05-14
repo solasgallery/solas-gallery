@@ -1,154 +1,152 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Events & Classes',
+  title: 'Events | Solas Gallery — Salado, TX',
   description:
-    'Live music, workshops, gallery openings, and private events at Solas Gallery on Main Street in Salado, Texas.',
-  alternates: {
-    canonical: '/events',
-  },
+    'Upcoming gallery events, live music, and performances at Solas Gallery in Salado, Texas. An evening worth clearing your calendar for.',
+  alternates: { canonical: '/events' },
   openGraph: {
-    title: 'Events & Classes | Solas Gallery — Salado, TX',
-    description: 'Live music, workshops, gallery openings, and private events at Solas Gallery on Main Street in Salado, Texas.',
+    title: 'Events | Solas Gallery — Salado, TX',
+    description: 'Upcoming events at Solas Gallery in Salado, Texas.',
     url: 'https://solasgallery.com/events',
     type: 'website',
-    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Events & Classes | Solas Gallery — Salado, TX',
-    description: 'Live music, workshops, gallery openings, and private events at Solas Gallery on Main Street in Salado, Texas.',
-    images: ['/og-default.jpg'],
+    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Solas Gallery Events' }],
   },
 }
 
-const categories = ['Live Music', 'Classes & Workshops', 'Gallery Openings', 'Private Events']
-
-const events = [
+const upcomingEvents = [
   {
-    date: 'April 2026',
-    title: 'Spring Exhibition Opening',
-    description: 'New works unveiled. Wine, conversation, and first looks.',
-    category: 'Gallery Openings',
-    link: '#',
+    date: 'June 2026',
+    day: 'Friday Evening',
+    title: 'An Evening with Tim Flanagan',
+    category: 'Live Music & Stories',
+    description:
+      'Original music, projected photographs, and the stories behind both. An intimate evening inside the gallery — the kind that doesn\'t repeat itself.',
+    link: null,
+    cta: 'Reserve Your Place',
   },
   {
-    date: 'April 2026',
-    title: 'JAM Night with Tim Flanagan',
-    description: 'Live music, stories, and open-mic on Main Street.',
+    date: 'Summer 2026',
+    day: 'Saturday',
+    title: 'Salado Songwriter Series',
     category: 'Live Music',
-    link: '#',
+    description:
+      'Three Central Texas songwriters. One round. No setlists. A Village Lamplighter production inside the Solas Gallery space.',
+    link: null,
+    cta: 'Details Soon',
   },
   {
-    date: 'May 2026',
-    title: 'Portrait Photography Workshop',
-    description: 'A half-day intensive on light, connection, and the decisive moment.',
-    category: 'Classes & Workshops',
-    link: '#',
+    date: 'Fall 2026',
+    day: 'Friday Evening',
+    title: 'Gallery Opening: New Works',
+    category: 'Exhibition',
+    description:
+      'An opening reception for new fine art works by Tim Flanagan. Wine, conversation, and the first look at work fresh from the studio.',
+    link: null,
+    cta: 'Add to Calendar',
   },
 ]
 
 export default function EventsPage() {
   return (
     <>
-      {/* ═══ HERO ═══ */}
-      <section className="relative h-[70vh] min-h-[500px] w-full overflow-hidden bg-deep">
-        <Image
-          src="/images/events/hero.jpg"
-          alt="Gallery event, warm light"
-          fill
-          priority
-          className="object-cover opacity-40"
-        />
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
-          <h1 className="font-display text-hero text-cream tracking-[0.1em]">
-            Events & Classes
+      {/* Hero */}
+      <section className="relative bg-deep text-cream py-28 px-6 text-center">
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <h1 className="font-display text-5xl md:text-6xl text-cream tracking-[0.08em] mb-6">
+            Upcoming
           </h1>
-          <p className="font-display text-lg md:text-xl text-cream/60 italic mt-4 max-w-lg">
-            An evening worth clearing your calendar for.
+          <p className="font-body text-sm text-cream/50 tracking-[0.2em] uppercase">
+            Events at Solas Gallery &middot; Salado, Texas
           </p>
         </div>
       </section>
 
-      {/* ═══ CATEGORY TABS ═══ */}
-      <section className="bg-cream border-b border-stone/20">
-        <div className="max-w-5xl mx-auto px-6 md:px-12 py-6 flex flex-wrap justify-center gap-6 md:gap-10">
-          {categories.map((cat) => (
-            <span
-              key={cat}
-              className="font-body text-xs tracking-[0.12em] uppercase text-charcoal/50 hover:text-charcoal transition-colors cursor-pointer"
-            >
-              {cat}
-            </span>
-          ))}
-        </div>
-      </section>
-
-      {/* ═══ EVENT CARDS ═══ */}
+      {/* Events */}
       <section className="section-pad bg-cream">
-        <div className="max-w-5xl mx-auto space-y-8">
-          {events.map((evt) => (
+        <div className="max-w-4xl mx-auto space-y-8">
+          {upcomingEvents.map((evt) => (
             <div
               key={evt.title}
-              className="border border-stone/30 p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6 transition-colors hover:border-stone/60"
+              className="border border-stone/30 p-10 hover:border-stone/60 transition-colors duration-300"
             >
-              <div>
-                <div className="flex items-center gap-4 mb-3">
-                  <p className="font-body text-xs text-stone tracking-[0.15em] uppercase">
-                    {evt.date}
-                  </p>
-                  <span className="font-body text-[10px] text-charcoal/30 tracking-[0.1em] uppercase">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+                <div className="flex-1">
+                  <p className="font-body text-xs text-stone tracking-[0.2em] uppercase mb-3">
                     {evt.category}
-                  </span>
+                  </p>
+                  <h2 className="font-display text-2xl md:text-3xl text-charcoal mb-4 leading-snug">
+                    {evt.title}
+                  </h2>
+                  <p className="font-body text-sm text-charcoal/60 leading-relaxed">
+                    {evt.description}
+                  </p>
                 </div>
-                <h3 className="font-display text-xl md:text-2xl text-charcoal mb-2">
-                  {evt.title}
-                </h3>
-                <p className="font-body text-sm text-charcoal/60 leading-relaxed">
-                  {evt.description}
-                </p>
+                <div className="md:text-right md:pl-10 shrink-0">
+                  <p className="font-display text-xl text-charcoal mb-1">{evt.date}</p>
+                  <p className="font-body text-xs text-stone/60 mb-5 tracking-wide">{evt.day}</p>
+                  {evt.link ? (
+                    <a
+                      href={evt.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-quiet text-charcoal"
+                    >
+                      {evt.cta} &rarr;
+                    </a>
+                  ) : (
+                    <p className="font-body text-xs text-stone/40 tracking-[0.15em] uppercase">
+                      {evt.cta}
+                    </p>
+                  )}
+                </div>
               </div>
-              <a
-                href={evt.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-quiet text-charcoal whitespace-nowrap self-start"
-              >
-                Reserve your place &rarr;
-              </a>
             </div>
           ))}
         </div>
+
+        {/* Venue Rental CTA */}
+        <div className="max-w-4xl mx-auto mt-20 pt-16 border-t border-stone/20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div>
+              <p className="font-body text-xs text-stone tracking-[0.2em] uppercase mb-4">
+                Private Events
+              </p>
+              <h2 className="font-display text-3xl text-charcoal mb-4">
+                Host your event at Solas Gallery.
+              </h2>
+              <p className="font-body text-sm text-charcoal/60 leading-relaxed">
+                The gallery is available for private dinners, receptions,
+                corporate events, and intimate performances. Capacity up to
+                sixty guests. Full details on the venue page.
+              </p>
+            </div>
+            <div className="md:text-right">
+              <Link href="/events/venue-rental" className="btn-quiet text-charcoal">
+                Venue Rental &rarr;
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
 
-      {/* ═══ VENUE RENTAL ═══ */}
-      <section className="section-pad bg-deep text-cream">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="font-display text-section text-cream mb-6">
-              The gallery as your backdrop.
-            </h2>
-            <p className="font-body text-sm text-cream/60 leading-relaxed mb-6">
-              Solas Gallery is available for private events, receptions, and intimate
-              gatherings. Art on the walls, warm light, a Main Street address, and the
-              kind of atmosphere that makes an evening memorable.
-            </p>
-            <a
-              href="/events/venue-rental"
-              className="btn-quiet text-cream border-cream/40 hover:border-cream"
-            >
-              Inquire about private events &rarr;
-            </a>
-          </div>
-          <div className="relative aspect-[4/3] overflow-hidden">
-            <Image
-              src="/images/events/venue.jpg"
-              alt="Gallery interior set for a private event"
-              fill
-              className="object-cover"
-            />
-          </div>
+      {/* Stay Updated */}
+      <section className="bg-deep text-cream section-pad px-6 text-center">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="font-display text-3xl text-cream mb-4">
+            Stay in the loop.
+          </h2>
+          <p className="font-body text-sm text-cream/50 leading-relaxed mb-8">
+            Events fill quickly. Drop us a line to be notified when new dates
+            are announced.
+          </p>
+          <a
+            href="mailto:info@solasgallery.com?subject=Event Updates"
+            className="btn-quiet text-cream border-stone/40 hover:border-cream"
+          >
+            info@solasgallery.com
+          </a>
         </div>
       </section>
     </>
