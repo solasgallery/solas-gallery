@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Collective | Solas Gallery</title>
+    <meta name="description" content="Exclusive trade program for interior designers and decorators. Partnership opportunities with Central Texas art gallery. Commission structures, designer benefits, and professional art consultation services.">
+    <meta property="og:title" content="Trade Collective | Solas Gallery">
+    <meta property="og:description" content="Exclusive trade program for interior designers and decorators. Partnership opportunities with Central Texas art gallery. Commission structures, designer benefits, and professional art consultation services.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://solasgallery.com/trade">
+    <meta name="keywords" content="art gallery trade program, interior designer partnership, Central Texas art, designer trade consideration, art consultation">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Solas Gallery",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2 Rock Creek Dr",
+        "addressLocality": "Salado",
+        "addressRegion": "Texas",
+        "postalCode": "76571",
+        "addressCountry": "US"
+      },
+      "telephone": "(254) 947-1881",
+      "email": "trade@solasgallery.com",
+      "url": "https://solasgallery.com",
+      "image": "https://solasgallery.com/images/solas-gallery-logo.png",
+      "description": "Exclusive trade program for interior designers and decorators in Central Texas",
+      "priceRange": "$$"
+    }
+    </script>
+
+    <style>
+        /* ============================================
+           RESET & BASE STYLES
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            color: #333;
+            background-color: #F5F3ED;
+            line-height: 1.6;
+            padding-top: 60px;
+        }
+
+        /* ============================================
+           COLOR PALETTE
+           ============================================ */
+        :root {
+            --solas-gold: #B8A41C;
+            --dark-olive: #5B5518;
+            --olive-brown: #6B5C2A;
+            --warm-gray: #C8C2B4;
+            --off-white: #F5F3ED;
+            --dark-bg: #1a1a1a;
+            --text-dark: #333;
+            --text-light: #666;
+        }
+
+        /* ============================================
+           NAVIGATION BAR
+           ============================================ */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--dark-bg);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .nav-logo a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-logo a:hover {
+            color: var(--solas-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding-bottom: 0.25rem;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links a:hover {
+            color: var(--solas-gold);
+            border-bottom-color: var(--solas-gold);
+        }
+
+        .nav-links a.active {
+            color: var(--solas-gold);
+            border-bottom-color: var(--solas-gold);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            background: linear-gradient(135deg, #2a2824 0%, #3d3a32 100%);
+            color: #fff;
+            padding: 6rem 2rem;
+            text-align: center;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23fff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: #ddd;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--solas-gold);
+            color: var(--dark-bg);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--solas-gold);
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--solas-gold);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ============================================
+           ABOUT/PARTNERSHIP SECTION
+           ============================================ */
+        .about {
+            background-color: #fff;
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--dark-olive);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--olive-brown);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-highlights {
+            background-color: #f9f7f2;
+            padding: 2rem;
+            border-left: 4px solid var(--solas-gold);
+        }
+
+        .about-highlights ul {
+            list-style: none;
+        }
+
+        .about-highlights li {
+            padding: 0.75rem 0;
+            color: var(--text-light);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .about-highlights li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--solas-gold);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* ============================================
+           SERVICES GRID
+           ============================================ */
+        .services {
+            background-color: var(--off-white);
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--dark-olive);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border-top: 3px solid var(--solas-gold);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--olive-brown);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* ============================================
+           TIERS SECTION
+           ============================================ */
+        .tiers {
+            background-color: #fff;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tiers h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--dark-olive);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .tiers-intro {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .tiers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .tier-card {
+            background-color: #f9f7f2;
+            padding: 2.5rem 2rem;
+            border-radius: 4px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .tier-card.featured {
+            border-color: var(--solas-gold);
+            background-color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0 8px 24px rgba(184, 164, 28, 0.2);
+        }
+
+        .tier-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--dark-olive);
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .tier-commission {
+            font-size: 2rem;
+            color: var(--solas-gold);
+            font-weight: 600;
+            margin: 1rem 0;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .tier-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .tier-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .tier-features li {
+            padding: 0.6rem 0;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .tier-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--solas-gold);
+            font-weight: bold;
+        }
+
+        /* ============================================
+           HOW IT WORKS
+           ============================================ */
+        .how-it-works {
+            background-color: var(--off-white);
+            padding: 4rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .how-it-works h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--dark-olive);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .step {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 4px;
+            position: relative;
+            text-align: center;
+        }
+
+        .step-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: var(--solas-gold);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .step h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: var(--olive-brown);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .step p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* ============================================
+           FORM SECTION
+           ============================================ */
+        .form-section {
+            background-color: #fff;
+            padding: 4rem 2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .form-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--dark-olive);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-intro {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .trade-form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            color: var(--dark-olive);
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--warm-gray);
+            border-radius: 2px;
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: #f9f7f2;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background-color: #fff;
+            border-color: var(--solas-gold);
+            box-shadow: 0 0 0 3px rgba(184, 164, 28, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 0.5rem;
+        }
+
+        .form-group.checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .form-group.checkbox-group label {
+            margin-bottom: 0;
+            text-transform: none;
+            font-weight: normal;
+            font-size: 0.95rem;
+        }
+
+        .form-submit {
+            background-color: var(--solas-gold);
+            color: var(--dark-bg);
+            padding: 1rem 2rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            font-weight: 600;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .form-submit:hover {
+            background-color: transparent;
+            color: var(--solas-gold);
+            border: 2px solid var(--solas-gold);
+        }
+
+        .form-submit:active {
+            transform: scale(0.98);
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            background-color: var(--dark-bg);
+            color: #fff;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: var(--solas-gold);
+        }
+
+        .footer-section p {
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--solas-gold);
+        }
+
+        .footer-nap {
+            border-top: 1px solid #444;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        .footer-nap strong {
+            display: block;
+            color: var(--solas-gold);
+            margin-bottom: 0.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.05em;
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 80px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about h2,
+            .services h2,
+            .tiers h2,
+            .how-it-works h2,
+            .form-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .tier-card.featured {
+                transform: scale(1);
+            }
+
+            .services-grid,
+            .tiers-grid,
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================
+           UTILITY CLASSES
+           ============================================ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .secondary-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+            padding: 2rem;
+            background-color: #f9f7f2;
+            border-radius: 4px;
+        }
+
+        .secondary-links a {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            color: var(--olive-brown);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .secondary-links a:hover {
+            color: var(--solas-gold);
+            border-bottom-color: var(--solas-gold);
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+
+        // Fire trade_page_view event on page load
+        gtag('event', 'trade_page_view');
+    </script>
+
+    <!-- Meta Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+
+        // Replace YOUR_PIXEL_ID with actual Meta Pixel ID
+        fbq('init', 'YOUR_PIXEL_ID');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+    </noscript>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-logo">
+            <a href="/">Solas Gallery</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/art">Art</a></li>
+            <li><a href="/portraits">Portraits</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/gallery">Gallery</a></li>
+            <li><a href="/story">Story</a></li>
+            <li><a href="/trade" class="active">Trade</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Trade Collective</h1>
+            <p>Exclusive partnership program for interior designers and decorators</p>
+            <a href="#application" class="cta-button">Apply for Trade Consideration</a>
+        </div>
+    </section>
+
+    <!-- About/Partnership Section -->
+    <section class="about">
+        <h2>Designer Partnership Excellence</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Designed for Your Practice</h3>
+                <p>The Solas Gallery Trade Collective offers curated partnership opportunities for interior designers, decorators, and design professionals who serve discerning clients. We understand the unique needs of your practice and provide dedicated support, professional pricing structures, and exclusive access to our collections.</p>
+                <p>Our three-tier program accommodates practices of all sizes, from emerging designers to established studios. Each tier unlocks distinct benefits tailored to your business needs and project volume.</p>
+            </div>
+            <div class="about-highlights">
+                <h3 style="margin-top: 0;">Why Partner with Solas</h3>
+                <ul>
+                    <li>Curated collections for discerning clients</li>
+                    <li>Professional trade consideration structures</li>
+                    <li>Dedicated design consultation support</li>
+                    <li>Priority access to new acquisitions</li>
+                    <li>Flexible project-based arrangements</li>
+                    <li>Support for residential and commercial projects</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services">
+        <h2>Trade Services & Support</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Design Consultation</h3>
+                <p>Professional guidance on art selection, color palettes, and spatial design integration. Our curators work directly with your design team to ensure perfect alignment with project vision and client aesthetic.</p>
+            </div>
+            <div class="service-card">
+                <h3>Custom Sourcing</h3>
+                <p>We source specific pieces for your projects, drawing from our collections and trusted network of artists. Whether you need a particular style, scale, or subject matter, we handle the research and curation.</p>
+            </div>
+            <div class="service-card">
+                <h3>Project Pricing</h3>
+                <p>Transparent, competitive trade consideration based on project scope and partnership tier. Simplified invoicing and flexible payment terms designed to support your project management workflow.</p>
+            </div>
+            <div class="service-card">
+                <h3>Priority Access</h3>
+                <p>First access to new acquisitions and exclusive pieces. Gallery events and collection previews give your practice competitive advantage in serving high-end clientele.</p>
+            </div>
+            <div class="service-card">
+                <h3>Installation Support</h3>
+                <p>Professional handling, logistics coordination, and installation guidance. We work seamlessly with your teams to ensure flawless project delivery and client satisfaction.</p>
+            </div>
+            <div class="service-card">
+                <h3>Account Management</h3>
+                <p>Dedicated account support for ongoing relationships. Your primary contact understands your design aesthetic, client base, and project needs for streamlined collaboration.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Tiers -->
+    <section class="tiers">
+        <h2>Partnership Tiers</h2>
+        <p class="tiers-intro">Choose the tier that best aligns with your practice size and project volume. All tiers include dedicated support and professional pricing.</p>
+
+        <div class="tiers-grid">
+            <div class="tier-card">
+                <h3>Associate</h3>
+                <p class="tier-commission">15%</p>
+                <p class="tier-description">Entry-level partnership ideal for emerging practices and occasional project needs.</p>
+                <ul class="tier-features">
+                    <li>Trade consideration on all pieces</li>
+                    <li>Quarterly collection updates</li>
+                    <li>Email consultation support</li>
+                    <li>Invoice payment terms</li>
+                    <li>Event invitations</li>
+                </ul>
+            </div>
+
+            <div class="tier-card featured">
+                <h3>Preferred</h3>
+                <p class="tier-commission">20%</p>
+                <p class="tier-description">Our most popular tier for active design practices with regular project flow.</p>
+                <ul class="tier-features">
+                    <li>All Associate benefits</li>
+                    <li>Priority new acquisition access</li>
+                    <li>Phone & in-person consultation</li>
+                    <li>Monthly collection features</li>
+                    <li>Custom sourcing service</li>
+                    <li>Dedicated account manager</li>
+                </ul>
+            </div>
+
+            <div class="tier-card">
+                <h3>Atelier</h3>
+                <p class="tier-commission">25%-35%</p>
+                <p class="tier-description">Premium partnership for high-volume studios and design firms.</p>
+                <ul class="tier-features">
+                    <li>All Preferred benefits</li>
+                    <li>Exclusive collection access</li>
+                    <li>Direct curator partnership</li>
+                    <li>Commissioned piece sourcing</li>
+                    <li>Private viewing events</li>
+                    <li>Flexible project agreements</li>
+                    <li>VIP client experiences</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <h2>How It Works</h2>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Apply for Partnership</h3>
+                <p>Complete our simple application form telling us about your practice, project focus, and design aesthetic. We review applications and reach out within 5 business days.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Consultation & Placement</h3>
+                <p>Meet with our trade team to discuss your tier placement, project needs, and desired collection access. We tailor your partnership to match your business objectives.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Seamless Collaboration</h3>
+                <p>Begin sourcing pieces and working with your dedicated account manager. Invoice payment terms and professional pricing make every project streamlined and profitable.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form Section -->
+    <section class="form-section" id="application">
+        <h2>Apply Now</h2>
+        <p class="form-intro">Join the Solas Gallery Trade Collective. Tell us about your practice and design focus.</p>
+
+        <form class="trade-form" id="tradeForm">
+            <!-- Wired to Brevo via /api/inquiry → list 43 (Trade Collective Prospects) -->
+
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="company">Design Firm / Business Name *</label>
+                <input type="text" id="company" name="company" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="location">City / Service Area *</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+
+            <div class="form-group">
+                <label for="practice">Primary Design Focus *</label>
+                <input type="text" id="practice" name="practice" placeholder="e.g., residential, commercial, luxury homes" required>
+            </div>
+
+            <div class="form-group">
+                <label for="volume">Average Annual Project Value *</label>
+                <input type="text" id="volume" name="volume" placeholder="e.g., $250K-$500K" required>
+            </div>
+
+            <div class="form-group">
+                <label for="aesthetic">Preferred Aesthetic / Design Style</label>
+                <input type="text" id="aesthetic" name="aesthetic" placeholder="e.g., contemporary, traditional, eclectic">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Tell us about your practice (optional)</label>
+                <textarea id="message" name="message" placeholder="Your design philosophy, client base, project types..."></textarea>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="subscribe" name="subscribe" value="yes">
+                <label for="subscribe">Add me to Solas Gallery trade updates and event invitations</label>
+            </div>
+
+            <button type="submit" class="form-submit">Submit Application</button>
+        </form>
+    </section>
+
+    <!-- Secondary Navigation Links -->
+    <div class="container">
+        <div class="secondary-links">
+            <a href="/trade/faq">Trade FAQ</a>
+            <a href="/trade/events">Trade Events</a>
+            <a href="/trade/apply">Apply for Atelier</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Solas</h4>
+                <p>A curatorial gallery dedicated to discovering, supporting, and championing artists whose work enriches interior spaces and elevates human experience.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Trade Program</h4>
+                <ul class="footer-links">
+                    <li><a href="/trade">Trade Collective</a></li>
+                    <li><a href="/trade/faq">Trade FAQ</a></li>
+                    <li><a href="/trade/events">Trade Events</a></li>
+                    <li><a href="/trade/apply">Apply for Atelier</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Gallery</h4>
+                <ul class="footer-links">
+                    <li><a href="/art">Art Collections</a></li>
+                    <li><a href="/portraits">Portraits</a></li>
+                    <li><a href="/events">Events</a></li>
+                    <li><a href="/gallery">Gallery Locations</a></li>
+                    <li><a href="/story">Our Story</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p><strong>Trade Inquiries:</strong></p>
+                <p>trade@solasgallery.com</p>
+                <p><strong>General:</strong></p>
+                <p>(254) 947-1881</p>
+            </div>
+        </div>
+
+        <div class="footer-nap">
+            <strong>Solas Gallery</strong>
+            2 Rock Creek Dr, Salado, Texas 76571<br>
+            (254) 947-1881 | trade@solasgallery.com
+        </div>
+    </footer>
+
+    <!-- GA4 Event Tracking -->
+    <script>
+        // Track form field focus for trade_form_start event
+        const formInputs = document.querySelectorAll('.trade-form input, .trade-form textarea');
+        let formStartTracked = false;
+
+        formInputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                if (!formStartTracked) {
+                    gtag('event', 'trade_form_start');
+                    formStartTracked = true;
+                }
+            });
+        });
+
+        // Track form submission for trade_form_submit event
+        document.querySelector('.trade-form').addEventListener('submit', function(e) {
+            gtag('event', 'trade_form_submit');
+            // Also fire Meta Pixel Lead event
+            fbq('track', 'Lead');
+        });
+    </script>
+    <!-- Brevo submission (list 43 = Trade Collective Prospects) -->
+    <script>
+    (function(){
+      var form=document.getElementById('tradeForm');
+      if(!form) return;
+      form.addEventListener('submit',async function(e){
+        e.preventDefault();
+        var d=new FormData(form),o={};
+        d.forEach(function(v,k){o[k]=v;});
+        var name=o.name||o.fullName||'';
+        var firm=o.company||o.firmName||'';
+        var extras=Object.keys(o).filter(function(k){return ['name','fullName','email','phone','company','firmName'].indexOf(k)<0;})
+          .map(function(k){return k+': '+o[k];}).join('\n');
+        var message=(firm?'Firm: '+firm+'\n':'')+extras;
+        try{
+          await fetch('/api/inquiry',{method:'POST',headers:{'content-type':'application/json'},
+            body:JSON.stringify({name:name,email:o.email||'',phone:o.phone||'',message:message,source:'Trade — Solas',listId:43})});
+          form.innerHTML='<p style="padding:2rem;text-align:center;font-size:1.1rem;">Thank you — your application has been received. We’ll be in touch shortly.</p>';
+        }catch(err){ alert('Something went wrong. Please email trade@solasgallery.com.'); }
+      });
+    })();
+    </script>
+</body>
+</html>

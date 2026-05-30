@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Collective Application - Solas Gallery</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- GA4 Tracking -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YOUR_GA4_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YOUR_GA4_ID');
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: #F5F3ED;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #1a1a1a;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #B8A41C;
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: white;
+            font-size: 1rem;
+            margin-right: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background-color: #F5F3ED;
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #C8C2B4;
+        }
+
+        .breadcrumb a {
+            color: #6B5C2A;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #B8A41C;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #F5F3ED 0%, #EFEFEB 100%);
+            padding: 8rem 2rem;
+            text-align: center;
+            min-height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #5B5518;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #6B5C2A;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero .descriptor {
+            font-family: 'Lora', serif;
+            font-size: 1.2rem;
+            color: #6B5C2A;
+            letter-spacing: 0.5px;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 700px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        /* Form Section */
+        .form-section {
+            background: white;
+            padding: 3rem;
+            border: 1px solid #C8C2B4;
+            margin-bottom: 3rem;
+        }
+
+        .form-section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #5B5518;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #C8C2B4;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-row.full {
+            grid-template-columns: 1fr;
+        }
+
+        .form-row.address {
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 1rem;
+        }
+
+        label {
+            display: block;
+            font-family: 'Lora', serif;
+            font-weight: 500;
+            color: #5B5518;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .required::after {
+            content: " *";
+            color: #B8A41C;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="url"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.875rem;
+            border: 1px solid #C8C2B4;
+            background-color: #F5F3ED;
+            font-family: 'Lora', serif;
+            font-size: 1rem;
+            color: #333;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="url"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #B8A41C;
+            box-shadow: 0 0 0 3px rgba(184, 164, 28, 0.1);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+            font-family: 'Lora', serif;
+        }
+
+        /* Checkboxes */
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            margin-right: 0.75rem;
+            cursor: pointer;
+            accent-color: #B8A41C;
+        }
+
+        .checkbox-item label {
+            margin-bottom: 0;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        /* Submit Button */
+        .button-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        button[type="submit"] {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1rem;
+            padding: 1rem 3rem;
+            border: 2px solid #5B5518;
+            background-color: transparent;
+            color: #5B5518;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #5B5518;
+            color: #F5F3ED;
+        }
+
+        /* Confirmation Message */
+        .confirmation {
+            display: none;
+            background-color: #F5F3ED;
+            padding: 3rem;
+            text-align: center;
+            margin: 3rem auto;
+            max-width: 700px;
+        }
+
+        .confirmation.show {
+            display: block;
+        }
+
+        .confirmation p {
+            font-family: 'Lora', serif;
+            font-size: 1.3rem;
+            color: #6B5C2A;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-family: 'Lora', serif;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: #B8A41C;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .footer-content {
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .nav-logo {
+                margin-right: 0;
+                margin-bottom: 1rem;
+                width: 100%;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+                letter-spacing: 1px;
+            }
+
+            .hero {
+                padding: 4rem 1.5rem;
+                min-height: 30vh;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                letter-spacing: 2px;
+            }
+
+            .hero .subtitle {
+                font-size: 1.3rem;
+                letter-spacing: 1px;
+            }
+
+            .hero .descriptor {
+                font-size: 1rem;
+            }
+
+            .form-section {
+                padding: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .form-row.address {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            button[type="submit"] {
+                padding: 0.875rem 2rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .form-section {
+                padding: 1.5rem;
+            }
+
+            .checkbox-group {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <a href="/" class="nav-logo">SOLAS GALLERY</a>
+        <div class="nav-links">
+            <a href="/art">ART</a>
+            <a href="/portraits">PORTRAITS</a>
+            <a href="/events">EVENTS</a>
+            <a href="/gallery">GALLERY</a>
+            <a href="/story">STORY</a>
+            <a href="/trade">TRADE</a>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <a href="/trade">← Back to Trade Collective</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>APPLICATION</h1>
+        <div class="subtitle">TRADE COLLECTIVE</div>
+        <p class="descriptor">Begin your partnership with Solas Gallery</p>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Application Form -->
+        <form id="tradeForm" class="form-section">
+            <h2>Trade Collective Application</h2>
+
+            <!-- Contact Information Section -->
+            <div class="form-group">
+                <div class="form-row">
+                    <div>
+                        <label for="fullName" class="required">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required>
+                    </div>
+                    <div>
+                        <label for="firmName" class="required">Firm / Studio Name</label>
+                        <input type="text" id="firmName" name="firmName" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label for="email" class="required">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div>
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                </div>
+
+                <div class="form-row full">
+                    <div>
+                        <label for="website">Website / Portfolio URL</label>
+                        <input type="url" id="website" name="website" placeholder="https://example.com">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Address Section -->
+            <div class="form-group">
+                <label style="margin-bottom: 1rem;">Mailing Address</label>
+                <div class="form-row address">
+                    <div>
+                        <input type="text" name="street" placeholder="Street Address">
+                    </div>
+                    <div>
+                        <input type="text" name="city" placeholder="City">
+                    </div>
+                    <div>
+                        <input type="text" name="state" placeholder="State">
+                    </div>
+                    <div>
+                        <input type="text" name="zip" placeholder="ZIP">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professional Information Section -->
+            <div class="form-group">
+                <div class="form-row full">
+                    <div>
+                        <label for="asid">ASID / Professional Membership</label>
+                        <input type="text" id="asid" name="asid" placeholder="e.g., ASID #123456">
+                    </div>
+                </div>
+
+                <div class="form-row full">
+                    <div>
+                        <label for="resaleCert">Texas Resale Certificate Number</label>
+                        <input type="text" id="resaleCert" name="resaleCert">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div>
+                        <label for="yearsInPractice" class="required">Years in Practice</label>
+                        <select id="yearsInPractice" name="yearsInPractice" required>
+                            <option value="">— Select —</option>
+                            <option value="1-3">1–3 years</option>
+                            <option value="4-10">4–10 years</option>
+                            <option value="11-20">11–20 years</option>
+                            <option value="20+">20+ years</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="specialization" class="required">Primary Specialization</label>
+                        <select id="specialization" name="specialization" required>
+                            <option value="">— Select —</option>
+                            <option value="residential">Residential</option>
+                            <option value="commercial">Commercial</option>
+                            <option value="hospitality">Hospitality</option>
+                            <option value="mixed">Mixed Practice</option>
+                            <option value="staging">Staging</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row full">
+                    <div>
+                        <label for="projectBudget" class="required">Typical Project Budget Range</label>
+                        <select id="projectBudget" name="projectBudget" required>
+                            <option value="">— Select —</option>
+                            <option value="under-5k">Under $5,000</option>
+                            <option value="5k-25k">$5,000–$25,000</option>
+                            <option value="25k-100k">$25,000–$100,000</option>
+                            <option value="100k+">$100,000+</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services of Interest Section -->
+            <div class="form-group">
+                <label class="required">Services of Interest</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="service1" name="services" value="Gallery Inventory">
+                        <label for="service1">Gallery Inventory</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="service2" name="services" value="Custom Commissions">
+                        <label for="service2">Custom Commissions</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="service3" name="services" value="Large-Format Printing">
+                        <label for="service3">Large-Format Printing</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="service4" name="services" value="Custom Framing">
+                        <label for="service4">Custom Framing</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="service5" name="services" value="Scaled Renderings">
+                        <label for="service5">Scaled Renderings</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="service6" name="services" value="Installation">
+                        <label for="service6">Installation</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text Areas Section -->
+            <div class="form-group">
+                <label for="hearAbout" class="required">How did you hear about us?</label>
+                <textarea id="hearAbout" name="hearAbout" required placeholder="Please share where you learned about the Trade Collective..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="practiceGoals" class="required">Brief description of your practice and goals</label>
+                <textarea id="practiceGoals" name="practiceGoals" required placeholder="Tell us about your practice, your aesthetic, and how we might collaborate..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="button-container">
+                <button type="submit">Submit Application</button>
+            </div>
+        </form>
+
+        <!-- Confirmation Message -->
+        <div id="confirmation" class="confirmation">
+            <p>Thank you. We will review your application and respond within 48–72 hours.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p><strong>SOLAS GALLERY</strong></p>
+            <p>2 Rock Creek Dr, Salado, Texas 76571</p>
+            <p><a href="tel:+12549471881">(254) 947-1881</a> | <a href="mailto:trade@solasgallery.com">trade@solasgallery.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.getElementById('tradeForm').addEventListener('submit', function(e) {
+            // Track form submission
+            gtag('event', 'trade_form_submit', {
+                'event_category': 'engagement',
+                'event_label': 'Trade Collective Application'
+            });
+        });
+
+        // Track form start (when first field is focused)
+        let formStarted = false;
+        document.getElementById('tradeForm').addEventListener('focusin', function() {
+            if (!formStarted) {
+                formStarted = true;
+                gtag('event', 'trade_form_start', {
+                    'event_category': 'engagement',
+                    'event_label': 'Trade Collective Application'
+                });
+            }
+        });
+
+    </script>
+    <!-- Brevo submission (list 43 = Trade Collective Prospects) -->
+    <script>
+    (function(){
+      var form=document.getElementById('tradeForm');
+      if(!form) return;
+      form.addEventListener('submit',async function(e){
+        e.preventDefault();
+        var d=new FormData(form),o={};
+        d.forEach(function(v,k){o[k]=v;});
+        var name=o.name||o.fullName||'';
+        var firm=o.company||o.firmName||'';
+        var extras=Object.keys(o).filter(function(k){return ['name','fullName','email','phone','company','firmName'].indexOf(k)<0;})
+          .map(function(k){return k+': '+o[k];}).join('\n');
+        var message=(firm?'Firm: '+firm+'\n':'')+extras;
+        try{
+          await fetch('/api/inquiry',{method:'POST',headers:{'content-type':'application/json'},
+            body:JSON.stringify({name:name,email:o.email||'',phone:o.phone||'',message:message,source:'Trade — Solas (Apply)',listId:43})});
+          form.innerHTML='<p style="padding:2rem;text-align:center;font-size:1.1rem;">Thank you — your application has been received. We’ll be in touch shortly.</p>';
+        }catch(err){ alert('Something went wrong. Please email trade@solasgallery.com.'); }
+      });
+    })();
+    </script>
+</body>
+</html>
