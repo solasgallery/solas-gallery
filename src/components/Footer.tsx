@@ -78,9 +78,13 @@ export default function Footer() {
           <p className="font-body text-xs text-cream/40">
             &copy; {new Date().getFullYear()} Solas Gallery. All rights reserved.
           </p>
-          <p className="font-body text-xs text-cream/30">
-            Salado, Texas &middot; Est. 1995
-          </p>
+          <div className="flex items-center gap-4 font-body text-xs text-cream/30">
+            <Link href="/privacy" className="hover:text-cream transition-colors">
+              Privacy &amp; SMS Terms
+            </Link>
+            <span aria-hidden="true">&middot;</span>
+            <p>Salado, Texas &middot; Est. 1995</p>
+          </div>
         </div>
       </div>
     </footer>

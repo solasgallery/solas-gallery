@@ -12,6 +12,7 @@ const routes: { path: string; priority: number; changeFrequency: MetadataRoute.S
   { path: '/events/venue-rental',       priority: 0.8, changeFrequency: 'monthly' },
   { path: '/gallery',                   priority: 0.7, changeFrequency: 'monthly' },
   { path: '/story',                     priority: 0.7, changeFrequency: 'yearly' },
+  { path: '/privacy',                   priority: 0.3, changeFrequency: 'yearly' },
   { path: '/area/austin',               priority: 0.6, changeFrequency: 'monthly' },
   { path: '/area/round-rock',           priority: 0.6, changeFrequency: 'monthly' },
   { path: '/area/georgetown',           priority: 0.6, changeFrequency: 'monthly' },
