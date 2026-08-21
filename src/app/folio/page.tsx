@@ -17,6 +17,7 @@ export const metadata: Metadata = createLandingMetadata({
 export default function FolioPage() {
   return (
     <LandingPage
+      hero="folio"
       eyebrow="FOLIO albums"
       heading={
         <>
@@ -27,8 +28,6 @@ export default function FolioPage() {
       }
       lede="Thick pages. One image to a spread. A book that can sit on a table for years without asking for attention."
       heroImage={images.folio}
-      heroCaption="FOLIO · archival album"
-      folioMark="FOLIO"
       cta={{ href: '/begin', label: 'Inquire about a FOLIO' }}
     >
       <section className="solas-archive-tease">

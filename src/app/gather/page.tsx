@@ -17,6 +17,7 @@ export const metadata: Metadata = createLandingMetadata({
 export default function GatherPage() {
   return (
     <LandingPage
+      hero="gather"
       eyebrow="The Saturday Table"
       heading={
         <>
@@ -27,7 +28,6 @@ export default function GatherPage() {
       }
       lede="Openings, long-table lunches, music, and the sort of conversation that follows you home."
       heroImage={images.gather}
-      heroCaption="A gathering at Solas"
       cta={{ href: '/begin', label: 'See what is gathering' }}
     >
       <section className="solas-gather">

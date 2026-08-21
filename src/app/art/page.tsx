@@ -17,6 +17,7 @@ export const metadata: Metadata = createLandingMetadata({
 export default function ArtPage() {
   return (
     <LandingPage
+      hero="art"
       eyebrow="Art for a considered home"
       heading={
         <>
@@ -27,7 +28,6 @@ export default function ArtPage() {
       }
       lede="Original and commissioned art, room studies, placement guidance, delivery, and installation — for homes and for designers."
       heroImage={images.art}
-      heroCaption="Selected work · pigment print on archival cotton"
       cta={{ href: '/begin', label: 'Find the right work' }}
     >
       <section className="solas-art-section">

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import LandingPage from '@/components/LandingPage'
 import { createLandingMetadata } from '@/lib/metadata'
-import { images, SITE } from '@/lib/site'
+import { images } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
   title: 'The Real Portrait Project',
@@ -17,6 +17,7 @@ export const metadata: Metadata = createLandingMetadata({
 export default function RealPortraitPage() {
   return (
     <LandingPage
+      hero="portrait"
       eyebrow="The Real Portrait Project"
       heading={
         <>
@@ -28,10 +29,7 @@ export default function RealPortraitPage() {
       lede="A monochrome sitting in the Karsh tradition. Character over performance. $295. Reserved for October."
       whisper="Reserved for October."
       heroImage={images.portrait}
-      heroCaption="October sessions · Salado, Texas"
-      folioMark="October"
       cta={{ href: '/begin', label: 'Reserve a sitting' }}
-      secondaryCta={{ href: `tel:${SITE.phoneTel}`, label: SITE.phoneDisplay }}
     >
       <section className="solas-portrait-section">
         <div className="solas-portrait-copy">

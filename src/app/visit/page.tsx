@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
+import VideoHero from '@/components/VideoHero'
 import { createLandingMetadata } from '@/lib/metadata'
 import { hours, images, SITE } from '@/lib/site'
 
@@ -15,25 +17,19 @@ export const metadata: Metadata = createLandingMetadata({
 export default function VisitPage() {
   return (
     <>
-      <section className="solas-opening" aria-labelledby="visit-heading">
-        <div className="solas-opening-image">
-          <img src={images.gather.src} alt={images.gather.alt} />
-          <div className="solas-light" />
-          <span className="solas-caption">Main Street · Salado</span>
-        </div>
-        <div className="solas-opening-copy">
-          <p className="solas-label">Main Street · Salado</p>
-          <h1 id="visit-heading">
+      <VideoHero
+        theme="gather"
+        label="Main Street · Salado"
+        heading={
+          <>
             The door
             <br />
             is open.
-          </h1>
-          <p className="solas-lede">
-            Visit the gallery, sit for a portrait, or bring the room, photograph,
-            or half-formed idea you cannot stop thinking about.
-          </p>
-        </div>
-      </section>
+          </>
+        }
+        href="/begin"
+        linkLabel="Begin a conversation"
+      />
 
       <section className="solas-visit-details">
         <div>
@@ -74,9 +70,7 @@ export default function VisitPage() {
           <h2>Bring what you cannot stop thinking about.</h2>
         </div>
         <p>A sitting, a piece for the wall, or simply a walk through the gallery.</p>
-        <a href="/begin">
-          Begin a conversation <span aria-hidden="true">↗</span>
-        </a>
+        <Link href="/begin">Begin a conversation</Link>
       </section>
     </>
   )

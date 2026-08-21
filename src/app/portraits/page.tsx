@@ -17,6 +17,7 @@ export const metadata: Metadata = createLandingMetadata({
 export default function PortraitsPage() {
   return (
     <LandingPage
+      hero="portrait"
       eyebrow="Portrait Studio · Salado"
       heading={
         <>
@@ -27,9 +28,7 @@ export default function PortraitsPage() {
       }
       lede="A portrait is not a photograph. It is a decision — made without rushing, in person, the way it was meant to be made."
       heroImage={images.portrait}
-      heroCaption="Portrait study · Salado, Texas"
       cta={{ href: '/real-portrait', label: 'The Real Portrait Project' }}
-      secondaryCta={{ href: '/begin', label: 'Begin a sitting' }}
     >
       <section className="solas-portrait-section">
         <div className="solas-portrait-copy">

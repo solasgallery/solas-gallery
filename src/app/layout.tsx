@@ -1,10 +1,26 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { Cormorant_Garamond, Outfit } from 'next/font/google'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { GtmNoscript, Tracking } from '@/components/Tracking'
 import { SITE } from '@/lib/site'
 import './globals.css'
+
+const display = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-display',
+  display: 'swap',
+})
+
+const sans = Outfit({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  variable: '--font-sans',
+  display: 'swap',
+})
 
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID
 
@@ -78,7 +94,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${display.variable} ${sans.variable}`}>
       <head>
         {gtmId ? (
           <Script id="gtm" strategy="afterInteractive">
