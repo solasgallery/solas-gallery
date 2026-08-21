@@ -3,6 +3,12 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
+  async redirects() {
+    return [
+      { source: '/gallery', destination: '/visit', permanent: true },
+      { source: '/events', destination: '/gather', permanent: true },
+    ]
+  },
   async rewrites() {
     return [
       { source: '/trade', destination: '/trade/index.html' },

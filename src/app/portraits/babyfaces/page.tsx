@@ -135,7 +135,7 @@ export default function BabyFacesPage() {
             during the third trimester.
           </p>
           <Link
-            href="/portraits"
+            href="/begin"
             className="inline-block font-display text-sm tracking-[0.12em] uppercase border-b border-stone pb-1 text-charcoal hover:border-charcoal transition-colors"
           >
             Begin your inquiry &rarr;
