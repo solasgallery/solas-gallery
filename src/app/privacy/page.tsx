@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
+import { createLandingMetadata } from '@/lib/metadata'
+import { SITE } from '@/lib/site'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createLandingMetadata({
   title: 'Privacy & SMS Terms',
   description:
     'Privacy policy and SMS terms for Solas Gallery LLC and its customer-facing brands.',
-  alternates: {
-    canonical: '/privacy',
-  },
-}
+  path: '/privacy',
+  noindex: false,
+})
 
 const sections = [
   {
@@ -102,7 +103,7 @@ const sections = [
         </ul>
         <p>
           For help, call{' '}
-          <a href="tel:+12549471881">(254) 947-1881</a> or email{' '}
+          <a href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a> or email{' '}
           <a href="mailto:cherie@solasgallery.com">cherie@solasgallery.com</a>.
         </p>
       </>
@@ -156,63 +157,53 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <>
-      <section className="bg-deep px-6 pb-16 pt-36 text-cream md:px-12 md:pb-20 md:pt-40">
-        <div className="mx-auto max-w-4xl">
-          <p className="mb-5 font-body text-xs uppercase tracking-[0.22em] text-stone">
-            Solas Gallery LLC
-          </p>
-          <h1 className="font-display text-4xl tracking-wide md:text-6xl">
-            Privacy &amp; SMS Terms
-          </h1>
-          <p className="mt-6 max-w-2xl font-body text-sm leading-relaxed text-cream/60">
-            Effective August 20, 2026
-          </p>
-        </div>
+      <section className="solas-policy-hero">
+        <p className="solas-label">Solas Gallery LLC</p>
+        <h1>
+          Privacy &amp;
+          <br />
+          SMS Terms
+        </h1>
+        <p>Effective August 20, 2026</p>
       </section>
 
-      <section className="bg-cream px-6 py-16 md:px-12 md:py-24">
-        <div className="mx-auto max-w-4xl">
-          <p className="mb-16 max-w-3xl font-body text-base leading-8 text-charcoal/70">
-            We value the trust you place in us. This policy explains what
-            information we collect, why we use it, and the choices available to
-            you—including specific terms for text-message communications.
-          </p>
+      <div className="solas-policy-body">
+        <p className="solas-policy-intro">
+          We value the trust you place in us. This policy explains what
+          information we collect, why we use it, and the choices available to
+          you—including specific terms for text-message communications.
+        </p>
 
-          <div className="space-y-12">
-            {sections.map((section) => (
-              <section key={section.title} className="border-t border-stone/30 pt-8">
-                <h2 className="mb-5 font-display text-2xl tracking-wide text-charcoal md:text-3xl">
-                  {section.title}
-                </h2>
-                <div className="space-y-4 font-body text-sm leading-7 text-charcoal/70 [&_a]:border-b [&_a]:border-stone [&_a]:text-charcoal [&_a]:transition-colors hover:[&_a]:border-charcoal [&_li]:ml-5 [&_li]:list-disc [&_li]:pl-2 [&_strong]:font-medium [&_strong]:text-charcoal [&_ul]:space-y-2">
-                  {section.body}
-                </div>
-              </section>
-            ))}
-          </div>
-
-          <section className="mt-12 border-t border-stone/30 pt-8">
-            <h2 className="mb-5 font-display text-2xl tracking-wide text-charcoal md:text-3xl">
-              Contact us
-            </h2>
-            <address className="not-italic font-body text-sm leading-7 text-charcoal/70">
-              Solas Gallery LLC
-              <br />
-              2 Rock Creek Dr
-              <br />
-              Salado, TX 76571
-              <br />
-              <a className="border-b border-stone text-charcoal" href="tel:+12549471881">
-                (254) 947-1881
-              </a>
-              <br />
-              <a className="border-b border-stone text-charcoal" href="mailto:cherie@solasgallery.com">
-                cherie@solasgallery.com
-              </a>
-            </address>
+        {sections.map((section, index) => (
+          <section className="solas-policy-section" key={section.title}>
+            <span>{String(index + 1).padStart(2, '0')}</span>
+            <div>
+              <h2>{section.title}</h2>
+              <div className="solas-policy-copy">{section.body}</div>
+            </div>
           </section>
-        </div>
-      </section>
+        ))}
+
+        <section className="solas-policy-section">
+          <span>10</span>
+          <div>
+            <h2>Contact us</h2>
+            <div className="solas-policy-copy">
+              <address className="not-italic">
+                Solas Gallery LLC
+                <br />
+                2 Rock Creek Dr
+                <br />
+                Salado, TX 76571
+                <br />
+                <a href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a>
+                <br />
+                <a href="mailto:cherie@solasgallery.com">cherie@solasgallery.com</a>
+              </address>
+            </div>
+          </div>
+        </section>
+      </div>
     </>
   )
 }

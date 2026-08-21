@@ -2,43 +2,73 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import { GtmNoscript, Tracking } from '@/components/Tracking'
+import { SITE } from '@/lib/site'
 import './globals.css'
 
+const gtmId = process.env.NEXT_PUBLIC_GTM_ID
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://solasgallery.com'),
+  metadataBase: new URL(SITE.url),
   title: {
-    default: 'Solas Gallery — Fine Art & Portraits | Salado, Texas',
-    template: '%s | Solas Gallery \u2014 Salado, TX',
+    default: SITE.title,
+    template: '%s | Solas Gallery — Salado, TX',
   },
-  description:
-    'Fine art photography, signature portraits, and gallery events on Main Street in Salado, Texas. Established 1995.',
+  description: SITE.description,
   alternates: {
     canonical: '/',
+  },
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://solasgallery.com',
-    siteName: 'Solas Gallery',
+    url: SITE.url,
+    siteName: SITE.name,
+    title: SITE.title,
+    description: SITE.description,
     images: [
       {
         url: '/og-default.jpg',
         width: 1200,
         height: 630,
-        alt: 'Solas Gallery — Fine Art & Portraits, Salado, Texas',
+        alt: SITE.title,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Solas Gallery — Fine Art & Portraits | Salado, Texas',
-    description:
-      'Fine art photography, signature portraits, and gallery events on Main Street in Salado, Texas.',
+    title: SITE.title,
+    description: SITE.description,
     images: ['/og-default.jpg'],
   },
-  // TODO: replace placeholder with token from search.google.com/search-console
-  verification: {
-    google: 'REPLACE_WITH_GSC_TOKEN',
+}
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': ['ArtGallery', 'PhotographyBusiness'],
+  '@id': `${SITE.url}/#business`,
+  name: SITE.name,
+  image: `${SITE.url}/og-default.jpg`,
+  description: SITE.description,
+  foundingDate: SITE.established,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: SITE.street,
+    addressLocality: SITE.city,
+    addressRegion: SITE.region,
+    postalCode: SITE.postalCode,
+    addressCountry: 'US',
+  },
+  telephone: SITE.phoneDisplay,
+  url: SITE.url,
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    opens: '10:00',
+    closes: '17:00',
   },
 }
 
@@ -50,49 +80,30 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/*
-          Google Tag Manager
-          Container: GTM-5MJG9C3
-          IMPORTANT: this snippet only loads the container.
-          GA4, Meta Pixel, and Brevo are configured INSIDE GTM as tags.
-          If tracking isn't firing, the container is likely unpublished —
-          open tagmanager.google.com > the container > Submit > Publish.
-        */}
-        <Script id="gtm" strategy="afterInteractive">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-5MJG9C3');`}
-        </Script>
-
-        {/*
-          Brevo page-view tracker — required for 30th anniversary
-          reconnect campaign attribution. Uses Brevo's modern SDK loader.
-        */}
-        <Script
-          id="brevo-sdk"
-          src="https://cdn.brevo.com/js/sdk-loader.js"
-          strategy="afterInteractive"
-          async
-        />
-        <Script id="brevo-init" strategy="afterInteractive">
-          {`window.Brevo = window.Brevo || [];
-          Brevo.push(["init", { client_key: "9u1hsxe9gvu5e6i2ar4j28q2" }]);`}
-        </Script>
+        {gtmId ? (
+          <Script id="gtm" strategy="afterInteractive">
+            {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${gtmId}');`}
+          </Script>
+        ) : null}
       </head>
       <body>
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-5MJG9C3"
-            height="0"
-            width="0"
-            style={{ display: 'none', visibility: 'hidden' }}
-          />
-        </noscript>
-        <Nav />
-        <main>{children}</main>
-        <Footer />
+        <GtmNoscript />
+        <Tracking />
+        <div className="solas-site">
+          <Nav />
+          <main>{children}</main>
+          <Footer />
+        </div>
+        <Script
+          id="json-ld"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </body>
     </html>
   )

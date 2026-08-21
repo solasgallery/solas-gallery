@@ -4,26 +4,20 @@ import { useState } from 'react'
 
 interface InquiryFormProps {
   source: string
-  dark?: boolean
   headline?: string
   subtext?: string
   messagePlaceholder?: string
+  submitLabel?: string
 }
 
 export default function InquiryForm({
   source,
-  dark = false,
   headline = 'Begin here.',
   subtext,
   messagePlaceholder = 'Tell us what you have in mind.',
+  submitLabel = 'Send inquiry',
 }: InquiryFormProps) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
-
-  const textColor = dark ? 'text-cream' : 'text-charcoal'
-  const mutedColor = dark ? 'text-cream/40' : 'text-charcoal/40'
-  const inputColor = dark ? 'text-cream' : 'text-charcoal'
-  const borderColor = dark ? 'border-cream/20 focus:border-cream/60' : 'border-stone/30 focus:border-stone'
-  const btnBorder = dark ? 'border-cream/40 hover:border-cream text-cream' : 'border-stone hover:border-charcoal text-charcoal'
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -58,84 +52,42 @@ export default function InquiryForm({
 
   if (status === 'sent') {
     return (
-      <div className="text-center py-12">
-        <h3 className={`font-display text-2xl ${textColor} mb-4`}>Thank you.</h3>
-        <p className={`font-body text-sm ${dark ? 'text-cream/50' : 'text-charcoal/50'}`}>
-          We received your inquiry and will be in touch shortly.
-        </p>
+      <div className="solas-form-thanks">
+        <h3>Thank you.</h3>
+        <p>We received your inquiry and will be in touch shortly.</p>
       </div>
     )
   }
 
   return (
-    <div className="max-w-xl mx-auto">
-      {headline && (
-        <h2 className={`font-display text-3xl ${textColor} text-center mb-4`}>
-          {headline}
-        </h2>
-      )}
-      {subtext && (
-        <p className={`font-body text-sm ${dark ? 'text-cream/50' : 'text-charcoal/50'} text-center mb-10`}>
-          {subtext}
-        </p>
-      )}
-      <form onSubmit={handleSubmit} className="space-y-6 text-left">
-        <div>
-          <label className={`font-body text-xs ${mutedColor} tracking-[0.1em] uppercase block mb-2`}>
-            Name
-          </label>
-          <input
-            type="text"
-            name="name"
-            required
-            className={`w-full bg-transparent border-b ${borderColor} outline-none py-3 font-body text-sm ${inputColor} transition-colors`}
-          />
-        </div>
-        <div>
-          <label className={`font-body text-xs ${mutedColor} tracking-[0.1em] uppercase block mb-2`}>
-            Email
-          </label>
-          <input
-            type="email"
-            name="email"
-            required
-            className={`w-full bg-transparent border-b ${borderColor} outline-none py-3 font-body text-sm ${inputColor} transition-colors`}
-          />
-        </div>
-        <div>
-          <label className={`font-body text-xs ${mutedColor} tracking-[0.1em] uppercase block mb-2`}>
-            Phone
-          </label>
-          <input
-            type="tel"
-            name="phone"
-            className={`w-full bg-transparent border-b ${borderColor} outline-none py-3 font-body text-sm ${inputColor} transition-colors`}
-          />
-        </div>
-        <div>
-          <label className={`font-body text-xs ${mutedColor} tracking-[0.1em] uppercase block mb-2`}>
-            {messagePlaceholder}
-          </label>
-          <textarea
-            name="message"
-            rows={4}
-            className={`w-full bg-transparent border-b ${borderColor} outline-none py-3 font-body text-sm ${inputColor} transition-colors resize-none`}
-          />
-        </div>
-        <div className="text-center pt-4">
-          <button
-            type="submit"
-            disabled={status === 'sending'}
-            className={`font-display text-sm tracking-[0.12em] uppercase border-b ${btnBorder} pb-1 transition-colors disabled:opacity-50`}
-          >
-            {status === 'sending' ? 'Sending...' : 'Send inquiry →'}
-          </button>
-        </div>
-        {status === 'error' && (
-          <p className="font-body text-xs text-red-500 text-center mt-4">
+    <div className="solas-form">
+      {headline ? <h2>{headline}</h2> : null}
+      {subtext ? <p className="solas-form-subtext">{subtext}</p> : null}
+      <form onSubmit={handleSubmit}>
+        <label>
+          Name
+          <input type="text" name="name" required autoComplete="name" />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required autoComplete="email" />
+        </label>
+        <label>
+          Phone
+          <input type="tel" name="phone" autoComplete="tel" />
+        </label>
+        <label>
+          {messagePlaceholder}
+          <textarea name="message" rows={4} />
+        </label>
+        <button type="submit" disabled={status === 'sending'}>
+          {status === 'sending' ? 'Sending…' : `${submitLabel} →`}
+        </button>
+        {status === 'error' ? (
+          <p className="solas-form-error">
             Something went wrong. Please call us at (254) 947-1881 or try again shortly.
           </p>
-        )}
+        ) : null}
       </form>
     </div>
   )
