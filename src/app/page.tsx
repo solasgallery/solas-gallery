@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { images } from '@/lib/site'
+import VideoHero from '@/components/VideoHero'
 
 const doors = [
   {
@@ -25,34 +25,25 @@ const doors = [
 export default function Home() {
   return (
     <>
-      <section className="solas-opening" aria-labelledby="solas-heading">
-        <div className="solas-opening-image">
-          <img src={images.portrait.src} alt={images.portrait.alt} />
-          <div className="solas-light" />
-          <span className="solas-caption">The Real Portrait Project · October</span>
-        </div>
-        <div className="solas-opening-copy">
-          <p className="solas-label">Salado, Texas · Est. 1995</p>
-          <h1 id="solas-heading">
+      <VideoHero
+        theme="portrait"
+        label="Salado, Texas · Est. 1995"
+        heading={
+          <>
             Beyond the screen,
             <br />
             a quiet truth.
-          </h1>
-          <p className="solas-lede">
-            The Real Portrait Project. Monochrome, Karsh-inspired sittings. Character
-            over performance. $295. Reserved for October.
-          </p>
-          <div className="solas-actions">
-            <Link href="/real-portrait">
-              Reserve a sitting <span aria-hidden="true">↗</span>
-            </Link>
-          </div>
-          <p className="solas-whisper">Reserved for October.</p>
-        </div>
-        <div className="solas-orbit" aria-hidden="true">
-          <i />
-        </div>
-        <span className="solas-folio">No. 01</span>
+          </>
+        }
+        href="/real-portrait"
+        linkLabel="The Real Portrait Project"
+      />
+
+      <section className="solas-after-hero">
+        <p className="solas-lede">
+          The Real Portrait Project. Monochrome, Karsh-inspired sittings. Character
+          over performance. $295. Reserved for October.
+        </p>
       </section>
 
       <section className="solas-doors" aria-labelledby="doors-heading">
@@ -80,9 +71,7 @@ export default function Home() {
           Visit the gallery, sit for a portrait, or bring the room, photograph, or
           half-formed idea you cannot stop thinking about.
         </p>
-        <Link href="/visit">
-          Plan a visit <span aria-hidden="true">↗</span>
-        </Link>
+        <Link href="/visit">Plan a visit</Link>
       </section>
 
       <section className="solas-begin" id="begin">
@@ -93,9 +82,7 @@ export default function Home() {
             A sitting, a piece for the wall, an evening at the table — start here.
           </p>
           <div className="solas-actions">
-            <Link href="/begin">
-              Begin <span aria-hidden="true">↗</span>
-            </Link>
+            <Link href="/begin">Begin</Link>
           </div>
         </div>
       </section>

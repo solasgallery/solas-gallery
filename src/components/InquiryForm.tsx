@@ -81,7 +81,7 @@ export default function InquiryForm({
           <textarea name="message" rows={4} />
         </label>
         <button type="submit" disabled={status === 'sending'}>
-          {status === 'sending' ? 'Sending…' : `${submitLabel} →`}
+          {status === 'sending' ? 'Sending…' : submitLabel}
         </button>
         {status === 'error' ? (
           <p className="solas-form-error">

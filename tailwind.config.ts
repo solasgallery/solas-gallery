@@ -8,14 +8,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: '#F7F4EF',
-        charcoal: '#1C1C1A',
-        stone: '#C4AE8A',
-        deep: '#111110',
+        cream: '#F6F1E8',
+        charcoal: '#1A1917',
+        stone: '#C4B8A8',
+        deep: '#1A1917',
+        paper: '#F6F1E8',
+        ink: '#1A1917',
+        rule: '#C4B8A8',
+        accent: '#7C6548',
       },
       fontFamily: {
-        display: ['Cormorant Garamond', 'serif'],
-        body: ['Jost', 'sans-serif'],
+        display: ['var(--font-display)', 'Georgia', 'serif'],
+        body: ['var(--font-sans)', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'hero': ['clamp(2.5rem, 5vw, 4.5rem)', { lineHeight: '1.1', letterSpacing: '0.02em' }],
