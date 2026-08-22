@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     description: 'Upcoming events at Solas Gallery in Salado, Texas.',
     url: 'https://solasgallery.com/events',
     type: 'website',
-    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Solas Gallery Events' }],
+    images: [{ url: '/solas-og.jpg', width: 1200, height: 630, alt: 'Solas Gallery Events' }],
   },
 }
 

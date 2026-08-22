@@ -16,7 +16,7 @@ export function createLandingMetadata({
   description,
   path,
   noindex = true,
-  image = '/og-default.jpg',
+  image = '/solas-og.jpg',
   imageAlt = SITE.name,
 }: LandingMetaInput): Metadata {
   const url = `${SITE.url}${path === '/' ? '' : path}`

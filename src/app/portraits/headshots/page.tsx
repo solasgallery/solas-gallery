@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     description: 'Professional headshot photography at Solas Gallery in Salado, Texas. Executive portraits, corporate headshots, LinkedIn photos, and personal branding by Tim Flanagan. Serving Austin, Temple, Killeen, Round Rock, and Central Texas.',
     url: 'https://solasgallery.com/portraits/headshots',
     type: 'website',
-    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
+    images: [{ url: '/solas-og.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Professional Headshots — Executive & Corporate Portraits | Solas Gallery — Salado, TX',
     description: 'Professional headshot photography at Solas Gallery in Salado, Texas. Executive portraits, corporate headshots, LinkedIn photos, and personal branding by Tim Flanagan. Serving Austin, Temple, Killeen, Round Rock, and Central Texas.',
-    images: ['/og-default.jpg'],
+    images: ['/solas-og.jpg'],
   },
 }
 

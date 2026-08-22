@@ -192,6 +192,17 @@ button, input, select, textarea { font: inherit; }
   inset: 0;
 }
 
+.solas-opening-image--graded > img {
+  filter: none;
+}
+
+.solas-veil {
+  background: linear-gradient(180deg, #1f1d1822, #1f1d1838 55%, #1f1d1848);
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
 .solas-caption {
   color: #ffffffbd;
   font: 8px var(--label);

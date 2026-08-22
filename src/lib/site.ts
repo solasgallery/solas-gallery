@@ -29,6 +29,10 @@ export const primaryNav = [
 ] as const
 
 export const images = {
+  home: {
+    src: '/images/home/hero-home.jpg',
+    alt: 'The Solas Gallery window wall at dusk, warm interior light reflected in the glass.',
+  },
   portrait: {
     src: '/solas/portrait.jpg',
     alt: 'A high-contrast, Karsh-inspired black and white studio portrait of a woman with silver hair and a serious expression, emphasizing character and texture against a dark backdrop.',

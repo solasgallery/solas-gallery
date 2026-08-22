@@ -26,9 +26,10 @@ export default function Home() {
   return (
     <>
       <section className="solas-opening" aria-labelledby="solas-heading">
-        <div className="solas-opening-image">
-          <img src={images.portrait.src} alt={images.portrait.alt} />
+        <div className="solas-opening-image solas-opening-image--graded">
+          <img src={images.home.src} alt={images.home.alt} />
           <div className="solas-light" />
+          <div className="solas-veil" aria-hidden="true" />
           <span className="solas-caption">The Real Portrait Project · October</span>
         </div>
         <div className="solas-opening-copy">

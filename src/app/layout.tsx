@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: SITE.description,
     images: [
       {
-        url: '/og-default.jpg',
+        url: '/solas-og.jpg',
         width: 1200,
         height: 630,
         alt: SITE.title,
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: SITE.title,
     description: SITE.description,
-    images: ['/og-default.jpg'],
+    images: ['/solas-og.jpg'],
   },
 }
 
@@ -51,7 +51,7 @@ const jsonLd = {
   '@type': ['ArtGallery', 'PhotographyBusiness'],
   '@id': `${SITE.url}/#business`,
   name: SITE.name,
-  image: `${SITE.url}/og-default.jpg`,
+  image: `${SITE.url}/solas-og.jpg`,
   description: SITE.description,
   foundingDate: SITE.established,
   address: {
