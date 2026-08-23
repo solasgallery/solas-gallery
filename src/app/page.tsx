@@ -44,9 +44,9 @@ export default function Home() {
         <div className="solas-opening-copy">
           <p className="solas-label">Salado, Texas · Est. 1995</p>
           <h1 id="solas-heading">
-            Real People also deserve
+            You don't have to
             <br />
-            a Master Portrait
+            be famous.
           </h1>
           <p className="solas-lede">
             The Real Portrait Project. Monochrome, Karsh-inspired sittings. Character
