@@ -27,7 +27,16 @@ export default function Home() {
     <>
       <section className="solas-opening" aria-labelledby="solas-heading">
         <div className="solas-opening-image solas-opening-image--graded">
-          <img src={images.home.src} alt={images.home.alt} />
+          <video
+            src="/videos/hero-home.mp4"
+            poster={images.home.src}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            aria-label={images.home.alt}
+          />
           <div className="solas-light" />
           <div className="solas-veil" aria-hidden="true" />
           <span className="solas-caption">The Real Portrait Project · October</span>
@@ -35,9 +44,9 @@ export default function Home() {
         <div className="solas-opening-copy">
           <p className="solas-label">Salado, Texas · Est. 1995</p>
           <h1 id="solas-heading">
-            Beyond the screen,
+            Real People also deserve
             <br />
-            a quiet truth.
+            a Master Portrait
           </h1>
           <p className="solas-lede">
             The Real Portrait Project. Monochrome, Karsh-inspired sittings. Character
