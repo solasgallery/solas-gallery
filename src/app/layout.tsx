@@ -36,9 +36,8 @@ export const metadata: Metadata = {
       'Fine art photography, signature portraits, and gallery events on Main Street in Salado, Texas.',
     images: ['/og-default.jpg'],
   },
-  // TODO: replace placeholder with token from search.google.com/search-console
   verification: {
-    google: 'REPLACE_WITH_GSC_TOKEN',
+    google: 'c_SsYTYO3P2VZcJrlGmw28Xei0LJVM0AUHkfJ_Xf74o',
   },
 }
 
