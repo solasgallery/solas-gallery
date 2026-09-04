@@ -44,6 +44,9 @@ export const metadata: Metadata = {
     description: SITE.description,
     images: ['/solas-og.jpg'],
   },
+    verification: {
+          google: 'c_SsYTYO3P2VZcJrlGmw28Xei0LJVM0AUHkfJ_Xf74o',
+    },
 }
 
 const jsonLd = {
