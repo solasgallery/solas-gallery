@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { SITE } from '@/lib/site'
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -6,10 +7,10 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/'],
+        disallow: ['/api/', '/area/'],
       },
     ],
-    sitemap: 'https://solasgallery.com/sitemap.xml',
-    host: 'https://solasgallery.com',
+    sitemap: `${SITE.url}/sitemap.xml`,
+    host: SITE.url.replace(/^https?:\/\//, ''),
   }
 }

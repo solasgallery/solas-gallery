@@ -13,13 +13,13 @@ export const metadata: Metadata = {
     description: 'Thirty years of light and shadow. The story of Tim and Cherie Flanagan, Solas Gallery, and a life built on Main Street in Salado, Texas.',
     url: 'https://solasgallery.com/story',
     type: 'website',
-    images: [{ url: '/og-default.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
+    images: [{ url: '/solas-og.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Our Story | Solas Gallery — Salado, TX',
     description: 'Thirty years of light and shadow. The story of Tim and Cherie Flanagan, Solas Gallery, and a life built on Main Street in Salado, Texas.',
-    images: ['/og-default.jpg'],
+    images: ['/solas-og.jpg'],
   },
 }
 
