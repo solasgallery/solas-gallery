@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import LandingPage from '@/components/LandingPage'
+import JsonLd from '@/components/JsonLd'
 import { createLandingMetadata } from '@/lib/metadata'
+import { areaJsonLd } from '@/lib/jsonld'
 import { images } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
@@ -14,9 +16,19 @@ export const metadata: Metadata = createLandingMetadata({
   imageAlt: images.portrait.alt,
 })
 
+const jsonLd = areaJsonLd({
+  title: 'Photographer Near Georgetown — Portraits, Headshots & Fine Art',
+  description:
+    'Solas Gallery in Salado, Texas — 24 minutes from Georgetown. Professional portraits, executive headshots, and fine art prints.',
+  path: '/area/georgetown',
+  areaName: 'Georgetown',
+})
+
 export default function GeorgetownPage() {
   return (
-    <LandingPage
+    <>
+      <JsonLd data={jsonLd} />
+      <LandingPage
       eyebrow="Georgetown · 24 minutes"
       heading="Solas Gallery for Georgetown"
       lede="24 minutes north. Two historic town squares, one creative tradition."
@@ -36,5 +48,6 @@ export default function GeorgetownPage() {
         </Link>
       </section>
     </LandingPage>
+    </>
   )
 }

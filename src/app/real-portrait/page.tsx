@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import LandingPage from '@/components/LandingPage'
+import JsonLd from '@/components/JsonLd'
 import { createLandingMetadata } from '@/lib/metadata'
+import { portraitServiceJsonLd } from '@/lib/jsonld'
 import { images, SITE } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
@@ -14,8 +16,18 @@ export const metadata: Metadata = createLandingMetadata({
   imageAlt: images.portrait.alt,
 })
 
+const jsonLd = portraitServiceJsonLd({
+  title: 'The Real Portrait Project',
+  description:
+    'The Real Portrait Project at Solas Gallery. October sessions only. $295. Monochrome, Karsh-inspired. Character over performance.',
+  path: '/real-portrait',
+  image: images.portrait.src,
+})
+
 export default function RealPortraitPage() {
   return (
+    <>
+    <JsonLd data={jsonLd} />
     <LandingPage
       eyebrow="The Real Portrait Project"
       heading={
@@ -62,5 +74,6 @@ export default function RealPortraitPage() {
         </div>
       </section>
     </LandingPage>
+    </>
   )
 }

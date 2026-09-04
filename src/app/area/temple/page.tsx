@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import LandingPage from '@/components/LandingPage'
+import JsonLd from '@/components/JsonLd'
 import { createLandingMetadata } from '@/lib/metadata'
+import { areaJsonLd } from '@/lib/jsonld'
 import { images } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
@@ -14,9 +16,19 @@ export const metadata: Metadata = createLandingMetadata({
   imageAlt: images.portrait.alt,
 })
 
+const jsonLd = areaJsonLd({
+  title: 'Photographer Near Temple TX — Portraits, Headshots & Fine Art',
+  description:
+    'Solas Gallery in Salado, Texas — 17 minutes from Temple. Professional portraits, executive headshots, and fine art. Serving Temple, Belton, and Bell County.',
+  path: '/area/temple',
+  areaName: 'Temple',
+})
+
 export default function TemplePage() {
   return (
-    <LandingPage
+    <>
+      <JsonLd data={jsonLd} />
+      <LandingPage
       eyebrow="Temple · 17 minutes"
       heading="Solas Gallery for Temple"
       lede="17 minutes south. Your closest fine art gallery and portrait studio."
@@ -37,5 +49,6 @@ export default function TemplePage() {
         </Link>
       </section>
     </LandingPage>
+    </>
   )
 }

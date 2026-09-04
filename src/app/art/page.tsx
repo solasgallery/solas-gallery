@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import LandingPage from '@/components/LandingPage'
+import JsonLd from '@/components/JsonLd'
 import { createLandingMetadata } from '@/lib/metadata'
+import { pageJsonLd } from '@/lib/jsonld'
 import { images } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
@@ -14,8 +16,18 @@ export const metadata: Metadata = createLandingMetadata({
   imageAlt: images.art.alt,
 })
 
+const jsonLd = pageJsonLd({
+  title: 'Art',
+  description:
+    'Original and commissioned art, room studies, placement, and installation for considered homes. Solas Gallery, Salado, Texas.',
+  path: '/art',
+  image: images.art.src,
+})
+
 export default function ArtPage() {
   return (
+    <>
+    <JsonLd data={jsonLd} />
     <LandingPage
       eyebrow="Art for a considered home"
       heading={
@@ -54,5 +66,6 @@ export default function ArtPage() {
         </div>
       </section>
     </LandingPage>
+    </>
   )
 }

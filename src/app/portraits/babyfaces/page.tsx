@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import JsonLd from '@/components/JsonLd'
+import { portraitServiceJsonLd } from '@/lib/jsonld'
 
 export const metadata: Metadata = {
   title: 'BabyFaces — Newborn & Child Portrait Photography',
@@ -24,9 +26,17 @@ export const metadata: Metadata = {
   },
 }
 
+const jsonLd = portraitServiceJsonLd({
+  title: 'BabyFaces — Newborn & Child Portrait Photography',
+  description:
+    'BabyFaces newborn and child portrait photography at Solas Gallery in Salado, Texas. Heirloom-quality baby portraits, milestone sessions, and family photography by Tim Flanagan.',
+  path: '/portraits/babyfaces',
+})
+
 export default function BabyFacesPage() {
   return (
     <>
+      <JsonLd data={jsonLd} />
       {/* Hero */}
       <section className="relative h-[70vh] min-h-[500px] w-full overflow-hidden bg-deep">
         <Image

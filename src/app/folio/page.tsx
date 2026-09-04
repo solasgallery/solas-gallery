@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import LandingPage from '@/components/LandingPage'
+import JsonLd from '@/components/JsonLd'
 import { createLandingMetadata } from '@/lib/metadata'
+import { pageJsonLd } from '@/lib/jsonld'
 import { images } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
@@ -14,8 +16,18 @@ export const metadata: Metadata = createLandingMetadata({
   imageAlt: images.folio.alt,
 })
 
+const jsonLd = pageJsonLd({
+  title: 'FOLIO Albums',
+  description:
+    'FOLIO albums from Solas Gallery — thick-paged, archival books for work that was made to be kept.',
+  path: '/folio',
+  image: images.folio.src,
+})
+
 export default function FolioPage() {
   return (
+    <>
+    <JsonLd data={jsonLd} />
     <LandingPage
       eyebrow="FOLIO albums"
       heading={
@@ -50,5 +62,6 @@ export default function FolioPage() {
         <div className="solas-page-edge" aria-hidden="true" />
       </section>
     </LandingPage>
+    </>
   )
 }

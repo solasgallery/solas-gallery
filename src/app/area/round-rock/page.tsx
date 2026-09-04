@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import LandingPage from '@/components/LandingPage'
+import JsonLd from '@/components/JsonLd'
 import { createLandingMetadata } from '@/lib/metadata'
+import { areaJsonLd } from '@/lib/jsonld'
 import { images } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
@@ -14,9 +16,19 @@ export const metadata: Metadata = createLandingMetadata({
   imageAlt: images.portrait.alt,
 })
 
+const jsonLd = areaJsonLd({
+  title: 'Photographer Near Round Rock — Portraits, Headshots & Fine Art',
+  description:
+    'Solas Gallery in Salado, Texas — 31 minutes from Round Rock. Professional portraits, executive headshots, and fine art.',
+  path: '/area/round-rock',
+  areaName: 'Round Rock',
+})
+
 export default function RoundRockPage() {
   return (
-    <LandingPage
+    <>
+      <JsonLd data={jsonLd} />
+      <LandingPage
       eyebrow="Round Rock · 31 minutes"
       heading="Solas Gallery for Round Rock"
       lede="31 minutes north. 132,000 people, and the best portraits are in Salado."
@@ -35,5 +47,6 @@ export default function RoundRockPage() {
         </Link>
       </section>
     </LandingPage>
+    </>
   )
 }

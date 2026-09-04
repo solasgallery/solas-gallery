@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import LandingPage from '@/components/LandingPage'
+import JsonLd from '@/components/JsonLd'
 import { createLandingMetadata } from '@/lib/metadata'
+import { areaJsonLd } from '@/lib/jsonld'
 import { images } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
@@ -14,9 +16,19 @@ export const metadata: Metadata = createLandingMetadata({
   imageAlt: images.portrait.alt,
 })
 
+const jsonLd = areaJsonLd({
+  title: 'Photographer Near Killeen — Portraits, Headshots & Fine Art',
+  description:
+    'Solas Gallery in Salado, Texas — 21 minutes from Killeen. Professional portraits, military family photography, and fine art.',
+  path: '/area/killeen',
+  areaName: 'Killeen',
+})
+
 export default function KilleenPage() {
   return (
-    <LandingPage
+    <>
+      <JsonLd data={jsonLd} />
+      <LandingPage
       eyebrow="Killeen · 21 minutes"
       heading="Solas Gallery for Killeen"
       lede="21 minutes east. Serving military families and Killeen professionals for 30 years."
@@ -36,5 +48,6 @@ export default function KilleenPage() {
         </Link>
       </section>
     </LandingPage>
+    </>
   )
 }

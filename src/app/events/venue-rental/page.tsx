@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import InquiryForm from '@/components/InquiryForm'
+import JsonLd from '@/components/JsonLd'
+import { venueJsonLd } from '@/lib/jsonld'
 
 export const metadata: Metadata = {
   title: 'Wedding & Event Venue',
@@ -60,9 +62,12 @@ const venueDetails = [
   { label: 'Setup time', value: '2 hours included before event start' },
 ]
 
+const jsonLd = venueJsonLd()
+
 export default function VenueRentalPage() {
   return (
     <>
+      <JsonLd data={jsonLd} />
       {/* Hero */}
       <section className="relative h-[70vh] min-h-[500px] w-full overflow-hidden bg-deep">
         <Image

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import JsonLd from '@/components/JsonLd'
+import { portraitServiceJsonLd } from '@/lib/jsonld'
 
 export const metadata: Metadata = {
   title: 'Professional Headshots — Executive & Corporate Portraits',
@@ -24,9 +26,17 @@ export const metadata: Metadata = {
   },
 }
 
+const jsonLd = portraitServiceJsonLd({
+  title: 'Professional Headshots — Executive & Corporate Portraits',
+  description:
+    'Professional headshot photography at Solas Gallery in Salado, Texas. Executive portraits, corporate headshots, LinkedIn photos, and personal branding by Tim Flanagan.',
+  path: '/portraits/headshots',
+})
+
 export default function HeadshotsPage() {
   return (
     <>
+      <JsonLd data={jsonLd} />
       {/* Hero */}
       <section className="relative h-[70vh] min-h-[500px] w-full overflow-hidden bg-deep">
         <Image

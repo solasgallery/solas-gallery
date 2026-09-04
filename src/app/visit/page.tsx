@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
+import JsonLd from '@/components/JsonLd'
 import { createLandingMetadata } from '@/lib/metadata'
+import { pageJsonLd } from '@/lib/jsonld'
 import { hours, images, SITE } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
@@ -12,9 +14,18 @@ export const metadata: Metadata = createLandingMetadata({
   imageAlt: images.gather.alt,
 })
 
+const jsonLd = pageJsonLd({
+  title: 'Visit Solas Gallery',
+  description:
+    'Visit Solas Gallery at 2 Rock Creek Dr, Salado, TX 76571. Gallery, portrait studio, and gathering place. Est. 1995.',
+  path: '/visit',
+  image: images.gather.src,
+})
+
 export default function VisitPage() {
   return (
     <>
+      <JsonLd data={jsonLd} />
       <section className="solas-opening" aria-labelledby="visit-heading">
         <div className="solas-opening-image">
           <img src={images.gather.src} alt={images.gather.alt} />

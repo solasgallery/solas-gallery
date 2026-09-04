@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import JsonLd from '@/components/JsonLd'
+import { pageJsonLd } from '@/lib/jsonld'
 
 export const metadata: Metadata = {
   title: 'Events | Solas Gallery — Salado, TX',
@@ -48,9 +50,17 @@ const upcomingEvents = [
   },
 ]
 
+const jsonLd = pageJsonLd({
+  title: 'Events',
+  description:
+    'Upcoming gallery events, live music, and performances at Solas Gallery in Salado, Texas.',
+  path: '/events',
+})
+
 export default function EventsPage() {
   return (
     <>
+      <JsonLd data={jsonLd} />
       {/* Hero */}
       <section className="relative bg-deep text-cream py-28 px-6 text-center">
         <div className="relative z-10 max-w-3xl mx-auto">

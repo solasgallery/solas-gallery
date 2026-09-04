@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import JsonLd from '@/components/JsonLd'
+import { pageJsonLd } from '@/lib/jsonld'
 
 export const metadata: Metadata = {
   title: 'Our Story',
@@ -23,9 +25,17 @@ export const metadata: Metadata = {
   },
 }
 
+const jsonLd = pageJsonLd({
+  title: 'Our Story',
+  description:
+    'Thirty years of light and shadow. The story of Tim and Cherie Flanagan, Solas Gallery, and a life built on Main Street in Salado, Texas.',
+  path: '/story',
+})
+
 export default function StoryPage() {
   return (
     <>
+      <JsonLd data={jsonLd} />
       {/* ═══ HERO ═══ */}
       <section className="relative h-[70vh] min-h-[500px] w-full overflow-hidden bg-deep">
         {/* Video or image hero */}

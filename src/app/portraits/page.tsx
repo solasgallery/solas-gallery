@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import LandingPage from '@/components/LandingPage'
+import JsonLd from '@/components/JsonLd'
 import { createLandingMetadata } from '@/lib/metadata'
+import { portraitServiceJsonLd } from '@/lib/jsonld'
 import { images } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
@@ -14,8 +16,18 @@ export const metadata: Metadata = createLandingMetadata({
   imageAlt: images.portrait.alt,
 })
 
+const jsonLd = portraitServiceJsonLd({
+  title: 'Portraits',
+  description:
+    'Signature portraits by Tim Flanagan at Solas Gallery in Salado, Texas. Character over performance.',
+  path: '/portraits',
+  image: images.portrait.src,
+})
+
 export default function PortraitsPage() {
   return (
+    <>
+    <JsonLd data={jsonLd} />
     <LandingPage
       eyebrow="Portrait Studio · Salado"
       heading={
@@ -66,5 +78,6 @@ export default function PortraitsPage() {
         </Link>
       </section>
     </LandingPage>
+    </>
   )
 }

@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import LandingPage from '@/components/LandingPage'
+import JsonLd from '@/components/JsonLd'
 import { createLandingMetadata } from '@/lib/metadata'
+import { pageJsonLd } from '@/lib/jsonld'
 import { images } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
@@ -14,8 +16,18 @@ export const metadata: Metadata = createLandingMetadata({
   imageAlt: images.gather.alt,
 })
 
+const jsonLd = pageJsonLd({
+  title: 'Gather',
+  description:
+    'Openings, long-table lunches, music, and evenings at Solas Gallery in Salado, Texas.',
+  path: '/gather',
+  image: images.gather.src,
+})
+
 export default function GatherPage() {
   return (
+    <>
+    <JsonLd data={jsonLd} />
     <LandingPage
       eyebrow="The Saturday Table"
       heading={
@@ -46,5 +58,6 @@ export default function GatherPage() {
         <img src={images.gather.src} alt={images.gather.alt} />
       </section>
     </LandingPage>
+    </>
   )
 }

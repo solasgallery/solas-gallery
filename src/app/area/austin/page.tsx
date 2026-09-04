@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import LandingPage from '@/components/LandingPage'
+import JsonLd from '@/components/JsonLd'
 import { createLandingMetadata } from '@/lib/metadata'
+import { areaJsonLd } from '@/lib/jsonld'
 import { images } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
@@ -14,9 +16,19 @@ export const metadata: Metadata = createLandingMetadata({
   imageAlt: images.portrait.alt,
 })
 
+const jsonLd = areaJsonLd({
+  title: 'Photographer Near Austin — Portraits, Headshots & Fine Art',
+  description:
+    'Solas Gallery in Salado, Texas — 45 minutes north of Austin. Professional portraits, executive headshots, fine art photography, and gallery events.',
+  path: '/area/austin',
+  areaName: 'Austin',
+})
+
 export default function AustinAreaPage() {
   return (
-    <LandingPage
+    <>
+      <JsonLd data={jsonLd} />
+      <LandingPage
       eyebrow="Austin · 45 minutes"
       heading="Solas Gallery for Austin"
       lede="45 minutes north on I-35. A world away from the ordinary."
@@ -44,5 +56,6 @@ export default function AustinAreaPage() {
         </Link>
       </section>
     </LandingPage>
+    </>
   )
 }

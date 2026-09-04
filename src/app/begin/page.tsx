@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import InquiryForm from '@/components/InquiryForm'
+import JsonLd from '@/components/JsonLd'
 import { createLandingMetadata } from '@/lib/metadata'
+import { pageJsonLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
@@ -11,9 +13,17 @@ export const metadata: Metadata = createLandingMetadata({
   noindex: false,
 })
 
+const jsonLd = pageJsonLd({
+  title: 'Begin a Conversation',
+  description:
+    'Begin a conversation with Solas Gallery in Salado, Texas — portraits, art, or an evening at the table.',
+  path: '/begin',
+})
+
 export default function BeginPage() {
   return (
     <>
+      <JsonLd data={jsonLd} />
       <section className="solas-policy-hero">
         <p className="solas-label">Begin a conversation</p>
         <h1>

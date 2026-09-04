@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import JsonLd from '@/components/JsonLd'
+import { pageJsonLd } from '@/lib/jsonld'
 
 export const metadata: Metadata = {
   title: 'Visit the Gallery',
@@ -32,9 +34,17 @@ const interiors = [
   { src: '/images/gallery/interior-06.jpg', alt: 'Gallery at golden hour' },
 ]
 
+const jsonLd = pageJsonLd({
+  title: 'Visit the Gallery',
+  description:
+    'Visit Solas Gallery on Main Street in Salado, Texas. Fine art, portraits, and events since 1995.',
+  path: '/gallery',
+})
+
 export default function GalleryPage() {
   return (
     <>
+      <JsonLd data={jsonLd} />
       {/* ═══ HERO ═══ */}
       <section className="relative h-[60vh] min-h-[450px] w-full overflow-hidden bg-deep">
         <Image
