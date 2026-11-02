@@ -15,6 +15,9 @@ const nextConfig = {
       { source: '/trade/apply', destination: '/trade/apply.html' },
       { source: '/trade/faq', destination: '/trade/faq.html' },
       { source: '/trade/events', destination: '/trade/events.html' },
+      // Universal Studio lives in its own Vercel project (solasgallery/universal-studio)
+      { source: '/universal-studio', destination: 'https://studio.solasgallery.com/universal-studio' },
+      { source: '/universal-studio/:path*', destination: 'https://studio.solasgallery.com/universal-studio/:path*' },
     ]
   },
 }
