@@ -9,7 +9,7 @@ import { images } from '@/lib/site'
 export const metadata: Metadata = createLandingMetadata({
   title: 'Art',
   description:
-    'Original and commissioned art, room studies, placement, and installation for considered homes. Solas Gallery, Salado, Texas.',
+    'Commissioned and studio original art, one of one and finished by hand. Room studies, placement, and installation. Solas Gallery, Salado, Texas.',
   path: '/art',
   noindex: false,
   image: images.art.src,
@@ -19,7 +19,7 @@ export const metadata: Metadata = createLandingMetadata({
 const jsonLd = pageJsonLd({
   title: 'Art',
   description:
-    'Original and commissioned art, room studies, placement, and installation for considered homes. Solas Gallery, Salado, Texas.',
+    'Commissioned and studio original art, one of one and finished by hand. Room studies, placement, and installation. Solas Gallery, Salado, Texas.',
   path: '/art',
   image: images.art.src,
 })
@@ -37,10 +37,11 @@ export default function ArtPage() {
           the room.
         </>
       }
-      lede="Original and commissioned art, room studies, placement guidance, delivery, and installation — for homes and for designers."
+      lede="We create the art you want but cannot find — commissioned for your room or chosen from the studio floor, one of one, finished by hand."
       heroImage={images.art}
-      heroCaption="Selected work · pigment print on archival cotton"
-      cta={{ href: '/begin', label: 'Find the right work' }}
+      heroCaption="Selected work · Solas Studio"
+      cta={{ href: '/#commissions', label: 'Start a commission' }}
+      secondaryCta={{ href: '/#sessions', label: 'Limited Edition Sessions' }}
     >
       <section className="solas-art-section">
         <div className="solas-art-image">
@@ -57,8 +58,9 @@ export default function ArtPage() {
             Made to be lived with.
           </h2>
           <p>
-            Fine art prints, original works, commissions, and large-format pieces —
-            printed in-house and framed next door when the work asks for it.
+            Studio originals, commissions from your own image, and pieces sized and
+            colored for your room — mixed media, archival pigment on canvas, finished by
+            hand in our studio. No two pieces here are alike.
           </p>
           <Link className="solas-underlink" href="/begin">
             Inquire about a piece <span aria-hidden="true">↗</span>

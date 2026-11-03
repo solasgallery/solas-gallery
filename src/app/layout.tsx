@@ -5,6 +5,12 @@ import Footer from '@/components/Footer'
 import { GtmNoscript, Tracking } from '@/components/Tracking'
 import { SITE } from '@/lib/site'
 import './globals.css'
+import './makeover.css'
+
+// Fonts load via a preconnected Google Fonts <link> (display=swap).
+// next/font/google failed on Vercel's build machine (font fetch), so it is not used.
+const FONTS_HREF =
+  'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap'
 
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID
 
@@ -83,6 +89,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="stylesheet" href={FONTS_HREF} />
         {gtmId ? (
           <Script id="gtm" strategy="afterInteractive">
             {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
