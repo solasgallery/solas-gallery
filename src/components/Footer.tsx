@@ -2,15 +2,18 @@ import Link from 'next/link'
 import { SITE, sisters } from '@/lib/site'
 
 export default function Footer() {
+  const year = new Date().getFullYear()
+
   return (
     <footer className="solas-footer-only" id="contact">
-      <img src="/brand/solas.svg" alt="Solas" />
+      <img src="/brand/solas.svg" alt="Solas Gallery" width={88} height={83} loading="lazy" />
       <div className="solas-footer-nap">
         <p>
-          Solas Gallery · 2 Rock Creek Dr, Salado, TX 76571 ·{' '}
+          {SITE.name} · {SITE.street}, {SITE.city}, {SITE.region} {SITE.postalCode} ·{' '}
           <a href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a>
         </p>
         <p className="solas-footer-sisters">
+          Neighbors on Rock Creek Drive:{' '}
           {sisters.map((sister, index) => (
             <span key={sister.href}>
               {index > 0 ? ' · ' : null}
@@ -24,7 +27,7 @@ export default function Footer() {
       <small>
         <Link href="/privacy">Privacy &amp; SMS Terms</Link>
         <br />
-        {SITE.city}, Texas · Since {SITE.established}
+        © {year} {SITE.name} · {SITE.city}, Texas · Since {SITE.established}
       </small>
     </footer>
   )

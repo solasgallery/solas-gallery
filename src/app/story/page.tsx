@@ -38,17 +38,12 @@ export default function StoryPage() {
       <JsonLd data={jsonLd} />
       {/* ═══ HERO ═══ */}
       <section className="relative h-[70vh] min-h-[500px] w-full overflow-hidden bg-deep">
-        {/* Video or image hero */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/images/story/hero-fallback.jpg"
+        {/* Stills only — no hero video (makeover Nov 2026). */}
+        <img
+          src="/images/story/hero-fallback.jpg"
+          alt="The Solas Gallery building in Salado through the trees."
           className="absolute inset-0 w-full h-full object-cover opacity-40"
-        >
-          <source src="/video/story-ambient.mp4" type="video/mp4" />
-        </video>
+        />
         <div className="absolute inset-0 bg-deep/30" />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
           <h1 className="font-display text-hero text-cream tracking-[0.1em]">
@@ -98,7 +93,7 @@ export default function StoryPage() {
                 but to experience something that slows them down.
               </p>
               <p>
-                I still shoot every session myself. I still print in-house. I still
+                I still shoot every session myself. Every piece is still finished by hand in our studio. I still
                 believe that a photograph — the right photograph, made with care and
                 intention — can outlast everything else we make.
               </p>
@@ -106,6 +101,7 @@ export default function StoryPage() {
                 The word <em>Solas</em> is Irish for light. That was the whole idea.
                 Follow the light. See what it reveals. Make something worth keeping.
               </p>
+              {/* PLACEHOLDER (W-08): "finished by hand" line edited from "I still print in-house" to meet client-language rules — Tim to confirm wording. */}
               {/* TIM: Replace this placeholder with your actual origin story in your own voice.
                    Stream-of-consciousness, honest, personal. This is your section. */}
             </div>

@@ -3,8 +3,25 @@ import Script from 'next/script'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { GtmNoscript, Tracking } from '@/components/Tracking'
+import { Cormorant_Garamond, Jost } from 'next/font/google'
 import { SITE } from '@/lib/site'
 import './globals.css'
+import './makeover.css'
+
+const display = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+  variable: '--font-display',
+})
+
+const body = Jost({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  display: 'swap',
+  variable: '--font-body',
+})
 
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID
 
@@ -81,7 +98,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${display.variable} ${body.variable}`}>
       <head>
         {gtmId ? (
           <Script id="gtm" strategy="afterInteractive">

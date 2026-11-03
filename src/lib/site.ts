@@ -2,7 +2,8 @@ export const SITE = {
   name: 'Solas Gallery',
   url: 'https://solasgallery.com',
   title: 'Solas Gallery | Portraits, Art, and a Place to Gather · Salado',
-  description: 'Gallery, portrait studio, and gathering place in Salado, Texas. Est. 1995.',
+  description:
+    'Art gallery in Salado, Texas. One-of-a-kind wall art — commissioned for your home or chosen from the studio floor, finished by hand. Est. 1995.',
   street: '2 Rock Creek Dr',
   city: 'Salado',
   region: 'TX',
@@ -20,12 +21,15 @@ export const sisters = [
   { name: 'HUB Salado', href: 'https://hubsalado.com' },
 ] as const
 
+export const HUB_URL = 'https://hubsalado.com'
+
 export const primaryNav = [
-  { href: '/portraits', label: 'Portraits' },
-  { href: '/art', label: 'Art' },
-  { href: '/gather', label: 'Gather' },
-  { href: '/visit', label: 'Visit' },
-  { href: '/begin', label: 'Begin' },
+  { href: '/#commissions', label: 'Commissions', external: false },
+  { href: '/#originals', label: 'Studio Originals', external: false },
+  { href: '/#sessions', label: 'Sessions', external: false },
+  { href: '/story', label: 'Our Story', external: false },
+  { href: HUB_URL, label: 'Events', external: true },
+  { href: '/visit', label: 'Visit', external: false },
 ] as const
 
 export const images = {
@@ -55,6 +59,7 @@ export const images = {
   },
 } as const
 
+// PLACEHOLDER (F-01): gallery hours — Tim to confirm (brief default Tue–Sat 10–5).
 export const hours = 'Tuesday – Saturday, 10 am – 5 pm'
 
 export const indexableRoutes = [
