@@ -14,9 +14,9 @@
   --gold: #141414;        /* former gold accent → black */
   --muted: #55524c;       /* body text on cream, 7.4:1 */
   --line: #1414142b;
-  --serif: var(--font-display), "Cormorant Garamond", Georgia, serif;
-  --sans: var(--font-body), "Jost", "Helvetica Neue", Arial, sans-serif;
-  --label: var(--font-body), "Jost", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --label: "Jost", "Helvetica Neue", Arial, sans-serif;
 }
 
 @layer base {

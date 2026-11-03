@@ -3,25 +3,14 @@ import Script from 'next/script'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { GtmNoscript, Tracking } from '@/components/Tracking'
-import { Cormorant_Garamond, Jost } from 'next/font/google'
 import { SITE } from '@/lib/site'
 import './globals.css'
 import './makeover.css'
 
-const display = Cormorant_Garamond({
-  subsets: ['latin'],
-  weight: ['400', '500'],
-  style: ['normal', 'italic'],
-  display: 'swap',
-  variable: '--font-display',
-})
-
-const body = Jost({
-  subsets: ['latin'],
-  weight: ['300', '400', '500'],
-  display: 'swap',
-  variable: '--font-body',
-})
+// Fonts load via a preconnected Google Fonts <link> (display=swap).
+// next/font/google failed on Vercel's build machine (font fetch), so it is not used.
+const FONTS_HREF =
+  'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap'
 
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID
 
@@ -98,8 +87,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html lang="en">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="stylesheet" href={FONTS_HREF} />
         {gtmId ? (
           <Script id="gtm" strategy="afterInteractive">
             {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
