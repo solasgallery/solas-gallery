@@ -9,7 +9,7 @@ import { images } from '@/lib/site'
 export const metadata: Metadata = createLandingMetadata({
   title: 'Art',
   description:
-    'Original and commissioned art, room studies, placement, and installation for considered homes. Solas Gallery, Salado, Texas.',
+    'Studio originals — one of one, hand-finished, multimedia. Solas Editions and Flanagan Signature bespoke art, from $1,500. Commissions to $10,000 and above. Solas Gallery, Salado, Texas.',
   path: '/art',
   noindex: false,
   image: images.art.src,
@@ -19,7 +19,7 @@ export const metadata: Metadata = createLandingMetadata({
 const jsonLd = pageJsonLd({
   title: 'Art',
   description:
-    'Original and commissioned art, room studies, placement, and installation for considered homes. Solas Gallery, Salado, Texas.',
+    'Studio originals — one of one, hand-finished, multimedia. Solas Editions and Flanagan Signature bespoke art, from $1,500. Commissions to $10,000 and above. Solas Gallery, Salado, Texas.',
   path: '/art',
   image: images.art.src,
 })
@@ -37,10 +37,11 @@ export default function ArtPage() {
           the room.
         </>
       }
-      lede="Original and commissioned art, room studies, placement guidance, delivery, and installation — for homes and for designers."
+      lede="We create the art you want but cannot find — commissioned for your room or chosen from the studio floor. Studio original, one of one, hand-finished."
       heroImage={images.art}
-      heroCaption="Selected work · pigment print on archival cotton"
-      cta={{ href: '/begin', label: 'Find the right work' }}
+      heroCaption="Selected work · Solas Studio"
+      cta={{ href: '/#commissions', label: 'Start a commission' }}
+      secondaryCta={{ href: '/real-portrait', label: 'The Real Portrait Project' }}
     >
       <section className="solas-art-section">
         <div className="solas-art-image">
@@ -57,9 +58,15 @@ export default function ArtPage() {
             Made to be lived with.
           </h2>
           <p>
-            Fine art prints, original works, commissions, and large-format pieces —
-            printed in-house and framed next door when the work asks for it.
+            Studio originals in two lines: Solas Editions, and Flanagan Signature bespoke
+            art. Each one a studio original — one of one, hand-finished, multimedia.
           </p>
+          <p>
+            Commissions from your own image, and pieces sized and colored for your room,
+            archival pigment on canvas, finished by hand in our studio. No two pieces here
+            are alike.
+          </p>
+          <p>Studio originals from $1,500. Commissions to $10,000 and above.</p>
           <Link className="solas-underlink" href="/begin">
             Inquire about a piece <span aria-hidden="true">↗</span>
           </Link>

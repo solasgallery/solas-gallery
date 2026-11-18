@@ -9,7 +9,7 @@ import { images } from '@/lib/site'
 export const metadata: Metadata = createLandingMetadata({
   title: 'Photographer Near Georgetown — Portraits, Headshots & Fine Art',
   description:
-    'Solas Gallery in Salado, Texas — 24 minutes from Georgetown. Professional portraits, executive headshots, and fine art prints.',
+    'Solas Gallery in Salado, Texas — 24 minutes from Georgetown. Professional portraits, executive headshots, and one-of-one studio original art.',
   path: '/area/georgetown',
   noindex: true,
   image: images.portrait.src,
@@ -19,7 +19,7 @@ export const metadata: Metadata = createLandingMetadata({
 const jsonLd = areaJsonLd({
   title: 'Photographer Near Georgetown — Portraits, Headshots & Fine Art',
   description:
-    'Solas Gallery in Salado, Texas — 24 minutes from Georgetown. Professional portraits, executive headshots, and fine art prints.',
+    'Solas Gallery in Salado, Texas — 24 minutes from Georgetown. Professional portraits, executive headshots, and one-of-one studio original art.',
   path: '/area/georgetown',
   areaName: 'Georgetown',
 })

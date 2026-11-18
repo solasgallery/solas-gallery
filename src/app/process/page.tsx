@@ -1,0 +1,68 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import LandingPage from '@/components/LandingPage'
+import JsonLd from '@/components/JsonLd'
+import { createLandingMetadata } from '@/lib/metadata'
+import { pageJsonLd } from '@/lib/jsonld'
+
+// The tools paragraph lives here only — never on the homepage (brand rule 2026-11-18).
+
+const description =
+  'How every Solas piece is made: directed, altered, and finished by hand in our studio in Salado, Texas. One of one.'
+
+const heroImage = {
+  src: '/images/art/category-commission.jpg',
+  alt: 'A large abstract painting of trees in green and gold, hung on a gallery wall.',
+}
+
+export const metadata: Metadata = createLandingMetadata({
+  title: 'Our Process',
+  description,
+  path: '/process',
+  noindex: false,
+  image: heroImage.src,
+  imageAlt: heroImage.alt,
+})
+
+const jsonLd = pageJsonLd({
+  title: 'Our Process',
+  description,
+  path: '/process',
+  image: heroImage.src,
+})
+
+export default function ProcessPage() {
+  return (
+    <>
+    <JsonLd data={jsonLd} />
+    <LandingPage
+      eyebrow="How it is made"
+      heading={
+        <>
+          Made by hand,
+          <br />
+          here.
+        </>
+      }
+      lede="Every piece is produced and finished by hand in our studio: mixed media, archival pigment on canvas, hand-finished surfaces."
+      heroImage={heroImage}
+      heroCaption="Solas Studio · Salado, Texas"
+      cta={{ href: '/#consult', label: 'Book a design consult' }}
+      secondaryCta={{ href: '/#commissions', label: 'Start a commission' }}
+    >
+      <section className="solas-page-copy">
+        <div className="solas-measure">
+          <h2>Tools.</h2>
+          <p>
+            We use every tool. Camera, brush, printer, AI. No tool decides here. A person
+            does. Every piece is directed, altered, and finished by hand. One of one.
+          </p>
+          <Link className="solas-underlink" href="/art">
+            See the art <span aria-hidden="true">↗</span>
+          </Link>
+        </div>
+      </section>
+    </LandingPage>
+    </>
+  )
+}

@@ -45,14 +45,14 @@ export default function PortraitsPage() {
     >
       <section className="solas-portrait-section">
         <div className="solas-portrait-copy">
-          <p className="solas-label">October</p>
+          <p className="solas-label">November 27 · December 1 · December 19</p>
           <h2>Beyond the screen, a quiet truth.</h2>
           <p>
-            The Real Portrait Project is reserved for October. Monochrome.
-            Karsh-inspired. Character over performance. $295.
+            The Real Portrait Project: a portrait display designed for your home.
+            Each design project starts with a free design consult.
           </p>
           <Link className="solas-underlink" href="/real-portrait">
-            Reserve a sitting <span aria-hidden="true">↗</span>
+            Book a design consult <span aria-hidden="true">↗</span>
           </Link>
         </div>
         <div className="solas-portrait-image">

@@ -8,10 +8,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        cream: '#F7F4EF',
-        charcoal: '#1C1C1A',
-        stone: '#C4AE8A',
-        deep: '#111110',
+        // Makeover Nov 2026: cream ground, black UI, neutral (non-tan) stone.
+        cream: '#F7F3EC',
+        charcoal: '#141414',
+        stone: '#8C877E',
+        deep: '#141414',
       },
       fontFamily: {
         display: ['Cormorant Garamond', 'serif'],
