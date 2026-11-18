@@ -27,8 +27,8 @@ Resolved or superseded by the "Personal art, designed for your home" reframe:
   included; single print $395 (8×10 or 11×14); Nov 27 keeps the $750 minimum order. No $390 Saturday, no $95 deposit.
 - **F-04:** the waitlist form stays (booking is open now). Day options: November 27 / December 1 / December 19 / Any of the three.
 
-Still open: **F-05** (the "About ten sittings · twenty minutes each" line on each card), plus W-01, W-06, W-07, W-08,
-F-01, F-03, F-06, F-07.
+Still open: W-01, W-06, W-07, W-08, F-01, F-03, F-06, F-07. (F-05 resolved 2026-11-18: the capacity line was deleted —
+the cap is 20 projects total across the three days, and the per-day count was never confirmed.)
 
 ## Needs Tim's photo
 
