@@ -48,7 +48,7 @@ export default function GatherPage() {
           <h2>An evening worth clearing the calendar for.</h2>
           <p>
             The gallery hosts openings, music, and private evenings. The space
-            itself — art on the walls, warm light, Salado at the door — is
+            itself — art on the walls, warm light, Main Street at the door — is
             part of what people come for.
           </p>
           <Link className="solas-underlink" href="/events/venue-rental">

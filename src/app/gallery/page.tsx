@@ -6,13 +6,13 @@ import { pageJsonLd } from '@/lib/jsonld'
 export const metadata: Metadata = {
   title: 'Visit the Gallery',
   description:
-    'Visit Solas Gallery at 2 Rock Creek Dr in Salado, Texas. Fine art, portraits, and events since 1995.',
+    'Visit Solas Gallery on Main Street in Salado, Texas. Fine art, portraits, and events since 1995.',
   alternates: {
     canonical: '/gallery',
   },
   openGraph: {
     title: 'Visit the Gallery | Solas Gallery — Salado, TX',
-    description: 'Visit Solas Gallery at 2 Rock Creek Dr in Salado, Texas. Fine art, portraits, and events since 1995.',
+    description: 'Visit Solas Gallery on Main Street in Salado, Texas. Fine art, portraits, and events since 1995.',
     url: 'https://solasgallery.com/gallery',
     type: 'website',
     images: [{ url: '/solas-og.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Visit the Gallery | Solas Gallery — Salado, TX',
-    description: 'Visit Solas Gallery at 2 Rock Creek Dr in Salado, Texas. Fine art, portraits, and events since 1995.',
+    description: 'Visit Solas Gallery on Main Street in Salado, Texas. Fine art, portraits, and events since 1995.',
     images: ['/solas-og.jpg'],
   },
 }
@@ -37,7 +37,7 @@ const interiors = [
 const jsonLd = pageJsonLd({
   title: 'Visit the Gallery',
   description:
-    'Visit Solas Gallery at 2 Rock Creek Dr in Salado, Texas. Fine art, portraits, and events since 1995.',
+    'Visit Solas Gallery on Main Street in Salado, Texas. Fine art, portraits, and events since 1995.',
   path: '/gallery',
 })
 
@@ -49,7 +49,7 @@ export default function GalleryPage() {
       <section className="relative h-[60vh] min-h-[450px] w-full overflow-hidden bg-deep">
         <Image
           src="/images/gallery/hero.jpg"
-          alt="Solas Gallery interior, Salado"
+          alt="Solas Gallery interior, Main Street Salado"
           fill
           priority
           className="object-cover opacity-50"
@@ -59,7 +59,7 @@ export default function GalleryPage() {
             The Gallery
           </h1>
           <p className="font-body text-sm text-cream/50 tracking-[0.15em] uppercase mt-4">
-            Salado, Texas. Open to the world.
+            Main Street, Salado. Open to the world.
           </p>
         </div>
       </section>

@@ -33,7 +33,11 @@ export default function VisitPage() {
           <span className="solas-caption">2 Rock Creek Dr · Salado</span>
         </div>
         <div className="solas-opening-copy">
-          <p className="solas-label">2 Rock Creek Dr · Salado</p>
+          <p className="solas-label">
+            2 Rock Creek Dr · Salado
+            <br />
+            At the corner of Main Street and Rock Creek Drive
+          </p>
           <h1 id="visit-heading">
             The door
             <br />
@@ -61,6 +65,8 @@ export default function VisitPage() {
               {SITE.street}
               <br />
               {SITE.city}, {SITE.region} {SITE.postalCode}
+              <br />
+              At the corner of Main Street and Rock Creek Drive.
             </dd>
             <dt>Telephone</dt>
             <dd>
