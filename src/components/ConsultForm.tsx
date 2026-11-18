@@ -4,11 +4,11 @@ import { useState } from 'react'
 import { SITE } from '@/lib/site'
 
 /**
- * Portrait design consult request. Posts to the
+ * Portrait design consult request (lives on /portraits#consult). Posts to the
  * existing /api/inquiry route (Brevo contact + notification email). Finish and
  * day preferences ride in the message field so no API change is needed.
  */
-export default function WaitlistForm() {
+export default function ConsultForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -48,7 +48,7 @@ export default function WaitlistForm() {
     return (
       <div className="sg-form sg-form--thanks" role="status">
         <h3>
-          You&rsquo;re in — we&rsquo;ll be in touch within one business day to set your free
+          Thank you — we&rsquo;ll be in touch within one business day to set your free
           design consult.
         </h3>
       </div>
@@ -56,11 +56,11 @@ export default function WaitlistForm() {
   }
 
   return (
-    <form className="sg-form" onSubmit={handleSubmit} aria-labelledby="waitlist-heading">
-      <h3 id="waitlist-heading">Book a design consult</h3>
+    <form className="sg-form" onSubmit={handleSubmit} aria-labelledby="consult-heading">
+      <h3 id="consult-heading">Book a design consult</h3>
       <p className="sg-form-note">
-        Pick your day. We will be in touch within one business day to set your free
-        design consult.
+        Choose your preferred day. We will be in touch within one business day to set your
+        free design consult.
       </p>
       <div className="sg-form-grid">
         <label>

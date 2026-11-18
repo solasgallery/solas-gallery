@@ -7,7 +7,7 @@ import { areaJsonLd } from '@/lib/jsonld'
 import { images } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
-  title: 'Photographer Near Killeen — Portraits, Headshots & Fine Art',
+  title: 'Solas Gallery for Killeen — Portraits & Fine Art',
   description:
     'Solas Gallery in Salado, Texas — 21 minutes from Killeen. Professional portraits, military family photography, and fine art.',
   path: '/area/killeen',
@@ -17,7 +17,7 @@ export const metadata: Metadata = createLandingMetadata({
 })
 
 const jsonLd = areaJsonLd({
-  title: 'Photographer Near Killeen — Portraits, Headshots & Fine Art',
+  title: 'Solas Gallery for Killeen — Portraits & Fine Art',
   description:
     'Solas Gallery in Salado, Texas — 21 minutes from Killeen. Professional portraits, military family photography, and fine art.',
   path: '/area/killeen',

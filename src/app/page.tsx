@@ -1,36 +1,14 @@
 import Link from 'next/link'
 import SiteImage from '@/components/SiteImage'
-import WaitlistForm from '@/components/WaitlistForm'
-import { HUB_URL, hours, SITE } from '@/lib/site'
+import { HUB_URL, hours, MAP_EMBED_URL, SITE } from '@/lib/site'
 
 // Homepage title/description come from the root layout (SITE.title) — the
 // title ranks for "art gallery Salado TX"; do not override it here.
 // Brand rule (2026-11-18): do not name AI anywhere on the homepage. The tools
 // paragraph lives on /process only.
 
-// Portrait design — the general portrait offering (2026-11-18). Locked terms:
-// the $295 design & creation fee covers the sitting and the creation of the
-// images; finished prints are priced separately. The first print is NOT
-// included. Single print $395 (8×10 or 11×14). No "master looks" language here:
-// that belongs to the campaign page /real-portrait only.
-const designDays = [
-  {
-    date: 'Friday, November 27',
-    short: 'Nov 27',
-    name: 'The Friday design project',
-    minimum: '$750 minimum order.',
-  },
-  {
-    date: 'Tuesday, December 1',
-    short: 'Dec 1',
-    name: 'The Tuesday design project',
-  },
-  {
-    date: 'Saturday, December 19',
-    short: 'Dec 19',
-    name: 'The Saturday design project',
-  },
-]
+// Portrait design booking lives on /portraits (Tim, 2026-11-18): the homepage is
+// the Gallery. This page carries only a quiet door to /portraits — no fee, no dates.
 
 const ways = [
   {
@@ -113,11 +91,11 @@ export default function Home() {
             From your photos or ours, designed for your walls and done for you.
           </p>
           <p className="sg-plain">
-            Solas Gallery in Salado, Texas creates one-of-a-kind wall art — commissioned
-            for your home, or chosen from the studio floor.
+            Solas Gallery in Salado, Texas creates one-of-a-kind art — commissioned for
+            your home, or chosen from the studio floor.
           </p>
           <div className="sg-ctas">
-            <Link className="sg-btn" href="#sessions">
+            <Link className="sg-btn" href="/portraits">
               Design your wall
             </Link>
             <Link className="sg-link" href="#commissions">
@@ -134,49 +112,21 @@ export default function Home() {
         />
       </section>
 
-      {/* ── 4. Portrait design · design projects ────────────────── */}
-      <section className="sg-section sg-sessions" id="sessions" aria-labelledby="sessions-heading">
+      {/* ── 4. Portrait design · a quiet door to /portraits ──────── */}
+      <section className="sg-section sg-sessions" id="portrait-design" aria-labelledby="portrait-design-heading">
         <header className="sg-section-head">
-          <p className="sg-eyebrow">Design projects · November 27, December 1, December 19</p>
-          <h2 id="sessions-heading">Portrait design</h2>
+          <p className="sg-eyebrow">Portraits</p>
+          <h2 id="portrait-design-heading">Portrait design</h2>
           <p className="sg-plain">
             A portrait display designed for your home. It starts with a free design consult,
             online or in person, where we design the portrait for your wall together.
           </p>
           <div className="sg-ctas">
-            <Link className="sg-btn" href="#consult">
-              Book a design consult
-            </Link>
             <Link className="sg-link" href="/portraits">
               How portrait design works
             </Link>
           </div>
         </header>
-
-        <div className="sg-days">
-          {designDays.map((day) => (
-            <article className="sg-day" key={day.short} aria-labelledby={`day-${day.short}`}>
-              <p className="sg-day-date">{day.date}</p>
-              <h3 id={`day-${day.short}`}>{day.name}</h3>
-              <p className="sg-day-price">$295 design &amp; creation fee</p>
-              <p>
-                Paid to reserve. It covers your sitting and the creation of your images.
-                Finished prints are priced separately.
-              </p>
-              <p>First print not included. Single print $395 (8×10 or 11×14).</p>
-              {day.minimum ? <p>{day.minimum}</p> : null}
-            </article>
-          ))}
-        </div>
-
-        <p className="sg-note">
-          Booking is open now. Black and white or color — your choice at your design consult.
-          When a day is full, it is full.
-        </p>
-
-        <div className="sg-waitlist" id="consult">
-          <WaitlistForm />
-        </div>
       </section>
 
       {/* ── 5. Studio originals ─────────────────────────────────── */}
@@ -262,7 +212,6 @@ export default function Home() {
             </li>
           ))}
         </ol>
-        <p className="sg-pullquote">The most you can ever be out is $195.</p>
         <div className="sg-ctas">
           <Link className="sg-btn" href="/begin">
             Start a commission
@@ -375,7 +324,6 @@ export default function Home() {
               <a href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a>
             </dd>
             <dt>Hours</dt>
-            {/* PLACEHOLDER (F-01): hours — confirm with Tim */}
             <dd>
               {hours}
               <br />
@@ -385,10 +333,10 @@ export default function Home() {
         </div>
         <div className="sg-map">
           <iframe
-            src="https://www.google.com/maps?q=2+Rock+Creek+Dr,+Salado,+TX+76571&output=embed"
+            src={MAP_EMBED_URL}
             title="Map of Solas Gallery, 2 Rock Creek Dr, Salado, TX"
             loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
+            referrerPolicy="strict-origin-when-cross-origin"
           />
         </div>
       </section>

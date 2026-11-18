@@ -40,7 +40,7 @@ export default function Nav() {
     <>
       {showBooking ? (
         <div className="sg-announce">
-          <Link href="/#sessions">
+          <Link href="/portraits">
             <strong>Portrait design</strong> sittings open, November 27, December 1,
             December 19. Book a design consult.
           </Link>
@@ -56,7 +56,7 @@ export default function Nav() {
           ))}
         </nav>
         {showBooking ? (
-          <Link className="sg-nav-cta" href="/#consult">
+          <Link className="sg-nav-cta" href="/portraits#consult">
             Book a design consult
           </Link>
         ) : null}
@@ -76,7 +76,7 @@ export default function Nav() {
               <NavLink key={link.href} link={link} onClick={() => setMenuOpen(false)} />
             ))}
             {showBooking ? (
-              <Link className="sg-nav-cta sg-nav-cta--panel" href="/#consult" onClick={() => setMenuOpen(false)}>
+              <Link className="sg-nav-cta sg-nav-cta--panel" href="/portraits#consult" onClick={() => setMenuOpen(false)}>
                 Book a design consult
               </Link>
             ) : null}

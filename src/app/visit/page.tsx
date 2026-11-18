@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 import JsonLd from '@/components/JsonLd'
 import { createLandingMetadata } from '@/lib/metadata'
 import { pageJsonLd } from '@/lib/jsonld'
-import { hours, images, SITE } from '@/lib/site'
+import { hours, images, MAP_EMBED_URL, SITE } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
   title: 'Visit',
   description:
-    'Visit Solas Gallery at 2 Rock Creek Dr, Salado, TX 76571. Gallery, portrait studio, and gathering place. Est. 1995.',
+    'Visit Solas Gallery at 2 Rock Creek Dr, Salado, TX 76571. Gallery, portrait design, and gathering place. Est. 1995.',
   path: '/visit',
   noindex: false,
   image: images.gather.src,
@@ -17,7 +17,7 @@ export const metadata: Metadata = createLandingMetadata({
 const jsonLd = pageJsonLd({
   title: 'Visit Solas Gallery',
   description:
-    'Visit Solas Gallery at 2 Rock Creek Dr, Salado, TX 76571. Gallery, portrait studio, and gathering place. Est. 1995.',
+    'Visit Solas Gallery at 2 Rock Creek Dr, Salado, TX 76571. Gallery, portrait design, and gathering place. Est. 1995.',
   path: '/visit',
   image: images.gather.src,
 })
@@ -76,10 +76,10 @@ export default function VisitPage() {
         </div>
         <div className="solas-map">
           <iframe
-            src="https://www.google.com/maps?q=2+Rock+Creek+Dr,+Salado,+TX+76571&output=embed"
+            src={MAP_EMBED_URL}
             title="Map of Solas Gallery, 2 Rock Creek Dr, Salado, TX"
             loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
+            referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
           />
         </div>

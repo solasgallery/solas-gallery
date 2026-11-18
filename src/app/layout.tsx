@@ -27,6 +27,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
+    apple: '/apple-touch-icon.png',
   },
   openGraph: {
     type: 'website',
@@ -75,7 +76,7 @@ const jsonLd = {
   url: SITE.url,
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
     opens: '10:00',
     closes: '17:00',
   },

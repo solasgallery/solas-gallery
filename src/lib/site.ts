@@ -3,7 +3,7 @@ export const SITE = {
   url: 'https://solasgallery.com',
   title: 'Solas Gallery | Portraits, Art, and a Place to Gather · Salado',
   description:
-    'Art gallery in Salado, Texas. One-of-a-kind wall art — commissioned for your home or chosen from the studio floor, finished by hand. Est. 1995.',
+    'Solas Gallery, Salado, Texas. Personal art, designed for your home — commissioned for your walls or chosen from the studio floor, finished by hand. Est. 1995.',
   street: '2 Rock Creek Dr',
   city: 'Salado',
   region: 'TX',
@@ -59,8 +59,13 @@ export const images = {
   },
 } as const
 
-// PLACEHOLDER (F-01): gallery hours — Tim to confirm (brief default Tue–Sat 10–5).
-export const hours = 'Tuesday – Saturday, 10 am – 5 pm'
+// Gallery hours match the Google Business Profile: Monday–Saturday, 10–5 (Tim, 2026-11-18).
+export const hours = 'Monday – Saturday, 10 am – 5 pm'
+
+// Google Maps place embed for the Solas Gallery listing (Share → Embed a map,
+// 2026-11-18). Shows the place card with the business name — not a bare address pin.
+export const MAP_EMBED_URL =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3421.796697055061!2d-97.536423!3d30.9482421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86453be326e5c787%3A0xd8e78f1e59f3a36c!2sSolas%20Gallery!5e0!3m2!1sen!2sus!4v1795044788858!5m2!1sen!2sus'
 
 export const indexableRoutes = [
   { path: '/', priority: 1, changeFrequency: 'weekly' as const },
@@ -72,5 +77,8 @@ export const indexableRoutes = [
   { path: '/real-portrait', priority: 0.9, changeFrequency: 'weekly' as const },
   { path: '/folio', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/process', priority: 0.6, changeFrequency: 'monthly' as const },
+  { path: '/story', priority: 0.6, changeFrequency: 'monthly' as const },
+  { path: '/events/venue-rental', priority: 0.7, changeFrequency: 'monthly' as const },
+  { path: '/portraits/babyfaces', priority: 0.6, changeFrequency: 'monthly' as const },
   { path: '/privacy', priority: 0.3, changeFrequency: 'yearly' as const },
 ]

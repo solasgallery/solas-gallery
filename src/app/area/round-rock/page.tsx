@@ -7,9 +7,9 @@ import { areaJsonLd } from '@/lib/jsonld'
 import { images } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
-  title: 'Photographer Near Round Rock — Portraits, Headshots & Fine Art',
+  title: 'Solas Gallery for Round Rock — Portraits & Fine Art',
   description:
-    'Solas Gallery in Salado, Texas — 31 minutes from Round Rock. Professional portraits, executive headshots, and fine art.',
+    'Solas Gallery in Salado, Texas — 31 minutes from Round Rock. Professional portraits and fine art.',
   path: '/area/round-rock',
   noindex: true,
   image: images.portrait.src,
@@ -17,9 +17,9 @@ export const metadata: Metadata = createLandingMetadata({
 })
 
 const jsonLd = areaJsonLd({
-  title: 'Photographer Near Round Rock — Portraits, Headshots & Fine Art',
+  title: 'Solas Gallery for Round Rock — Portraits & Fine Art',
   description:
-    'Solas Gallery in Salado, Texas — 31 minutes from Round Rock. Professional portraits, executive headshots, and fine art.',
+    'Solas Gallery in Salado, Texas — 31 minutes from Round Rock. Professional portraits and fine art.',
   path: '/area/round-rock',
   areaName: 'Round Rock',
 })
