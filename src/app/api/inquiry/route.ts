@@ -1,7 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 const BREVO_API_KEY = process.env.BREVO_API_KEY || ''
-const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || 'info@solasgallery.com'
+// Consult/inquiry notifications go to Cherie (2026-11-18). The Vercel env var
+// NOTIFICATION_EMAIL is set to the same address; this default covers a missing var.
+const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || 'cherie@solasgallery.com'
 
 // Brevo list ID for website inquiries (create this list in Brevo, or use default)
 const BREVO_LIST_ID = Number(process.env.BREVO_LIST_ID) || 2
@@ -44,7 +46,7 @@ export async function POST(request: NextRequest) {
       console.error('Brevo contact error:', await contactRes.text())
     }
 
-    // 2. Send notification email to Tim via Brevo transactional
+    // 2. Send notification email to Cherie via Brevo transactional
     const emailRes = await fetch('https://api.brevo.com/v3/smtp/email', {
       method: 'POST',
       headers: {
@@ -57,7 +59,7 @@ export async function POST(request: NextRequest) {
           name: 'Solas Gallery Website',
           email: 'cherie@solasgallery.com',
         },
-        to: [{ email: NOTIFICATION_EMAIL, name: 'Tim Flanagan' }],
+        to: [{ email: NOTIFICATION_EMAIL, name: 'Cherie Flanagan' }],
         subject: `New inquiry from ${name} — ${source || 'Website'}`,
         htmlContent: `
           <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; padding: 40px 20px;">
