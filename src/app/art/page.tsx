@@ -41,7 +41,7 @@ export default function ArtPage() {
       heroImage={images.art}
       heroCaption="Selected work · Solas Studio"
       cta={{ href: '/#commissions', label: 'Start a commission' }}
-      secondaryCta={{ href: '/real-portrait', label: 'The Real Portrait Project' }}
+      secondaryCta={{ href: '/portraits', label: 'Portrait design' }}
     >
       <section className="solas-art-section">
         <div className="solas-art-image">

@@ -62,7 +62,7 @@ export function pageJsonLd({
   }
 }
 
-/** Portraits / headshots / babyfaces service schema. */
+/** Portraits / babyfaces service schema. */
 export function portraitServiceJsonLd({
   title,
   description,
