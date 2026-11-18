@@ -72,8 +72,7 @@ export default function RealPortraitPage() {
           <h2>What this is.</h2>
           <p>
             A design project at Solas Gallery: a portrait display designed for your home,
-            from the first consult to the finished wall. Made in the studio on Main Street
-            in Salado.
+            from the first consult to the finished wall. Made in the studio in Salado.
           </p>
           <p>Design projects: November 27, December 1, December 19.</p>
           <p>
