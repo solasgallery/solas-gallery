@@ -26,7 +26,7 @@ export const HUB_URL = 'https://hubsalado.com'
 export const primaryNav = [
   { href: '/#commissions', label: 'Commissions', external: false },
   { href: '/#originals', label: 'Studio Originals', external: false },
-  { href: '/#sessions', label: 'Sessions', external: false },
+  { href: '/real-portrait', label: 'Real Portrait', external: false },
   { href: '/story', label: 'Our Story', external: false },
   { href: HUB_URL, label: 'Events', external: true },
   { href: '/visit', label: 'Visit', external: false },
@@ -39,7 +39,7 @@ export const images = {
   },
   portrait: {
     src: '/solas/portrait.jpg',
-    alt: 'A high-contrast, Karsh-inspired black and white studio portrait of a woman with silver hair and a serious expression, emphasizing character and texture against a dark backdrop.',
+    alt: 'A family of six in a hand-finished studio portrait against a painted backdrop.',
   },
   art: {
     src: '/solas/art.jpg',
@@ -71,5 +71,6 @@ export const indexableRoutes = [
   { path: '/begin', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/real-portrait', priority: 0.9, changeFrequency: 'weekly' as const },
   { path: '/folio', priority: 0.8, changeFrequency: 'monthly' as const },
+  { path: '/process', priority: 0.6, changeFrequency: 'monthly' as const },
   { path: '/privacy', priority: 0.3, changeFrequency: 'yearly' as const },
 ]

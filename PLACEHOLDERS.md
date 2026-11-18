@@ -15,6 +15,21 @@ crop to the listed ratio, and keep the alt text.
 > Note: the source is TSX, so markers are JSX comments (`{/* PLACEHOLDER … */}`), not literal
 > `<!-- -->` HTML comments. In the rendered page, image slots carry `data-placeholder="IMG-xx"`.
 
+## Update 2026-11-18 — brand reframe
+
+Resolved or superseded by the "Personal art, designed for your home" reframe:
+
+- **IMG-01 to IMG-08:** no placeholder boxes remain. Each slot now shows an existing site photograph
+  (`src/components/SiteImage.tsx`, same frame and ratio). Swap in purpose-shot photos later if wanted.
+- **W-02, W-03, W-04, W-05, W-09:** rewritten to the locked brand copy. The tools paragraph (W-05) now lives
+  on `/process` only; the homepage names no tools.
+- **F-02, F-08:** superseded. Every date card is a $295 design fee that covers the sitting only; first print not
+  included; single print $395 (8×10 or 11×14); Nov 27 keeps the $750 minimum order. No $390 Saturday, no $95 deposit.
+- **F-04:** the waitlist form stays (booking is open now). Day options: November 27 / December 1 / December 19 / Any of the three.
+
+Still open: **F-05** (the "About ten sittings · twenty minutes each" line on each card), plus W-01, W-06, W-07, W-08,
+F-01, F-03, F-06, F-07.
+
 ## Needs Tim's photo
 
 | ID | Where | Ratio | Art direction | Alt text (keep) |

@@ -1,63 +1,55 @@
 import Link from 'next/link'
-import ArtPlaceholder from '@/components/ArtPlaceholder'
+import SiteImage from '@/components/SiteImage'
 import WaitlistForm from '@/components/WaitlistForm'
 import { HUB_URL, hours, SITE } from '@/lib/site'
 
 // Homepage title/description come from the root layout (SITE.title) — the
 // title ranks for "art gallery Salado TX"; do not override it here.
+// Brand rule (2026-11-18): do not name AI anywhere on the homepage. The tools
+// paragraph lives on /process only.
 
-const sessionDays = [
-  {
-    date: 'Tuesday, November 17',
-    short: 'Nov 17',
-    name: 'The Tuesday sitting',
-    price: '$295',
-    includes: 'Your sitting and one finished 11×14 portrait, archival pigment, hand-finished.',
-    terms: '$95 deposit to reserve. $200 balance at your session.',
-  },
-  {
-    date: 'Saturday, November 21',
-    short: 'Nov 21',
-    name: 'The Saturday sitting',
-    price: '$390',
-    includes: 'Saturday prime. Your sitting and one finished 11×14 portrait, archival pigment, hand-finished.',
-    terms: '$95 deposit to reserve. $295 balance at your session.',
-  },
+// Locked terms (2026-11-12): the $295 design fee covers the sitting only. The
+// first print is NOT included. Single print $395 (8×10 or 11×14).
+const designDays = [
   {
     date: 'Friday, November 27',
     short: 'Nov 27',
-    name: 'The premium day',
-    price: '$295 session fee',
-    // PLACEHOLDER (F-02): confirm what the premium day includes and how the deposit applies
-    includes: 'Our most unhurried sitting of the season, with a $750 minimum order.',
-    terms: '$95 deposit to reserve. $295 session fee at your session.',
+    name: 'The Friday design project',
+    minimum: '$750 minimum order.',
+  },
+  {
+    date: 'Tuesday, December 1',
+    short: 'Dec 1',
+    name: 'The Tuesday design project',
+  },
+  {
+    date: 'Saturday, December 19',
+    short: 'Dec 19',
+    name: 'The Saturday design project',
   },
 ]
 
 const ways = [
   {
-    id: 'IMG-03',
     title: 'From your image',
     body: 'A photograph, a place, a memory you can only describe. We transform it by hand into a single piece that exists nowhere else.',
     price: 'From $1,500',
-    direction: 'commission: a family photograph beside the finished canvas it became, studio table',
-    alt: 'A client photograph on the studio table beside the finished one-of-one canvas made from it.',
+    src: '/images/gallery/interior-03.jpg',
+    alt: 'Family portraits displayed on tall hinged panels in the Solas Gallery.',
   },
   {
-    id: 'IMG-04',
     title: 'Studio originals',
     body: 'Abstracts and re-imaginings made in our studio. One of one. When it is gone, it is gone.',
     price: 'As marked',
-    direction: 'studio original: textured abstract canvas, raking side light showing hand-finished surface',
-    alt: 'A textured abstract studio original in side light, showing its hand-finished surface.',
+    src: '/images/gallery/interior-05.jpg',
+    alt: 'A set of tall, colorful abstract panels hanging on a white gallery wall.',
   },
   {
-    id: 'IMG-05',
     title: 'Sized & colored for you',
     body: 'Choose a piece from the studio floor. We resize it and adjust its color to belong to your room.',
     price: 'Priced by size',
-    direction: 'adaptable piece: same composition shown in two palettes, hung in a living room',
-    alt: 'One studio composition shown in two palettes, each sized for a different wall.',
+    src: '/images/gallery/interior-02.jpg',
+    alt: 'A large black and white framed piece hung above a console table.',
   },
 ]
 
@@ -113,79 +105,113 @@ export default function Home() {
       <section className="sg-hero" aria-labelledby="hero-heading">
         <div className="sg-hero-copy">
           <p className="sg-eyebrow">Solas Gallery · Salado, Texas</p>
-          <h1 id="hero-heading">Meet Art.</h1>
-          <p className="sg-hero-line">We create the art you want but cannot find.</p>
+          <h1 id="hero-heading">Personal art, designed for your home.</h1>
+          <p className="sg-hero-line">
+            From your photos or ours, designed for your walls and done for you.
+          </p>
           <p className="sg-plain">
             Solas Gallery in Salado, Texas creates one-of-a-kind wall art — commissioned
             for your home, or chosen from the studio floor.
           </p>
           <div className="sg-ctas">
             <Link className="sg-btn" href="#sessions">
-              Book a Limited Edition Session
+              Design your wall
             </Link>
             <Link className="sg-link" href="#commissions">
               Start a commission
             </Link>
           </div>
         </div>
-        {/* PLACEHOLDER (IMG-01): hero photograph */}
-        <ArtPlaceholder
+        <SiteImage
           ratio="16:9"
-          id="IMG-01"
-          direction="hero: large abstract canvas on the gallery wall, warm late-afternoon light, no people"
-          alt="A large abstract canvas hanging on the Solas Gallery wall in warm afternoon light."
+          src="/images/gallery/hero.jpg"
+          alt="Framed portraits hung around a doorway and along a shelf in the Solas Gallery."
+          sizes="(min-width: 768px) 86vw, 100vw"
+          priority
         />
       </section>
 
-      {/* ── 4. Limited Edition Sessions ─────────────────────────── */}
+      {/* ── 4. The Real Portrait Project · design projects ──────── */}
       <section className="sg-section sg-sessions" id="sessions" aria-labelledby="sessions-heading">
         <header className="sg-section-head">
-          <p className="sg-eyebrow">November · Three days only</p>
-          <h2 id="sessions-heading">Limited Edition Sessions</h2>
+          <p className="sg-eyebrow">Design projects · November 27, December 1, December 19</p>
+          <h2 id="sessions-heading">The Real Portrait Project</h2>
           <p className="sg-plain">
-            A short portrait sitting in the gallery, finished by hand as a one-of-one piece
-            for your wall. Three days this November, then the book closes.
+            A portrait display designed for your home. Your design project starts with a free
+            design consult, online or in person, where you pick the master looks you love and
+            we plan your display together.
           </p>
+          <div className="sg-ctas">
+            <Link className="sg-btn" href="#consult">
+              Book a design consult
+            </Link>
+          </div>
         </header>
 
-        <ol className="sg-rollout" aria-label="How booking opens">
-          <li>
-            <span>Now</span>The waitlist is open
-          </li>
-          <li>
-            <span>Nov 3–4</span>The waitlist is invited to book first
-          </li>
-          <li>
-            <span>Thu Nov 5 · 6:00 AM</span>Public booking opens
-          </li>
-        </ol>
-
-        {/* PLACEHOLDER (W-04, F-05, F-08): session inclusions wording, sitting count, Saturday inclusions */}
         <div className="sg-days">
-          {sessionDays.map((day) => (
+          {designDays.map((day) => (
             <article className="sg-day" key={day.short} aria-labelledby={`day-${day.short}`}>
               <p className="sg-day-date">{day.date}</p>
               <h3 id={`day-${day.short}`}>{day.name}</h3>
-              <p className="sg-day-price">{day.price}</p>
-              <p>{day.includes}</p>
-              <p>{day.terms}</p>
+              <p className="sg-day-price">$295 design fee</p>
+              <p>Paid to reserve. It covers the sitting only.</p>
+              <p>First print not included. Single print $395 (8×10 or 11×14).</p>
+              {day.minimum ? <p>{day.minimum}</p> : null}
+              {/* PLACEHOLDER (F-05): photo-day capacity — confirm before launch */}
               <p className="sg-day-meta">About ten sittings · twenty minutes each</p>
             </article>
           ))}
         </div>
 
         <p className="sg-note">
-          Black and white or color — your choice when you book. Days fill from the waitlist
-          first; when a day is full, it is full.
+          Booking is open now. Black and white or color — your choice at your design consult.
+          When a day is full, it is full.
         </p>
 
-        <div className="sg-waitlist">
-          {/* PLACEHOLDER (F-04): swap this form for the real booking links on Thu Nov 5, 6 AM */}
+        <div className="sg-waitlist" id="consult">
           <WaitlistForm />
         </div>
       </section>
 
-      {/* ── 5. Three ways to own the only one ───────────────────── */}
+      {/* ── 5. Studio originals ─────────────────────────────────── */}
+      <section className="sg-section sg-originals" id="originals" aria-labelledby="originals-heading">
+        <header className="sg-section-head">
+          <p className="sg-eyebrow">Studio originals</p>
+          <h2 id="originals-heading">Our art made yours.</h2>
+          <p className="sg-plain">
+            Studio originals — hand-finished, one of one, sized and colored for your room.
+          </p>
+          <p className="sg-plain">
+            Two lines: Solas Editions, and Flanagan Signature bespoke art.
+          </p>
+          <p className="sg-price">Multimedia originals and giclées, from $1,500.</p>
+        </header>
+        <div className="sg-squares">
+          <SiteImage
+            ratio="1:1"
+            src="/images/art/category-commission.jpg"
+            alt="A large abstract painting of trees in green and gold, hung on a gallery wall."
+            sizes="(min-width: 768px) 30vw, 100vw"
+          />
+          <SiteImage
+            ratio="1:1"
+            src="/images/art/category-prints.jpg"
+            alt="Tall multimedia panels of patterned color blocks, hung side by side."
+            sizes="(min-width: 768px) 30vw, 100vw"
+          />
+          <SiteImage
+            ratio="1:1"
+            src="/images/art/shadow-wing-7.jpg"
+            alt="A black and white study of sunflower petals in deep shadow."
+            sizes="(min-width: 768px) 30vw, 100vw"
+          />
+        </div>
+        <Link className="sg-link" href="/art">
+          See the art
+        </Link>
+      </section>
+
+      {/* ── 6. Three ways to own the only one ───────────────────── */}
       <section className="sg-section" id="commissions" aria-labelledby="ways-heading">
         <header className="sg-section-head">
           <p className="sg-eyebrow">Commissions</p>
@@ -198,8 +224,12 @@ export default function Home() {
         <div className="sg-ways">
           {ways.map((way, index) => (
             <article className="sg-way" key={way.title}>
-              {/* PLACEHOLDER (IMG-03 to IMG-05): commission path photographs */}
-              <ArtPlaceholder ratio="4:5" id={way.id} direction={way.direction} alt={way.alt} />
+              <SiteImage
+                ratio="4:5"
+                src={way.src}
+                alt={way.alt}
+                sizes="(min-width: 768px) 30vw, 100vw"
+              />
               <p className="sg-way-num">0{index + 1}</p>
               <h3>{way.title}</h3>
               <p>{way.body}</p>
@@ -209,7 +239,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 6. How a commission works ───────────────────────────── */}
+      {/* ── 7. How a commission works ───────────────────────────── */}
       <section className="sg-section sg-process" aria-labelledby="process-heading">
         <header className="sg-section-head">
           <p className="sg-eyebrow">The proof process</p>
@@ -237,43 +267,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 7. Studio originals / Solas Editions ────────────────── */}
-      <section className="sg-section sg-originals" id="originals" aria-labelledby="originals-heading">
-        <header className="sg-section-head">
-          <p className="sg-eyebrow">Studio originals · Solas Editions</p>
-          <h2 id="originals-heading">No two pieces here are alike.</h2>
-          <p className="sg-plain">
-            Most of what hangs in the gallery is one of one. A few studio pieces are released
-            as Solas Editions — a limited edition of twenty, each embellished by hand so that
-            no two are the same.
-          </p>
-        </header>
-        <div className="sg-squares">
-          {/* PLACEHOLDER (IMG-06 to IMG-08): studio originals */}
-          <ArtPlaceholder
-            ratio="1:1"
-            id="IMG-06"
-            direction="studio original: square abstract, earth palette, straight on, gallery wall"
-            alt="A square abstract studio original in an earth palette."
-          />
-          <ArtPlaceholder
-            ratio="1:1"
-            id="IMG-07"
-            direction="Solas Edition: detail of hand embellishment — brush and leaf on canvas surface"
-            alt="Close detail of hand embellishment on a Solas Edition canvas."
-          />
-          <ArtPlaceholder
-            ratio="1:1"
-            id="IMG-08"
-            direction="re-imagining: landscape abstracted, hung above a console, soft daylight"
-            alt="A re-imagined landscape studio original hung above a console table."
-          />
-        </div>
-        <Link className="sg-link" href="/visit">
-          See them on the gallery floor
-        </Link>
-      </section>
-
       {/* ── 8. Meet Art ─────────────────────────────────────────── */}
       {/* PLACEHOLDER (W-01): Meet Art story fragments — Tim to replace with the canon mythology */}
       <section className="sg-section sg-art" aria-labelledby="art-heading">
@@ -295,27 +288,25 @@ export default function Home() {
       </section>
 
       {/* ── 9. Made by hand here ────────────────────────────────── */}
-      {/* PLACEHOLDER (W-05): honesty copy — confirm tools named and materials list */}
+      {/* Tools are named on /process only — never on the homepage. */}
       <section className="sg-section sg-hand" aria-labelledby="hand-heading">
         <div className="sg-hand-copy">
           <p className="sg-eyebrow">How it is made</p>
           <h2 id="hand-heading">Made by hand, here.</h2>
           <p>
-            We design with modern tools — Photoshop and AI among them — the way a painter
-            sketches. They stay at the drafting table.
-          </p>
-          <p>
-            Every piece is then produced and finished by hand in our studio: mixed media,
+            Every piece is produced and finished by hand in our studio: mixed media,
             archival pigment on canvas, hand-finished surfaces.
           </p>
           <p className="sg-pullquote">Finished by hand in our studio. Always.</p>
+          <Link className="sg-link" href="/process">
+            Our process
+          </Link>
         </div>
-        {/* PLACEHOLDER (IMG-02): studio hands */}
-        <ArtPlaceholder
+        <SiteImage
           ratio="4:5"
-          id="IMG-02"
-          direction="studio: hands finishing a canvas surface with brush and medium, natural window light"
-          alt="Hands finishing the surface of a canvas with a brush in the Solas studio."
+          src="/images/gallery/interior-04.jpg"
+          alt="A Solas Gallery hallway hung with large, hand-finished abstract work."
+          sizes="(min-width: 768px) 40vw, 100vw"
         />
       </section>
 

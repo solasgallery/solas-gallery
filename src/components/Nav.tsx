@@ -33,9 +33,8 @@ export default function Nav() {
     <>
       <div className="sg-announce">
         <Link href="/#sessions">
-          <strong>Limited Edition Sessions</strong>
-          <span className="sg-announce-sep" aria-hidden="true">—</span>
-          public booking opens Thu Nov 5, 6 AM. Three days only.
+          <strong>The Real Portrait Project</strong> design projects open, November 27,
+          December 1, December 19. Book a design consult.
         </Link>
       </div>
       <header className="solas-nav">
@@ -47,8 +46,8 @@ export default function Nav() {
             <NavLink key={link.href} link={link} />
           ))}
         </nav>
-        <Link className="sg-nav-cta" href="/#sessions">
-          Book a Session
+        <Link className="sg-nav-cta" href="/#consult">
+          Book a design consult
         </Link>
         <button
           className="mobile-menu"
@@ -65,8 +64,8 @@ export default function Nav() {
             {primaryNav.map((link) => (
               <NavLink key={link.href} link={link} onClick={() => setMenuOpen(false)} />
             ))}
-            <Link className="sg-nav-cta sg-nav-cta--panel" href="/#sessions" onClick={() => setMenuOpen(false)}>
-              Book a Session
+            <Link className="sg-nav-cta sg-nav-cta--panel" href="/#consult" onClick={() => setMenuOpen(false)}>
+              Book a design consult
             </Link>
           </div>
         ) : null}

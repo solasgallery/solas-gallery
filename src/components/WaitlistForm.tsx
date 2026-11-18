@@ -4,10 +4,9 @@ import { useState } from 'react'
 import { SITE } from '@/lib/site'
 
 /**
- * Limited Edition Sessions waitlist. Posts to the existing /api/inquiry route
- * (Brevo contact + notification email). Finish and day preferences ride in the
- * message field so no API change is needed.
- * PLACEHOLDER (F-04): real booking links replace this form on Nov 5.
+ * The Real Portrait Project waitlist / design-consult request. Posts to the
+ * existing /api/inquiry route (Brevo contact + notification email). Finish and
+ * day preferences ride in the message field so no API change is needed.
  */
 export default function WaitlistForm() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
@@ -25,7 +24,7 @@ export default function WaitlistForm() {
       email: field('email'),
       phone: field('phone'),
       message: `Finish: ${field('finish')} · Preferred day: ${field('day')}`,
-      source: 'Limited Edition Sessions waitlist',
+      source: 'The Real Portrait Project waitlist',
     }
 
     try {
@@ -49,7 +48,7 @@ export default function WaitlistForm() {
     return (
       <div className="sg-form sg-form--thanks" role="status">
         <h3>You are on the list.</h3>
-        <p>Waitlist invitations go out before public booking opens. Watch your inbox.</p>
+        <p>We will be in touch within one business day to set your design consult.</p>
       </div>
     )
   }
@@ -58,7 +57,8 @@ export default function WaitlistForm() {
     <form className="sg-form" onSubmit={handleSubmit} aria-labelledby="waitlist-heading">
       <h3 id="waitlist-heading">Join the waitlist</h3>
       <p className="sg-form-note">
-        The waitlist is invited to book first, before public booking opens.
+        Pick your day. We will be in touch within one business day to set your free
+        design consult.
       </p>
       <div className="sg-form-grid">
         <label>
@@ -84,9 +84,9 @@ export default function WaitlistForm() {
         <label className="sg-form-wide">
           Preferred day
           <select name="day" defaultValue="Any of the three">
-            <option>Tuesday, November 17</option>
-            <option>Saturday, November 21</option>
-            <option>Friday, November 27</option>
+            <option>November 27</option>
+            <option>December 1</option>
+            <option>December 19</option>
             <option>Any of the three</option>
           </select>
         </label>
