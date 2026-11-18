@@ -5,7 +5,7 @@ import { SITE } from '@/lib/site'
 export const metadata: Metadata = createLandingMetadata({
   title: 'Privacy & SMS Terms',
   description:
-    'Privacy policy and SMS terms for Solas Gallery LLC and its customer-facing brands.',
+    'Privacy policy and SMS terms for Solas Gallery LLC.',
   path: '/privacy',
   noindex: false,
 })
@@ -15,12 +15,12 @@ const sections = [
     title: 'Who this policy covers',
     body: (
       <p>
-        This policy applies to Solas Gallery LLC and its customer-facing brands,
-        including Solas Gallery, Salado Village Framer, and HUB Salado
-        (collectively, “Solas,” “we,” “us,” or “our”). It describes how we
-        handle information collected through our websites, forms, telephone
-        calls, text messages, email, in-person interactions, and related
-        services.
+        This policy applies to Solas Gallery LLC, which operates Solas Gallery
+        (“Solas,” “we,” “us,” or “our”). Salado Village Framer, LLC and
+        HUBSalado, LLC are separate legal entities and are not covered by this
+        policy. It describes how we handle information collected through our
+        websites, forms, telephone calls, text messages, email, in-person
+        interactions, and related services.
       </p>
     ),
   },
