@@ -7,13 +7,13 @@ import { venueJsonLd } from '@/lib/jsonld'
 export const metadata: Metadata = {
   title: 'Wedding & Event Venue',
   description:
-    'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue on Main Street in Salado, Texas. Original art, warm light, thirty years of hospitality.',
+    'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue on Main Street in Salado, Texas. Seated events up to 50 guests; standing receptions up to 100. Original art, warm light, thirty years of hospitality.',
   alternates: {
     canonical: '/events/venue-rental',
   },
   openGraph: {
     title: 'Wedding & Event Venue | Solas Gallery — Salado, TX',
-    description: 'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue on Main Street in Salado, Texas. Original art, warm light, thirty years of hospitality.',
+    description: 'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue on Main Street in Salado, Texas. Seated events up to 50 guests; standing receptions up to 100. Original art, warm light, thirty years of hospitality.',
     url: 'https://solasgallery.com/events/venue-rental',
     type: 'website',
     images: [{ url: '/solas-og.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Wedding & Event Venue | Solas Gallery — Salado, TX',
-    description: 'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue on Main Street in Salado, Texas. Original art, warm light, thirty years of hospitality.',
+    description: 'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue on Main Street in Salado, Texas. Seated events up to 50 guests; standing receptions up to 100. Original art, warm light, thirty years of hospitality.',
     images: ['/solas-og.jpg'],
   },
 }
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const eventTypes = [
   {
     title: 'Intimate Weddings',
-    desc: 'Small ceremonies. Art on the walls, warm light overhead, Main Street at the door. Elopements welcome.',
+    desc: 'Small ceremonies for up to 50 guests. Art on the walls, warm light overhead, Main Street at the door. Elopements welcome.',
   },
   {
     title: 'Rehearsal Dinners',
@@ -54,9 +54,10 @@ const eventTypes = [
 ]
 
 const venueDetails = [
+  { label: 'Capacity', value: 'Seated: up to 50 guests · Standing: up to 100 guests' },
   { label: 'Ceremony seating', value: 'Theater-style or open floor' },
-  { label: 'Dining', value: 'Seated dinner among original works' },
-  { label: 'Cocktail reception', value: 'Standing reception' },
+  { label: 'Dining', value: 'Seated dinner for up to 40' },
+  { label: 'Cocktail reception', value: 'Standing reception for up to 100' },
   { label: 'Hours', value: 'Evening events, typically 5 pm – 10 pm' },
   { label: 'Setup time', value: '2 hours included before event start' },
 ]
@@ -120,8 +121,8 @@ export default function VenueRentalPage() {
               feel considered, not commercial.
             </p>
             <p>
-              The gallery accommodates ceremonies, receptions,
-              and seated dinners. The space is yours for the evening — we handle
+              The gallery accommodates seated ceremonies for up to 50 guests and
+              standing receptions for up to 100. The space is yours for the evening — we handle
               the venue, you bring the celebration.
             </p>
             <p>
