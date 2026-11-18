@@ -4,3 +4,4 @@ node_modules/
 *.env
 *.env.local
 public/video/*.mp4
+*.tsbuildinfo
