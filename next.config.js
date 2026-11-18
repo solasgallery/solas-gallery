@@ -7,6 +7,9 @@ const nextConfig = {
     return [
       { source: '/gallery', destination: '/visit', permanent: true },
       { source: '/events', destination: '/gather', permanent: true },
+      // Headshots moved to HUBSalado (2026-11-18). Temporary (307) until
+      // hubsalado.com has its own headshots page to point at.
+      { source: '/portraits/headshots', destination: 'https://hubsalado.com', permanent: false },
     ]
   },
   async rewrites() {

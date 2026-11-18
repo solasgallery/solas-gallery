@@ -8,8 +8,11 @@ import { HUB_URL, hours, SITE } from '@/lib/site'
 // Brand rule (2026-11-18): do not name AI anywhere on the homepage. The tools
 // paragraph lives on /process only.
 
-// Locked terms (2026-11-12): the $295 design fee covers the sitting only. The
-// first print is NOT included. Single print $395 (8×10 or 11×14).
+// Portrait design — the general portrait offering (2026-11-18). Locked terms:
+// the $295 design & creation fee covers the sitting and the creation of the
+// images; finished prints are priced separately. The first print is NOT
+// included. Single print $395 (8×10 or 11×14). No "master looks" language here:
+// that belongs to the campaign page /real-portrait only.
 const designDays = [
   {
     date: 'Friday, November 27',
@@ -131,19 +134,21 @@ export default function Home() {
         />
       </section>
 
-      {/* ── 4. The Real Portrait Project · design projects ──────── */}
+      {/* ── 4. Portrait design · design projects ────────────────── */}
       <section className="sg-section sg-sessions" id="sessions" aria-labelledby="sessions-heading">
         <header className="sg-section-head">
           <p className="sg-eyebrow">Design projects · November 27, December 1, December 19</p>
-          <h2 id="sessions-heading">The Real Portrait Project</h2>
+          <h2 id="sessions-heading">Portrait design</h2>
           <p className="sg-plain">
-            A portrait display designed for your home. Your design project starts with a free
-            design consult, online or in person, where you pick the master looks you love and
-            we plan your display together.
+            A portrait display designed for your home. It starts with a free design consult,
+            online or in person, where we design the portrait for your wall together.
           </p>
           <div className="sg-ctas">
             <Link className="sg-btn" href="#consult">
               Book a design consult
+            </Link>
+            <Link className="sg-link" href="/portraits">
+              How portrait design works
             </Link>
           </div>
         </header>
@@ -153,8 +158,11 @@ export default function Home() {
             <article className="sg-day" key={day.short} aria-labelledby={`day-${day.short}`}>
               <p className="sg-day-date">{day.date}</p>
               <h3 id={`day-${day.short}`}>{day.name}</h3>
-              <p className="sg-day-price">$295 design fee</p>
-              <p>Paid to reserve. It covers the sitting only.</p>
+              <p className="sg-day-price">$295 design &amp; creation fee</p>
+              <p>
+                Paid to reserve. It covers your sitting and the creation of your images.
+                Finished prints are priced separately.
+              </p>
               <p>First print not included. Single print $395 (8×10 or 11×14).</p>
               {day.minimum ? <p>{day.minimum}</p> : null}
             </article>

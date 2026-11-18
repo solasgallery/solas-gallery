@@ -450,3 +450,9 @@ html { scroll-padding-top: 24px; }
 @media (width <= 1080px) {
   .sg-nav-cta:not(.sg-nav-cta--panel) { display: none; }
 }
+
+/* Portrait design steps on /portraits (landing layout) */
+.solas-page-copy .sg-steps { margin: 8px 0 0; max-width: 640px; }
+.solas-page-copy .sg-steps li { margin: 0; max-width: none; }
+.solas-page-copy .sg-steps h3 { font: italic 400 1.35rem/1.15 var(--serif); margin: 0 0 4px; color: var(--ink); }
+.solas-page-copy .sg-steps p { margin: 0; }

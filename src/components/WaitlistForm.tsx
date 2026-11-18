@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { SITE } from '@/lib/site'
 
 /**
- * The Real Portrait Project waitlist / design-consult request. Posts to the
+ * Portrait design consult request. Posts to the
  * existing /api/inquiry route (Brevo contact + notification email). Finish and
  * day preferences ride in the message field so no API change is needed.
  */
@@ -24,7 +24,7 @@ export default function WaitlistForm() {
       email: field('email'),
       phone: field('phone'),
       message: `Finish: ${field('finish')} · Preferred day: ${field('day')}`,
-      source: 'The Real Portrait Project design consult',
+      source: 'Portrait design consult',
     }
 
     try {

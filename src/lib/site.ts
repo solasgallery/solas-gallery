@@ -26,7 +26,7 @@ export const HUB_URL = 'https://hubsalado.com'
 export const primaryNav = [
   { href: '/#commissions', label: 'Commissions', external: false },
   { href: '/#originals', label: 'Studio Originals', external: false },
-  { href: '/real-portrait', label: 'Real Portrait', external: false },
+  { href: '/portraits', label: 'Portraits', external: false },
   { href: '/story', label: 'Our Story', external: false },
   { href: HUB_URL, label: 'Events', external: true },
   { href: '/visit', label: 'Visit', external: false },
