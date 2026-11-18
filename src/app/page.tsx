@@ -82,9 +82,9 @@ const steps = [
 
 const events = [
   {
-    when: 'Thursday, November 5 · 6 PM',
+    when: 'Thursday, December 10 · 6 PM',
     title: 'Socrates in the City',
-    body: 'A book club for the questions that matter, at the gallery. Also December 3 and December 17.',
+    body: 'A book club for the questions that matter, at the gallery. Also Thursday, December 17.',
   },
   {
     when: 'Early December',

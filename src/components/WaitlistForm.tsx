@@ -47,8 +47,10 @@ export default function WaitlistForm() {
   if (status === 'sent') {
     return (
       <div className="sg-form sg-form--thanks" role="status">
-        <h3>You are on the list.</h3>
-        <p>We will be in touch within one business day to set your design consult.</p>
+        <h3>
+          You&rsquo;re in — we&rsquo;ll be in touch within one business day to set your free
+          design consult.
+        </h3>
       </div>
     )
   }
