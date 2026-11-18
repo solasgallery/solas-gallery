@@ -30,10 +30,10 @@ export default function VisitPage() {
         <div className="solas-opening-image">
           <img src={images.gather.src} alt={images.gather.alt} />
           <div className="solas-light" />
-          <span className="solas-caption">Main Street · Salado</span>
+          <span className="solas-caption">2 Rock Creek Dr · Salado</span>
         </div>
         <div className="solas-opening-copy">
-          <p className="solas-label">Main Street · Salado</p>
+          <p className="solas-label">2 Rock Creek Dr · Salado</p>
           <h1 id="visit-heading">
             The door
             <br />

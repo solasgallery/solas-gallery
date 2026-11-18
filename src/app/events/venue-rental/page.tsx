@@ -7,13 +7,13 @@ import { venueJsonLd } from '@/lib/jsonld'
 export const metadata: Metadata = {
   title: 'Wedding & Event Venue',
   description:
-    'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue on Main Street in Salado, Texas. Up to 50 guests. Original art, warm light, thirty years of hospitality.',
+    'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue in Salado, Texas. Up to 50 guests. Original art, warm light, thirty years of hospitality.',
   alternates: {
     canonical: '/events/venue-rental',
   },
   openGraph: {
     title: 'Wedding & Event Venue | Solas Gallery — Salado, TX',
-    description: 'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue on Main Street in Salado, Texas. Up to 50 guests. Original art, warm light, thirty years of hospitality.',
+    description: 'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue in Salado, Texas. Up to 50 guests. Original art, warm light, thirty years of hospitality.',
     url: 'https://solasgallery.com/events/venue-rental',
     type: 'website',
     images: [{ url: '/solas-og.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Wedding & Event Venue | Solas Gallery — Salado, TX',
-    description: 'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue on Main Street in Salado, Texas. Up to 50 guests. Original art, warm light, thirty years of hospitality.',
+    description: 'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue in Salado, Texas. Up to 50 guests. Original art, warm light, thirty years of hospitality.',
     images: ['/solas-og.jpg'],
   },
 }
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const eventTypes = [
   {
     title: 'Intimate Weddings',
-    desc: 'Small ceremonies for up to 50 guests. Art on the walls, warm light overhead, Main Street at the door. Elopements welcome.',
+    desc: 'Small ceremonies for up to 50 guests. Art on the walls, warm light overhead, Salado at the door. Elopements welcome.',
   },
   {
     title: 'Rehearsal Dinners',
@@ -79,13 +79,13 @@ export default function VenueRentalPage() {
         />
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
           <p className="font-body text-xs text-stone tracking-[0.2em] uppercase mb-6">
-            Solas Gallery &middot; Main Street, Salado
+            Solas Gallery &middot; Salado, Texas
           </p>
           <h1 className="font-display text-4xl md:text-6xl text-cream tracking-[0.08em] leading-tight">
             Your event, framed by art.
           </h1>
           <p className="font-display text-lg text-cream/60 italic mt-4 max-w-lg">
-            An intimate gallery venue on Main Street.
+            An intimate gallery venue in Salado.
           </p>
         </div>
       </section>
@@ -115,7 +115,7 @@ export default function VenueRentalPage() {
           </h2>
           <div className="space-y-4 font-body text-sm text-charcoal/60 leading-relaxed">
             <p>
-              Solas Gallery is an intimate, art-filled venue on Main Street in
+              Solas Gallery is an intimate, art-filled venue in
               Salado, Texas. Original art on every wall. Warm, directional light.
               Hardwood floors and the kind of atmosphere that makes an evening
               feel considered, not commercial.
@@ -351,7 +351,7 @@ export default function VenueRentalPage() {
       <section className="px-6 md:px-12 lg:px-24 py-14 bg-cream border-t border-stone/20">
         <div className="max-w-3xl mx-auto">
           <p className="font-body text-xs text-charcoal/30 leading-relaxed text-center">
-            Solas Gallery is an intimate wedding and event venue on Main Street in
+            Solas Gallery is an intimate wedding and event venue in
             Salado, Texas. Available for weddings, receptions, rehearsal dinners,
             bridal showers, corporate events, and private gatherings. Serving couples
             and event planners from Austin, Round Rock, Georgetown, Temple, Killeen,

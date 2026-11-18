@@ -80,7 +80,7 @@ export default function HeadshotsPage() {
                 your company website, and print.
               </p>
               <p>
-                The gallery is located on Main Street in Salado, Texas — a quiet,
+                The gallery is located at 2 Rock Creek Dr in Salado, Texas — a quiet,
                 unhurried environment 45 minutes from Austin, 17 minutes from Temple,
                 and 21 minutes from Killeen. Worth the drive.
               </p>
@@ -151,7 +151,7 @@ export default function HeadshotsPage() {
             Solas Gallery provides professional headshot photography in Salado, Texas,
             serving clients from Austin, Round Rock, Georgetown, Temple, Killeen,
             Cedar Park, Pflugerville, Belton, Harker Heights, and all of Central Texas.
-            Located on Main Street in Salado, 76571.
+            Located at 2 Rock Creek Dr, Salado, TX 76571.
           </p>
         </div>
       </section>

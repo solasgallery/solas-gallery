@@ -159,7 +159,7 @@ export default function BabyFacesPage() {
           <p className="font-body text-xs text-charcoal/30 leading-relaxed text-center">
             BabyFaces newborn and child portrait photography at Solas Gallery in Salado,
             Texas. Serving families from Austin, Round Rock, Georgetown, Temple, Killeen,
-            Cedar Park, Belton, and all of Central Texas. Main Street, Salado, TX 76571.
+            Cedar Park, Belton, and all of Central Texas. 2 Rock Creek Dr, Salado, TX 76571.
           </p>
         </div>
       </section>
