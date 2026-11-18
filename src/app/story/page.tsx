@@ -65,7 +65,7 @@ export default function StoryPage() {
                 src="/images/story/tim-portrait.jpg"
                 alt="Tim Flanagan"
                 fill
-                className="object-cover"
+                className="object-cover sg-mono"
               />
             </div>
           </div>
@@ -93,7 +93,7 @@ export default function StoryPage() {
                 but to experience something that slows them down.
               </p>
               <p>
-                I still shoot every session myself. Every piece is still finished by hand in our studio. I still
+                I still shoot every portrait myself. Every piece is still finished by hand in our studio. I still
                 believe that a photograph — the right photograph, made with care and
                 intention — can outlast everything else we make.
               </p>
@@ -127,7 +127,7 @@ export default function StoryPage() {
               src="/images/story/cherie.jpg"
               alt="Cherie Flanagan"
               fill
-              className="object-cover"
+              className="object-cover sg-mono"
             />
           </div>
         </div>

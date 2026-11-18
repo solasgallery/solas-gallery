@@ -74,7 +74,6 @@ export default function RealPortraitPage() {
             truth. Character over performance.
           </p>
           <p>Design projects reserve with the $295 design &amp; creation fee.</p>
-          <p>The next campaign opens in the new year.</p>
           <Link className="solas-underlink" href="/portraits">
             Looking for a portrait now? See portrait design{' '}
             <span aria-hidden="true">↗</span>

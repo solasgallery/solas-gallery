@@ -92,12 +92,11 @@ export function venueJsonLd() {
     '@type': 'EventVenue',
     name: 'Solas Gallery — Event Venue',
     description:
-      'An intimate art gallery venue on Main Street in Salado, Texas. Weddings, receptions, and private events for up to 50 guests.',
+      'An intimate art gallery venue on Main Street in Salado, Texas. Weddings, receptions, and private events.',
     url: `${SITE.url}/events/venue-rental`,
     image: `${SITE.url}/solas-og.jpg`,
     address: baseAddress,
     telephone: SITE.phoneDisplay,
-    maximumAttendeeCapacity: 50,
   }
 }
 

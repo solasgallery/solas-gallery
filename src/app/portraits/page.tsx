@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import LandingPage from '@/components/LandingPage'
+import ConsultForm from '@/components/ConsultForm'
 import JsonLd from '@/components/JsonLd'
 import { createLandingMetadata } from '@/lib/metadata'
 import { portraitServiceJsonLd } from '@/lib/jsonld'
@@ -68,7 +69,7 @@ export default function PortraitsPage() {
       heroImage={images.portrait}
       heroCaption="Portrait design · Salado, Texas"
       folioMark="Nov 27 · Dec 1 · Dec 19"
-      cta={{ href: '/#consult', label: 'Book a design consult' }}
+      cta={{ href: '#consult', label: 'Book a design consult' }}
       secondaryCta={{ href: `tel:${SITE.phoneTel}`, label: SITE.phoneDisplay }}
     >
       <section className="solas-page-copy">
@@ -90,20 +91,37 @@ export default function PortraitsPage() {
         <div className="solas-portrait-copy">
           <p className="solas-label">November 27 · December 1 · December 19</p>
           <h2>Three sitting days.</h2>
+          <ul className="sg-rollout sg-rollout--dark">
+            <li>
+              <span>Friday, November 27</span> — $750 minimum order.
+            </li>
+            <li>
+              <span>Tuesday, December 1</span>
+            </li>
+            <li>
+              <span>Saturday, December 19</span>
+            </li>
+          </ul>
           <p>
             A $295 design &amp; creation fee reserves your design project. It covers your
             sitting and the creation of your images. Finished prints are priced
             separately: the first print is not included, and a single print is $395
-            (8×10 or 11×14). November 27 carries a $750 minimum order.
+            (8×10 or 11×14).
           </p>
           <p>Booking is open now. When a day is full, it is full.</p>
-          <Link className="solas-underlink" href="/#consult">
+          <Link className="solas-underlink" href="#consult">
             Book a design consult <span aria-hidden="true">↗</span>
           </Link>
         </div>
         <div className="solas-portrait-image">
           <img src={images.portrait.src} alt={images.portrait.alt} />
           <span className="solas-image-number">$295</span>
+        </div>
+      </section>
+
+      <section className="solas-page-copy">
+        <div id="consult">
+          <ConsultForm />
         </div>
       </section>
 

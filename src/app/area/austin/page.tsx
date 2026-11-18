@@ -7,9 +7,9 @@ import { areaJsonLd } from '@/lib/jsonld'
 import { images } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
-  title: 'Photographer Near Austin — Portraits, Headshots & Fine Art',
+  title: 'Solas Gallery for Austin — Portraits & Fine Art',
   description:
-    'Solas Gallery in Salado, Texas — 45 minutes north of Austin. Professional portraits, executive headshots, fine art photography, and gallery events.',
+    'Solas Gallery in Salado, Texas — 45 minutes north of Austin. Professional portraits, fine art photography, and gallery events.',
   path: '/area/austin',
   noindex: true,
   image: images.portrait.src,
@@ -17,9 +17,9 @@ export const metadata: Metadata = createLandingMetadata({
 })
 
 const jsonLd = areaJsonLd({
-  title: 'Photographer Near Austin — Portraits, Headshots & Fine Art',
+  title: 'Solas Gallery for Austin — Portraits & Fine Art',
   description:
-    'Solas Gallery in Salado, Texas — 45 minutes north of Austin. Professional portraits, executive headshots, fine art photography, and gallery events.',
+    'Solas Gallery in Salado, Texas — 45 minutes north of Austin. Professional portraits, fine art photography, and gallery events.',
   path: '/area/austin',
   areaName: 'Austin',
 })
@@ -47,7 +47,6 @@ export default function AustinAreaPage() {
         </p>
         <p>
           Austin executives, entrepreneurs, and families come to Solas for
-          professional headshots that stand apart from the volume studios,
           signature portraits that become heirlooms, and fine art for the
           walls of considered homes.
         </p>

@@ -7,13 +7,13 @@ import { venueJsonLd } from '@/lib/jsonld'
 export const metadata: Metadata = {
   title: 'Wedding & Event Venue',
   description:
-    'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue on Main Street in Salado, Texas. Up to 50 guests. Original art, warm light, thirty years of hospitality.',
+    'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue on Main Street in Salado, Texas. Original art, warm light, thirty years of hospitality.',
   alternates: {
     canonical: '/events/venue-rental',
   },
   openGraph: {
     title: 'Wedding & Event Venue | Solas Gallery — Salado, TX',
-    description: 'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue on Main Street in Salado, Texas. Up to 50 guests. Original art, warm light, thirty years of hospitality.',
+    description: 'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue on Main Street in Salado, Texas. Original art, warm light, thirty years of hospitality.',
     url: 'https://solasgallery.com/events/venue-rental',
     type: 'website',
     images: [{ url: '/solas-og.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Wedding & Event Venue | Solas Gallery — Salado, TX',
-    description: 'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue on Main Street in Salado, Texas. Up to 50 guests. Original art, warm light, thirty years of hospitality.',
+    description: 'Host your wedding, reception, or private event at Solas Gallery — an intimate art gallery venue on Main Street in Salado, Texas. Original art, warm light, thirty years of hospitality.',
     images: ['/solas-og.jpg'],
   },
 }
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const eventTypes = [
   {
     title: 'Intimate Weddings',
-    desc: 'Small ceremonies for up to 50 guests. Art on the walls, warm light overhead, Main Street at the door. Elopements welcome.',
+    desc: 'Small ceremonies. Art on the walls, warm light overhead, Main Street at the door. Elopements welcome.',
   },
   {
     title: 'Rehearsal Dinners',
@@ -54,10 +54,9 @@ const eventTypes = [
 ]
 
 const venueDetails = [
-  { label: 'Capacity', value: 'Up to 50 guests' },
   { label: 'Ceremony seating', value: 'Theater-style or open floor' },
-  { label: 'Dining', value: 'Seated dinner for up to 40' },
-  { label: 'Cocktail reception', value: 'Standing room for 50' },
+  { label: 'Dining', value: 'Seated dinner among original works' },
+  { label: 'Cocktail reception', value: 'Standing reception' },
   { label: 'Hours', value: 'Evening events, typically 5 pm – 10 pm' },
   { label: 'Setup time', value: '2 hours included before event start' },
 ]
@@ -121,7 +120,7 @@ export default function VenueRentalPage() {
               feel considered, not commercial.
             </p>
             <p>
-              The gallery accommodates up to 50 guests for ceremonies, receptions,
+              The gallery accommodates ceremonies, receptions,
               and seated dinners. The space is yours for the evening — we handle
               the venue, you bring the celebration.
             </p>
@@ -300,8 +299,8 @@ export default function VenueRentalPage() {
               <h3 className="font-display text-xl text-cream mb-3">Can we move or remove the art?</h3>
               <p className="font-body text-sm text-cream/60 leading-[1.8]">
                 The art stays. It is one of the things that makes the space what it
-                is — and frankly, it is one of the reasons people choose the gallery
-                over a blank-wall venue. Guests love it. Your event photos will too.
+                is — and it is one of the reasons people choose the gallery
+                over a blank-wall venue.
               </p>
             </div>
 
@@ -351,11 +350,8 @@ export default function VenueRentalPage() {
       <section className="px-6 md:px-12 lg:px-24 py-14 bg-cream border-t border-stone/20">
         <div className="max-w-3xl mx-auto">
           <p className="font-body text-xs text-charcoal/30 leading-relaxed text-center">
-            Solas Gallery is an intimate wedding and event venue on Main Street in
-            Salado, Texas. Available for weddings, receptions, rehearsal dinners,
-            bridal showers, corporate events, and private gatherings. Serving couples
-            and event planners from Austin, Round Rock, Georgetown, Temple, Killeen,
-            Waco, and all of Central Texas. 76571.
+            Solas Gallery is an intimate art gallery venue on Main Street in Salado, Texas,
+            serving Central Texas.
           </p>
         </div>
       </section>

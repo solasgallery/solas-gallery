@@ -47,7 +47,7 @@ export default function ProcessPage() {
       lede="Every piece is produced and finished by hand in our studio: mixed media, archival pigment on canvas, hand-finished surfaces."
       heroImage={heroImage}
       heroCaption="Solas Studio · Salado, Texas"
-      cta={{ href: '/#consult', label: 'Book a design consult' }}
+      cta={{ href: '/portraits#consult', label: 'Book a design consult' }}
       secondaryCta={{ href: '/#commissions', label: 'Start a commission' }}
     >
       <section className="solas-page-copy">
