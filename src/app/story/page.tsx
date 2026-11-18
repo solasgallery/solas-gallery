@@ -6,13 +6,13 @@ import { pageJsonLd } from '@/lib/jsonld'
 export const metadata: Metadata = {
   title: 'Our Story',
   description:
-    'Thirty years of light and shadow. The story of Tim and Cherie Flanagan, Solas Gallery, and a life built in Salado, Texas.',
+    'Thirty years of light and shadow. The story of Tim and Cherie Flanagan, Solas Gallery, and a life built on Main Street in Salado, Texas.',
   alternates: {
     canonical: '/story',
   },
   openGraph: {
     title: 'Our Story | Solas Gallery — Salado, TX',
-    description: 'Thirty years of light and shadow. The story of Tim and Cherie Flanagan, Solas Gallery, and a life built in Salado, Texas.',
+    description: 'Thirty years of light and shadow. The story of Tim and Cherie Flanagan, Solas Gallery, and a life built on Main Street in Salado, Texas.',
     url: 'https://solasgallery.com/story',
     type: 'website',
     images: [{ url: '/solas-og.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Our Story | Solas Gallery — Salado, TX',
-    description: 'Thirty years of light and shadow. The story of Tim and Cherie Flanagan, Solas Gallery, and a life built in Salado, Texas.',
+    description: 'Thirty years of light and shadow. The story of Tim and Cherie Flanagan, Solas Gallery, and a life built on Main Street in Salado, Texas.',
     images: ['/solas-og.jpg'],
   },
 }
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const jsonLd = pageJsonLd({
   title: 'Our Story',
   description:
-    'Thirty years of light and shadow. The story of Tim and Cherie Flanagan, Solas Gallery, and a life built in Salado, Texas.',
+    'Thirty years of light and shadow. The story of Tim and Cherie Flanagan, Solas Gallery, and a life built on Main Street in Salado, Texas.',
   path: '/story',
 })
 
@@ -81,7 +81,7 @@ export default function StoryPage() {
                 way I understood the world.
               </p>
               <p>
-                Solas Gallery started as a small portrait studio in
+                Solas Gallery started as a small portrait studio on Main Street in
                 Salado, Texas — a town of maybe 2,000 people in the Hill Country
                 between Austin and Waco. It was not an obvious place to build a
                 creative life. But Cherie and I chose it, and it chose us back.
@@ -150,7 +150,7 @@ export default function StoryPage() {
       <section className="section-pad bg-cream">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="font-display text-section text-charcoal mb-6">
-            A creative campus in Salado.
+            A creative campus on Main Street.
           </h2>
           <p className="font-body text-sm text-charcoal/60 leading-[1.8]">
             Today, Solas Gallery sits at the center of a small creative ecosystem:
