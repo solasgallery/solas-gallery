@@ -157,8 +157,6 @@ export default function Home() {
               <p>Paid to reserve. It covers the sitting only.</p>
               <p>First print not included. Single print $395 (8×10 or 11×14).</p>
               {day.minimum ? <p>{day.minimum}</p> : null}
-              {/* PLACEHOLDER (F-05): photo-day capacity — confirm before launch */}
-              <p className="sg-day-meta">About ten sittings · twenty minutes each</p>
             </article>
           ))}
         </div>

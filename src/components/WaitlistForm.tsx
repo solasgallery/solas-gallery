@@ -24,7 +24,7 @@ export default function WaitlistForm() {
       email: field('email'),
       phone: field('phone'),
       message: `Finish: ${field('finish')} · Preferred day: ${field('day')}`,
-      source: 'The Real Portrait Project waitlist',
+      source: 'The Real Portrait Project design consult',
     }
 
     try {
@@ -55,7 +55,7 @@ export default function WaitlistForm() {
 
   return (
     <form className="sg-form" onSubmit={handleSubmit} aria-labelledby="waitlist-heading">
-      <h3 id="waitlist-heading">Join the waitlist</h3>
+      <h3 id="waitlist-heading">Book a design consult</h3>
       <p className="sg-form-note">
         Pick your day. We will be in touch within one business day to set your free
         design consult.
@@ -92,7 +92,7 @@ export default function WaitlistForm() {
         </label>
       </div>
       <button type="submit" disabled={status === 'sending'}>
-        {status === 'sending' ? 'Sending…' : 'Join the waitlist'}
+        {status === 'sending' ? 'Sending…' : 'Request my design consult'}
       </button>
       {status === 'error' ? (
         <p className="sg-form-error" role="alert">
