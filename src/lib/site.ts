@@ -46,8 +46,8 @@ export const images = {
     alt: 'A large framed abstract painting with black and beige textured blocks leaning against a stone-colored plaster wall in a sunlit gallery space.',
   },
   folio: {
-    src: '/solas/stone.svg',
-    alt: 'A premium, thick-paged black folio album open on a rustic wooden table, displaying two black-and-white landscape photographs of hills and sea stacks.',
+    src: '/images/folio-hero.jpg',
+    alt: 'The entrance to Solas Gallery at dusk, warm light in the arched window above the stone steps.',
   },
   gather: {
     src: '/solas/gather.jpg',

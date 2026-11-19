@@ -110,9 +110,6 @@ export default function VenueRentalPage() {
       {/* The Space */}
       <section className="px-6 md:px-12 lg:px-24 py-20 bg-cream">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="font-display text-3xl text-charcoal mb-6">
-            A gallery, not a banquet hall.
-          </h2>
           <div className="space-y-4 font-body text-sm text-charcoal/60 leading-relaxed">
             <p>
               Solas Gallery is an intimate, art-filled venue on Main Street in
