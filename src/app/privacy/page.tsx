@@ -164,7 +164,7 @@ export default function PrivacyPage() {
           <br />
           SMS Terms
         </h1>
-        <p>Effective August 20, 2026</p>
+        <p>Effective August 20, 2026 · Updated November 18, 2026</p>
       </section>
 
       <div className="solas-policy-body">

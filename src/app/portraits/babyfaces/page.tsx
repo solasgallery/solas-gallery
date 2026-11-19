@@ -7,8 +7,7 @@ import { portraitServiceJsonLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
 
 // BabyFaces, rebuilt on the shared LandingPage layout (Hermès pass, 2026-11-18).
-// "Portraits from $350" is carried over from the old page — awaiting Tim's
-// confirmation of the price and what it includes (see gallery STATUS.md).
+// "Portraits from $350" confirmed by Tim (2026-11-18).
 
 const description =
   'BabyFaces newborn and child portrait photography at Solas Gallery in Salado, Texas. Heirloom-quality baby portraits, milestone portraits, and family photography by Tim Flanagan. Serving Austin, Temple, Georgetown, and Central Texas.'
@@ -86,12 +85,11 @@ export default function BabyFacesPage() {
 
         <section className="solas-page-copy">
           <div className="solas-measure">
-            <h2>Not a photo session. A portrait sitting.</h2>
+            <h2>Portraits made to be kept for generations.</h2>
             <p>
-              BabyFaces is our dedicated newborn and child portrait experience. These are not
-              snapshots with backdrops and props — they are heirloom portraits made with the
-              same lighting, care, and artistry that has defined Tim Flanagan&rsquo;s work for
-              thirty years.
+              BabyFaces is our newborn and child portrait experience — heirloom portraits made
+              with the same lighting, care, and artistry that has defined Tim Flanagan&rsquo;s
+              work for thirty years.
             </p>
             <p>
               Every sitting is unhurried and gentle, designed entirely around your
