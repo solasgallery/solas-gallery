@@ -85,11 +85,11 @@ export default function BabyFacesPage() {
 
         <section className="solas-page-copy">
           <div className="solas-measure">
-            <h2>Portraits made to be kept for generations.</h2>
+            <h2>They won&rsquo;t stay this small.</h2>
             <p>
-              BabyFaces is our newborn and child portrait experience — heirloom portraits made
-              with the same lighting, care, and artistry that has defined Tim Flanagan&rsquo;s
-              work for thirty years.
+              BabyFaces is for newborns and children. Just your child, photographed simply,
+              with patience and care — in portraits made to hang on your wall for years to
+              come.
             </p>
             <p>
               Every sitting is unhurried and gentle, designed entirely around your

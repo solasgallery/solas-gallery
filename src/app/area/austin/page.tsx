@@ -38,9 +38,9 @@ export default function AustinAreaPage() {
       <section className="solas-page-copy">
         <h2>Why Austin clients make the drive</h2>
         <p>
-          Austin has no shortage of photographers. But Solas Gallery is not a
-          photography studio — it is a thirty-year creative practice housed in
-          a fine art gallery on Main Street in Salado, Texas. The experience
+          Austin has no shortage of photographers. Solas Gallery is a
+          thirty-year creative practice housed in a fine art gallery on Main
+          Street in Salado, Texas. The experience
           is different. The work is different. And the 45-minute drive north
           on I-35 is part of the appeal — you leave the city behind and arrive
           somewhere quiet, intentional, and unhurried.

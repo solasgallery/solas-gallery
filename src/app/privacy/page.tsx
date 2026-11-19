@@ -148,7 +148,7 @@ const sections = [
     body: (
       <p>
         We may update this policy as our services or legal obligations change.
-        The effective date below identifies the current version.
+        The effective date above identifies the current version.
       </p>
     ),
   },
