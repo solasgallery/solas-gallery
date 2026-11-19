@@ -20,6 +20,9 @@ const nextConfig = {
       // Universal Studio lives in its own Vercel project (solasgallery/universal-studio)
       { source: '/universal-studio', destination: 'https://studio.solasgallery.com/universal-studio' },
       { source: '/universal-studio/:path*', destination: 'https://studio.solasgallery.com/universal-studio/:path*' },
+      // Private family pages (Family Archive) live in their own static Vercel project (solas-collections).
+      // Unlisted, noindex; published per family from the Collection Desk.
+      { source: '/c/:path*', destination: 'https://solas-collections.vercel.app/c/:path*' },
     ]
   },
 }
