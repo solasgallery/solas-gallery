@@ -39,7 +39,8 @@ export default function FolioPage() {
       }
       lede="Thick pages. One image to a spread. A book that can sit on a table for years without asking for attention."
       heroImage={images.folio}
-      heroCaption="FOLIO · archival album"
+      heroPosition="25% 50%"
+      heroCaption="FOLIO · Solas Gallery"
       folioMark="FOLIO"
       cta={{ href: '/begin', label: 'Inquire about a FOLIO' }}
     >
