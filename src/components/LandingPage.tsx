@@ -12,6 +12,8 @@ export type LandingPageProps = {
   lede?: string
   whisper?: string
   heroImage?: { src: string; alt: string }
+  /** CSS object-position for the hero crop, e.g. '25% 50%'. Defaults to centre. */
+  heroPosition?: string
   heroCaption?: string
   folioMark?: string
   cta?: LandingCta
@@ -30,6 +32,7 @@ export default function LandingPage({
   lede,
   whisper,
   heroImage,
+  heroPosition,
   heroCaption,
   folioMark,
   cta,
@@ -41,7 +44,11 @@ export default function LandingPage({
       <section className="solas-opening" aria-labelledby="landing-heading">
         {heroImage ? (
           <div className="solas-opening-image">
-            <img src={heroImage.src} alt={heroImage.alt} />
+            <img
+              src={heroImage.src}
+              alt={heroImage.alt}
+              style={heroPosition ? { objectPosition: heroPosition } : undefined}
+            />
             <div className="solas-light" />
             {heroCaption ? <span className="solas-caption">{heroCaption}</span> : null}
           </div>
