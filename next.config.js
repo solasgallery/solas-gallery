@@ -12,6 +12,8 @@ const nextConfig = {
       // Trade events page pulled (2026-11-19): the listings were dateless placeholders.
       { source: '/trade/events', destination: '/trade', permanent: true },
       { source: '/trade/events.html', destination: '/trade', permanent: true },
+      // Short link for the Killarney event (2026-11-19). Temporary (307) so it can be repointed.
+      { source: '/killarney', destination: 'https://buytickets.at/hubsalado/2496909', permanent: false },
     ]
   },
   async rewrites() {
