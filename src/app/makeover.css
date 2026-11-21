@@ -526,6 +526,7 @@ html { scroll-padding-top: 24px; }
 .solas-page-copy .sg-steps li { margin: 0; max-width: none; }
 .solas-page-copy .sg-steps h3 { font: italic 400 1.35rem/1.15 var(--serif); margin: 0 0 4px; color: var(--ink); }
 .solas-page-copy .sg-steps p { margin: 0; }
+.solas-page-copy .sg-process-prices { margin-top: 40px; }
 
 /* ── Rebuild 2026-11 additions ─────────────────────────────── */
 .sg-way-links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 20px; }
@@ -613,6 +614,7 @@ a[href^="tel:"] {
   overflow: hidden;
   background: radial-gradient(120% 90% at 30% 25%, #ece5d8 0%, #e2d9c9 55%, #d6ccba 100%);
 }
+.sg-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .sg-hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 @media (prefers-reduced-motion: reduce) { .sg-hero-video { display: none; } }
 .sg-hero--bleed .sg-hero-copy { max-width: 760px; margin: 0; padding: 36px 16px 8px; }
@@ -626,8 +628,8 @@ a[href^="tel:"] {
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(to right, rgba(20, 20, 20, 0.5) 0%, rgba(20, 20, 20, 0.22) 45%, rgba(20, 20, 20, 0) 70%),
-      linear-gradient(to top, rgba(20, 20, 20, 0.6) 0%, rgba(20, 20, 20, 0.25) 40%, rgba(20, 20, 20, 0) 65%);
+      linear-gradient(to right, rgba(20, 20, 20, 0.62) 0%, rgba(20, 20, 20, 0.36) 45%, rgba(20, 20, 20, 0) 75%),
+      linear-gradient(to top, rgba(20, 20, 20, 0.66) 0%, rgba(20, 20, 20, 0.36) 50%, rgba(20, 20, 20, 0.08) 80%);
     pointer-events: none;
   }
   .sg-hero--bleed .sg-hero-copy {

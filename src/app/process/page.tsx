@@ -90,7 +90,7 @@ export default function ProcessPage() {
               </li>
             ))}
           </ol>
-          <p>
+          <p className="sg-process-prices">
             For portrait design, a $295 design &amp; creation fee reserves your design
             project. It covers your sitting and the creation of your images. Finished
             pieces are separate. Your first print is $395 (8×10 or 11×14), and your wall
