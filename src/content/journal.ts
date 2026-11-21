@@ -98,7 +98,7 @@ export const articles: Article[] = [
       { type: 'h2', text: 'Rules of thumb for size' },
       {
         type: 'p',
-        text: 'Over a sofa, console or bed, a single piece usually looks right at about two-thirds to three-quarters of the furniture width, hung several inches above it. On an open wall, go larger than feels comfortable on paper; a piece that is too small is the most common mistake. In a hallway, where you pass close, smaller pieces hung in a line work better than one large one. These are starting points only. A wall proof shows the piece on your actual wall, and that settles it.',
+        text: 'Over a sofa, console or bed, a single piece usually looks right at about two-thirds to three-quarters of the furniture width, hung several inches above it. On an open wall, go larger than feels comfortable on paper; a piece that is too small is a common mistake. In a hallway, where you pass close, smaller pieces hung in a line work better than one large one. These are starting points only. A wall proof shows the piece on your actual wall, and that settles it.',
       },
       { type: 'h2', text: 'Height and light' },
       {
@@ -134,7 +134,7 @@ export const articles: Article[] = [
       { type: 'lede', text: 'A design proof shows you the finished piece before it exists.' },
       {
         type: 'p',
-        text: 'It is the part of our process that people tell us they value most, and the simplest to describe. We take a photograph of your own wall, place the proposed piece on it at true scale, and show you the result with a firm price. You decide by looking, not by imagining.',
+        text: 'It is the simplest part of our process to describe. We take a photograph of your own wall, place the proposed piece on it at true scale, and show you the result with a firm price. You decide by looking, not by imagining.',
       },
       { type: 'h2', text: 'What a proof settles' },
       {
@@ -176,7 +176,7 @@ export const articles: Article[] = [
       { type: 'lede', text: 'Canvas is sturdy, but it does not love a Texas summer.' },
       {
         type: 'p',
-        text: 'Our work is archival pigment on canvas, finished by hand. It is made to last, and a few habits help it last longer in a hot, bright climate. These are general rules for caring for any canvas, and they are the ones we give our own clients.',
+        text: 'Our work is archival pigment on canvas, finished by hand. It is made to last, and a few habits help it last longer in a hot, bright climate. These are general rules for caring for any canvas.',
       },
       { type: 'h2', text: 'Keep it out of direct sun' },
       {
@@ -196,7 +196,7 @@ export const articles: Article[] = [
       { type: 'h2', text: 'Never store it in an attic, garage or car' },
       {
         type: 'p',
-        text: 'These spaces get far hotter than the rest of the house and swing between extremes. Heat softens varnishes and adhesives and can warp stretcher bars. If a piece must be stored, keep it indoors, upright, wrapped in clean paper or cloth, and off the floor.',
+        text: 'These spaces get far hotter than the rest of the house and swing between extremes. Heat can soften varnishes and adhesives and warp stretcher bars. If a piece must be stored, keep it indoors, upright, wrapped in clean paper or cloth, and off the floor.',
       },
       { type: 'h2', text: 'Dusting and cleaning' },
       {
