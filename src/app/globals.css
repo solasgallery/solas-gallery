@@ -432,6 +432,8 @@ button, input, select, textarea { font: inherit; }
 }
 
 .solas-underlink {
+  min-height: 24px;
+  padding-bottom: 2px;
   border-bottom: 1px solid;
   gap: 14px;
   width: max-content;
