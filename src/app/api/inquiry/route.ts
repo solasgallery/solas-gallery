@@ -7,8 +7,20 @@ const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || 'cherie@solasgaller
 
 // Brevo list "Website Inquiries" (ID 51, created 2026-11-18). The Vercel env var
 // BREVO_LIST_ID is set to the same ID; this default covers a missing var.
-// Trade forms pass their own listId (43) and are not affected.
 const BREVO_LIST_ID = Number(process.env.BREVO_LIST_ID) || 51
+// Brevo list "Trade Collective Prospects" (ID 43), used by the /trade forms.
+const TRADE_LIST_ID = 43
+
+// The server, not the browser, picks the Brevo list, keyed by the form's source.
+// Any listId/listIds sent by the client is ignored. Unknown sources go to BREVO_LIST_ID.
+const SOURCE_LISTS = new Map<string, number>([
+  ['Begin', BREVO_LIST_ID],
+  ['venue-rental', BREVO_LIST_ID],
+  ['Portrait design consult', BREVO_LIST_ID],
+  ['in-person-qr', BREVO_LIST_ID],
+  ['Trade — Solas', TRADE_LIST_ID],
+  ['Trade — Solas (Apply)', TRADE_LIST_ID],
+])
 
 const BREVO_HEADERS = {
   'accept': 'application/json',
@@ -63,8 +75,7 @@ async function saveContact(
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { name, email, phone, message, source, listId } = body
-    const targetList = Number(listId) || BREVO_LIST_ID
+    const { name, email, phone, message, source } = body
 
     if (!email || !name) {
       return NextResponse.json(
@@ -78,6 +89,7 @@ export async function POST(request: NextRequest) {
     const phoneText = phone ? String(phone) : ''
     const messageText = message ? String(message) : ''
     const sourceText = source ? String(source) : 'Website'
+    const targetList = SOURCE_LISTS.get(sourceText) ?? BREVO_LIST_ID
 
     // 1. Create/update contact in Brevo (201 created, 204 updated)
     const attributes: Record<string, string> = {
