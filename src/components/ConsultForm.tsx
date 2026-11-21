@@ -59,7 +59,7 @@ export default function ConsultForm({ days = [] }: { days?: string[] }) {
   }
 
   return (
-    <form className="sg-form" onSubmit={handleSubmit} aria-labelledby="consult-heading">
+    <form method="post" className="sg-form" onSubmit={handleSubmit} aria-labelledby="consult-heading">
       <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, overflow: 'hidden' }}>
         <label>Leave this field empty<input type="text" name="hp" tabIndex={-1} autoComplete="off" /></label>
       </div>

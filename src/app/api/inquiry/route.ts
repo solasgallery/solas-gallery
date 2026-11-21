@@ -158,22 +158,30 @@ export async function POST(request: NextRequest) {
       LASTNAME: nameText.split(' ').slice(1).join(' ') || '',
       SMS: phoneText,
     }
-    let contactRes: Response | null = IS_PREVIEW ? null : await saveContact(emailText, attributes, targetList)
-    let contactOk = IS_PREVIEW ? true : contactRes!.ok
-
-    if (!contactOk && contactRes) {
-      const errorText = await contactRes.text()
-      if (phoneText && contactRes.status === 400 && isPhoneRejection(errorText)) {
-        console.warn('Brevo rejected the phone; saving contact without it:', errorText)
-        const withoutPhone = { ...attributes }
-        delete withoutPhone.SMS
-        contactRes = await saveContact(emailText, withoutPhone, targetList)
+    // A failed (or thrown) contact save must not stop the lead email: the email is the record that matters.
+    let contactOk = IS_PREVIEW
+    if (!IS_PREVIEW) {
+      try {
+        let contactRes = await saveContact(emailText, attributes, targetList)
         contactOk = contactRes.ok
         if (!contactOk) {
-          console.error('Brevo contact error (retry without phone):', await contactRes.text())
+          const errorText = await contactRes.text()
+          if (phoneText && contactRes.status === 400 && isPhoneRejection(errorText)) {
+            console.warn('Brevo rejected the phone; saving contact without it:', errorText)
+            const withoutPhone = { ...attributes }
+            delete withoutPhone.SMS
+            contactRes = await saveContact(emailText, withoutPhone, targetList)
+            contactOk = contactRes.ok
+            if (!contactOk) {
+              console.error('Brevo contact error (retry without phone):', await contactRes.text())
+            }
+          } else {
+            console.error('Brevo contact error:', errorText)
+          }
         }
-      } else {
-        console.error('Brevo contact error:', errorText)
+      } catch (err) {
+        contactOk = false
+        console.error('Brevo contact request failed:', err instanceof Error ? err.name : 'unknown')
       }
     }
 
@@ -222,6 +230,7 @@ export async function POST(request: NextRequest) {
               </tr>` : ''}
             </table>
             <hr style="border: none; border-top: 1px solid #C4AE8A; margin: 24px 0;" />
+            ${contactOk ? '' : `<p style="font-size: 14px; color: #8a2a1a;"><b>Note:</b> this contact was NOT saved to Brevo (list ${targetList}). Please add it by hand.</p>`}
             <p style="font-size: 12px; color: #999;">This inquiry was submitted through solasgallery.com</p>
           </div>
         `,
@@ -233,16 +242,22 @@ export async function POST(request: NextRequest) {
       console.error('Brevo email error:', await emailRes.text())
     }
 
-    // No silent success: if either Brevo call failed, the form shows its error
-    // state (with the phone number) instead of "You're in".
-    if (!contactOk || !emailOk) {
+    // Only a failed lead email is a real failure: then nobody has the request, and the form
+    // shows its error state (with the phone number).
+    if (!emailOk) {
       return NextResponse.json(
         { error: 'Something went wrong. Please try again.' },
         { status: 500 }
       )
     }
 
-    return NextResponse.json({ success: true })
+    // The lead reached Cherie. saved:false = the contact/list save failed (the email above says so);
+    // the visitor's request still went through, so this is a success, not "did not go through".
+    // On preview the contact save is skipped by design: saved:false, preview:true.
+    if (!contactOk || IS_PREVIEW) {
+      return NextResponse.json({ success: true, received: true, saved: false, ...(IS_PREVIEW ? { preview: true } : {}) })
+    }
+    return NextResponse.json({ success: true, received: true, saved: true })
   } catch (error) {
     console.error('Inquiry API error:', error)
     return NextResponse.json(

@@ -912,7 +912,7 @@
         <h2>Apply Now</h2>
         <p class="form-intro">Tell us about your practice and your design focus.</p>
 
-        <form class="trade-form" id="tradeForm">
+        <form method="post" class="trade-form" id="tradeForm">
             <!-- Wired to Brevo via /api/inquiry → list 43 (Trade Collective Prospects) -->
 
             <div class="form-group">
@@ -1042,7 +1042,7 @@
       form.addEventListener('submit',async function(e){
         e.preventDefault();
         var d=new FormData(form),o={};
-        d.forEach(function(v,k){o[k]=v;});
+        d.forEach(function(v,k){o[k]=(k in o)?o[k]+', '+v:v;}); // keep every ticked box (e.g. services), not only the last
         var name=o.name||o.fullName||'';
         var firm=o.company||o.firmName||'';
         var extras=Object.keys(o).filter(function(k){return ['name','fullName','email','phone','company','firmName','hp'].indexOf(k)<0;})

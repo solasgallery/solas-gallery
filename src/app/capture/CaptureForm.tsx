@@ -6,6 +6,8 @@ export default function CaptureForm() {
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
+  // true when the details reached us but the list save failed (production only).
+  const [notSaved, setNotSaved] = useState(false)
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -37,6 +39,8 @@ export default function CaptureForm() {
         body: JSON.stringify(data),
       })
       if (!res.ok) throw new Error("Network error")
+      const j = await res.json().catch(() => ({}))
+      setNotSaved(j.saved === false && !j.preview)
       setSubmitted(true)
     } catch {
       setError("Something went wrong. Please try again or ask staff for help.")
@@ -54,12 +58,17 @@ export default function CaptureForm() {
             <p className="sg-capture-sub">
               Thank you for visiting Solas Gallery. We will be in touch.
             </p>
+            {notSaved && (
+              <p className="sg-capture-sub">
+                Your details reached us, but we couldn&apos;t add you to the list automatically. We will add you by hand.
+              </p>
+            )}
           </div>
         ) : (
           <>
             <h1>Solas Gallery</h1>
             <p className="sg-capture-sub">Stay connected</p>
-            <form className="sg-form" onSubmit={handleSubmit}>
+            <form method="post" className="sg-form" onSubmit={handleSubmit}>
               <div className="sg-form-grid">
                 <label>
                   First name

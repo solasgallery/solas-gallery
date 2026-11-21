@@ -457,7 +457,7 @@
     <!-- Main Content -->
     <div class="container">
         <!-- Application Form -->
-        <form id="tradeForm" class="form-section">
+        <form method="post" id="tradeForm" class="form-section">
             <h2>Trade Collective Application</h2>
 
             <!-- Contact Information Section -->
@@ -634,7 +634,7 @@
       form.addEventListener('submit',async function(e){
         e.preventDefault();
         var d=new FormData(form),o={};
-        d.forEach(function(v,k){o[k]=v;});
+        d.forEach(function(v,k){o[k]=(k in o)?o[k]+', '+v:v;}); // keep every ticked box (e.g. services), not only the last
         var name=o.name||o.fullName||'';
         var firm=o.company||o.firmName||'';
         var extras=Object.keys(o).filter(function(k){return ['name','fullName','email','phone','company','firmName','hp'].indexOf(k)<0;})
