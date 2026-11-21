@@ -70,8 +70,8 @@ export default function RealPortraitPage() {
         <div className="solas-measure">
           <h2>What this is.</h2>
           <p>
-            A limited campaign, made in the studio in Salado. Beyond the screen, a quiet
-            truth. Character over performance.
+            A limited campaign, made in the studio in Salado. We will post the dates here
+            when they are set.
           </p>
           <p>Design projects reserve with the $295 design &amp; creation fee.</p>
           <Link className="solas-underlink" href="/portraits">

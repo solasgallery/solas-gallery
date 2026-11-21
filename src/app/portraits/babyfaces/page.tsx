@@ -26,6 +26,7 @@ const jsonLd = portraitServiceJsonLd({
   title: 'BabyFaces Newborn & Child Portraits',
   description,
   path: '/portraits/babyfaces',
+  serviceType: 'Newborn and child portraits',
 })
 
 const kinds = [

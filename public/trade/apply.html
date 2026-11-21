@@ -15,12 +15,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Lora:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- GA4 Tracking -->
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-    </script>
 
     <style>
         * {
@@ -585,16 +579,8 @@
                         <label for="service2">Custom Commissions</label>
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="service3" name="services" value="Large-Format Printing">
-                        <label for="service3">Large-Format Printing</label>
-                    </div>
-                    <div class="checkbox-item">
                         <input type="checkbox" id="service4" name="services" value="Custom Framing">
                         <label for="service4">Custom Framing</label>
-                    </div>
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="service5" name="services" value="Scaled Renderings">
-                        <label for="service5">Scaled Renderings</label>
                     </div>
                     <div class="checkbox-item">
                         <input type="checkbox" id="service6" name="services" value="Installation">
@@ -622,7 +608,7 @@
 
         <!-- Confirmation Message -->
         <div id="confirmation" class="confirmation">
-            <p>Thank you. We will review your application and respond within 48–72 hours.</p>
+            <p>Thank you. We will review your application and respond within five business days.</p>
         </div>
     </div>
 
@@ -636,26 +622,6 @@
     </footer>
 
     <script>
-        // Form submission handling
-        document.getElementById('tradeForm').addEventListener('submit', function(e) {
-            // Track form submission
-            gtag('event', 'trade_form_submit', {
-                'event_category': 'engagement',
-                'event_label': 'Trade Collective Application'
-            });
-        });
-
-        // Track form start (when first field is focused)
-        let formStarted = false;
-        document.getElementById('tradeForm').addEventListener('focusin', function() {
-            if (!formStarted) {
-                formStarted = true;
-                gtag('event', 'trade_form_start', {
-                    'event_category': 'engagement',
-                    'event_label': 'Trade Collective Application'
-                });
-            }
-        });
 
     </script>
     <!-- Brevo submission (list 43 = Trade Collective Prospects) -->

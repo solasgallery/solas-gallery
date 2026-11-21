@@ -10,8 +10,8 @@ export const metadata: Metadata = createLandingMetadata({
     'Visit Solas Gallery at 2 Rock Creek Dr, Salado, TX 76571, on Main Street at Rock Creek Drive. Open Monday to Saturday, 10 am to 5 pm. Call (254) 947-1881.',
   path: '/visit',
   noindex: false,
-  ogImage: '/og/folio.jpg',
-  imageAlt: images.visit.alt,
+  ogImage: '/og/home.jpg',
+  imageAlt: 'Framed portraits hung around a doorway in the Solas Gallery.',
 })
 
 const jsonLd = pageJsonLd({
@@ -19,7 +19,7 @@ const jsonLd = pageJsonLd({
   description:
     'Visit Solas Gallery at 2 Rock Creek Dr, Salado, TX 76571, on Main Street at Rock Creek Drive. Open Monday to Saturday, 10 am to 5 pm. Call (254) 947-1881.',
   path: '/visit',
-  image: '/og/folio.jpg',
+  image: '/og/home.jpg',
 })
 
 export default function VisitPage() {

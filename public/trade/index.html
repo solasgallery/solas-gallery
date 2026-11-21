@@ -37,8 +37,7 @@
       "email": "trade@solasgallery.com",
       "url": "https://www.solasgallery.com",
       "image": "https://www.solasgallery.com/og/commissions.jpg",
-      "description": "Trade program for interior designers and decorators in Central Texas",
-      "priceRange": "$$"
+      "description": "Trade program for interior designers and decorators in Central Texas"
     }
     </script>
 
@@ -805,34 +804,7 @@
     </style>
 </head>
 <body>
-    <!-- Google Analytics 4 -->
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
 
-        // Fire trade_page_view event on page load
-        gtag('event', 'trade_page_view');
-    </script>
-
-    <!-- Meta Pixel -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-
-        // Replace YOUR_PIXEL_ID with actual Meta Pixel ID
-        fbq('init', 'YOUR_PIXEL_ID');
-        fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
-    </noscript>
 
     <!-- Navigation -->
     <nav>
@@ -872,8 +844,8 @@
             <div class="about-highlights">
                 <h3 style="margin-top: 0;">Why Partner with Solas</h3>
                 <ul>
-                    <li>Curated collections for discerning clients</li>
-                    <li>Professional trade consideration structures</li>
+                    <li>Studio originals and commissions for your clients</li>
+                    <li>Trade discounts of 10%, 15% or 20% by tier</li>
                     <li>Dedicated design consultation support</li>
                     <li>Priority access to new acquisitions</li>
                     <li>Flexible project-based arrangements</li>
@@ -973,7 +945,7 @@
             <div class="step">
                 <div class="step-number">1</div>
                 <h3>Apply for Partnership</h3>
-                <p>Complete our simple application form telling us about your practice, project focus, and design aesthetic. We review applications and reach out within 5 business days.</p>
+                <p>Complete our simple application form telling us about your practice, project focus, and design aesthetic. We review applications and reply within five business days.</p>
             </div>
             <div class="step">
                 <div class="step-number">2</div>
@@ -1110,18 +1082,11 @@
         formInputs.forEach(input => {
             input.addEventListener('focus', function() {
                 if (!formStartTracked) {
-                    gtag('event', 'trade_form_start');
                     formStartTracked = true;
                 }
             });
         });
 
-        // Track form submission for trade_form_submit event
-        document.querySelector('.trade-form').addEventListener('submit', function(e) {
-            gtag('event', 'trade_form_submit');
-            // Also fire Meta Pixel Lead event
-            fbq('track', 'Lead');
-        });
     </script>
     <!-- Brevo submission (list 43 = Trade Collective Prospects) -->
     <script>

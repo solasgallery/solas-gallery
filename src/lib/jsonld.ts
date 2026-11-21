@@ -68,7 +68,8 @@ export function portraitServiceJsonLd({
   description,
   path,
   image = '/solas-og.jpg',
-}: PageJsonLdInput) {
+  serviceType = 'Portrait design',
+}: PageJsonLdInput & { serviceType?: string }) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -81,6 +82,6 @@ export function portraitServiceJsonLd({
       '@type': 'State',
       name: 'Texas',
     },
-    serviceType: 'Portrait design',
+    serviceType,
   }
 }

@@ -1,7 +1,7 @@
 export const SITE = {
   name: 'Solas Gallery',
   url: 'https://www.solasgallery.com',
-  title: 'Solas Gallery | Portraits, Commissions & Art in Salado, TX',
+  title: 'Solas Gallery | Portraits, Commissions & Art, Salado TX',
   description:
     'Solas Gallery in Salado, Texas: portrait design, commissions from your images, and studio originals. One of one, hand-finished, designed for your home.',
   street: '2 Rock Creek Dr',
