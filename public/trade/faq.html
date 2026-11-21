@@ -6,6 +6,8 @@
     <meta name="description" content="Answers on membership tiers, trade pricing and how to work with Solas Gallery in Salado, Texas, for interior designers, decorators and architects. Apply online.">
     <meta name="keywords" content="art gallery trade program FAQ, interior designer partnership questions, professional art sourcing">
     <title>Trade Program FAQ for Designers | Solas Gallery, Salado</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="canonical" href="https://www.solasgallery.com/trade/faq">
     <meta property="og:image" content="https://www.solasgallery.com/og/commissions.jpg">
     <meta property="og:image:width" content="1200">
@@ -382,6 +384,21 @@
             }
         }
     </style>
+    <style>
+        /* Gate 1 fixes: 44px tap targets, nav matches the 8-link site nav */
+        nav a { display: inline-flex; align-items: center; min-height: 44px; }
+        .nav-links, .nav-right { flex-wrap: wrap; gap: 0.25rem 1.5rem !important; }
+        .nav-links a, nav .nav-right a { padding-bottom: 0; }
+        input[type="checkbox"] { width: 24px !important; height: 24px !important; flex: none; }
+        .checkbox-item, .form-group.checkbox-group { min-height: 44px; }
+        .checkbox-item label, .form-group.checkbox-group label { padding: 10px 0; }
+        .breadcrumb a, .form-intro a { display: inline-block; padding: 12px 0; }
+        @media (max-width: 768px) {
+            nav { position: relative !important; flex-direction: column !important; padding: 0.75rem 1rem !important; gap: 0 !important; }
+            body { padding-top: 0 !important; }
+            .nav-links, nav .nav-right { flex-direction: row !important; flex-wrap: wrap; justify-content: center; gap: 0 1.25rem !important; }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -390,10 +407,13 @@
             <a href="/">SOLAS GALLERY</a>
         </div>
         <div class="nav-right">
-            <a href="/art">ART</a>
-            <a href="/portraits">PORTRAITS</a>
-            <a href="/visit">GALLERY</a>
-            <a href="/story">STORY</a>
+            <a href="/#portrait-design">PORTRAITS</a>
+            <a href="/#commissions">COMMISSIONS</a>
+            <a href="/#originals">STUDIO ORIGINALS</a>
+            <a href="/journal">JOURNAL</a>
+            <a href="/story">OUR STORY</a>
+            <a href="https://www.hubsalado.com/events">EVENTS</a>
+            <a href="/visit">VISIT</a>
             <a href="/trade" class="trade-link">TRADE</a>
         </div>
     </nav>

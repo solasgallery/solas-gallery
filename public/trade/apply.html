@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apply to the Trade Program | Solas Gallery, Salado, TX</title>
+    <meta name="description" content="Apply to the Solas Gallery trade program for interior designers and decorators in Salado, Texas. Tell us about your practice and we will reply within five business days.">
     <meta name="robots" content="noindex, follow">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="canonical" href="https://www.solasgallery.com/trade/apply">
 
     <!-- Google Fonts -->
@@ -413,16 +416,34 @@
             }
         }
     </style>
+    <style>
+        /* Gate 1 fixes: 44px tap targets, nav matches the 8-link site nav */
+        nav a { display: inline-flex; align-items: center; min-height: 44px; }
+        .nav-links, .nav-right { flex-wrap: wrap; gap: 0.25rem 1.5rem !important; }
+        .nav-links a, nav .nav-right a { padding-bottom: 0; }
+        input[type="checkbox"] { width: 24px !important; height: 24px !important; flex: none; }
+        .checkbox-item, .form-group.checkbox-group { min-height: 44px; }
+        .checkbox-item label, .form-group.checkbox-group label { padding: 10px 0; }
+        .breadcrumb a, .form-intro a { display: inline-block; padding: 12px 0; }
+        @media (max-width: 768px) {
+            nav { position: relative !important; flex-direction: column !important; padding: 0.75rem 1rem !important; gap: 0 !important; }
+            body { padding-top: 0 !important; }
+            .nav-links, nav .nav-right { flex-direction: row !important; flex-wrap: wrap; justify-content: center; gap: 0 1.25rem !important; }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <a href="/" class="nav-logo">SOLAS GALLERY</a>
         <div class="nav-links">
-            <a href="/art">ART</a>
-            <a href="/portraits">PORTRAITS</a>
-            <a href="/visit">GALLERY</a>
-            <a href="/story">STORY</a>
+            <a href="/#portrait-design">PORTRAITS</a>
+            <a href="/#commissions">COMMISSIONS</a>
+            <a href="/#originals">STUDIO ORIGINALS</a>
+            <a href="/journal">JOURNAL</a>
+            <a href="/story">OUR STORY</a>
+            <a href="https://www.hubsalado.com/events">EVENTS</a>
+            <a href="/visit">VISIT</a>
             <a href="/trade">TRADE</a>
         </div>
     </nav>
@@ -642,6 +663,11 @@
     (function(){
       var form=document.getElementById('tradeForm');
       if(!form) return;
+      function showErr(){
+        var m=document.getElementById('tradeFormError');
+        if(!m){m=document.createElement('p');m.id='tradeFormError';m.setAttribute('role','alert');m.style.cssText='padding:1rem 0;text-align:center;color:#8a2a1a;';form.appendChild(m);}
+        m.innerHTML='Something went wrong, and your application did not go through. Please email <a href="mailto:trade@solasgallery.com">trade@solasgallery.com</a> and we will take it from there.';
+      }
       form.addEventListener('submit',async function(e){
         e.preventDefault();
         var d=new FormData(form),o={};
@@ -652,10 +678,11 @@
           .map(function(k){return k+': '+o[k];}).join('\n');
         var message=(firm?'Firm: '+firm+'\n':'')+extras;
         try{
-          await fetch('/api/inquiry',{method:'POST',headers:{'content-type':'application/json'},
+          var r=await fetch('/api/inquiry',{method:'POST',headers:{'content-type':'application/json'},
             body:JSON.stringify({name:name,email:o.email||'',phone:o.phone||'',message:message,source:'Trade — Solas (Apply)',listId:43})});
+          if(!r.ok) throw new Error('inquiry '+r.status);
           form.innerHTML='<p style="padding:2rem;text-align:center;font-size:1.1rem;">Thank you — your application has been received. We’ll be in touch shortly.</p>';
-        }catch(err){ alert('Something went wrong. Please email trade@solasgallery.com.'); }
+        }catch(err){ showErr(); }
       });
     })();
     </script>

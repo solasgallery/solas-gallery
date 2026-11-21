@@ -57,8 +57,6 @@ export default function VisitPage() {
             <dt>Hours</dt>
             <dd>
               {hours}
-              <br />
-              And by appointment
             </dd>
             <dt>Address</dt>
             <dd>

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trade Program for Interior Designers | Solas Gallery</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="canonical" href="https://www.solasgallery.com/trade">
     <meta property="og:image" content="https://www.solasgallery.com/og/commissions.jpg">
     <meta property="og:image:width" content="1200">
@@ -786,6 +788,21 @@
             border-bottom-color: var(--solas-gold);
         }
     </style>
+    <style>
+        /* Gate 1 fixes: 44px tap targets, nav matches the 8-link site nav */
+        nav a { display: inline-flex; align-items: center; min-height: 44px; }
+        .nav-links, .nav-right { flex-wrap: wrap; gap: 0.25rem 1.5rem !important; }
+        .nav-links a, nav .nav-right a { padding-bottom: 0; }
+        input[type="checkbox"] { width: 24px !important; height: 24px !important; flex: none; }
+        .checkbox-item, .form-group.checkbox-group { min-height: 44px; }
+        .checkbox-item label, .form-group.checkbox-group label { padding: 10px 0; }
+        .breadcrumb a, .form-intro a { display: inline-block; padding: 12px 0; }
+        @media (max-width: 768px) {
+            nav { position: relative !important; flex-direction: column !important; padding: 0.75rem 1rem !important; gap: 0 !important; }
+            body { padding-top: 0 !important; }
+            .nav-links, nav .nav-right { flex-direction: row !important; flex-wrap: wrap; justify-content: center; gap: 0 1.25rem !important; }
+        }
+    </style>
 </head>
 <body>
     <!-- Google Analytics 4 -->
@@ -823,10 +840,13 @@
             <a href="/">Solas Gallery</a>
         </div>
         <ul class="nav-links">
-            <li><a href="/art">Art</a></li>
-            <li><a href="/portraits">Portraits</a></li>
-            <li><a href="/visit">Gallery</a></li>
-            <li><a href="/story">Story</a></li>
+            <li><a href="/#portrait-design">Portraits</a></li>
+            <li><a href="/#commissions">Commissions</a></li>
+            <li><a href="/#originals">Studio Originals</a></li>
+            <li><a href="/journal">Journal</a></li>
+            <li><a href="/story">Our Story</a></li>
+            <li><a href="https://www.hubsalado.com/events">Events</a></li>
+            <li><a href="/visit">Visit</a></li>
             <li><a href="/trade" class="active">Trade</a></li>
         </ul>
     </nav>
@@ -842,12 +862,12 @@
 
     <!-- About/Partnership Section -->
     <section class="about">
-        <h2>Designer Partnership Excellence</h2>
+        <h2>Working with designers</h2>
         <div class="about-content">
             <div class="about-text">
                 <h3>Designed for Your Practice</h3>
-                <p>The Solas Gallery Trade Collective offers curated partnership opportunities for interior designers, decorators, and design professionals who serve discerning clients. We understand the unique needs of your practice and provide dedicated support and professional pricing structures.</p>
-                <p>Our three-tier program accommodates practices of all sizes, from emerging designers to established studios. Each tier includes distinct benefits tailored to your business needs and project volume.</p>
+                <p>The Solas Gallery Trade Collective is for interior designers, decorators and other design professionals. You get trade pricing, help choosing art, and a person at the gallery who knows your projects.</p>
+                <p>There are three tiers, for new practices and busy studios alike. Your tier depends on how much you buy over a year.</p>
             </div>
             <div class="about-highlights">
                 <h3 style="margin-top: 0;">Why Partner with Solas</h3>
@@ -869,7 +889,7 @@
         <div class="services-grid">
             <div class="service-card">
                 <h3>Design Consultation</h3>
-                <p>Professional guidance on art selection, color palettes, and spatial design integration. Our curators work directly with your design team to ensure perfect alignment with project vision and client aesthetic.</p>
+                <p>Help choosing art, from color to scale to where it hangs. We work with you and your client to choose art that fits the room and the project.</p>
             </div>
             <div class="service-card">
                 <h3>Custom Sourcing</h3>
@@ -885,11 +905,11 @@
             </div>
             <div class="service-card">
                 <h3>Installation Support</h3>
-                <p>Professional handling, logistics coordination, and installation guidance. We work seamlessly with your teams to ensure flawless project delivery and client satisfaction.</p>
+                <p>Professional handling, logistics coordination, and installation guidance. We handle the packing, delivery and hanging with your team, so the piece arrives right.</p>
             </div>
             <div class="service-card">
                 <h3>Account Management</h3>
-                <p>Dedicated account support for ongoing relationships. Your primary contact understands your design aesthetic, client base, and project needs for streamlined collaboration.</p>
+                <p>One person at the gallery knows your work, your clients and your projects, and answers when you call.</p>
             </div>
         </div>
     </section>
@@ -924,7 +944,7 @@
                     <li>Phone & in-person consultation</li>
                     <li>Monthly collection features</li>
                     <li>Custom sourcing service</li>
-                    <li>Dedicated account manager</li>
+                    <li>One contact at the gallery</li>
                 </ul>
             </div>
 
@@ -936,7 +956,7 @@
                 <ul class="tier-features">
                     <li>All Trade Plus benefits</li>
                     <li>First access to new collections</li>
-                    <li>Direct curator partnership</li>
+                    <li>Work directly with the studio</li>
                     <li>Commissioned piece sourcing</li>
                     <li>Flexible project agreements</li>
                     <li>Private viewings for your clients</li>
@@ -962,8 +982,8 @@
             </div>
             <div class="step">
                 <div class="step-number">3</div>
-                <h3>Seamless Collaboration</h3>
-                <p>Begin sourcing pieces and working with your dedicated account manager. Invoice payment terms and professional pricing keep every project simple.</p>
+                <h3>Working Together</h3>
+                <p>Start choosing pieces and working with your contact at the gallery. Invoice payment terms and professional pricing keep every project simple.</p>
             </div>
         </div>
     </section>
@@ -1108,6 +1128,11 @@
     (function(){
       var form=document.getElementById('tradeForm');
       if(!form) return;
+      function showErr(){
+        var m=document.getElementById('tradeFormError');
+        if(!m){m=document.createElement('p');m.id='tradeFormError';m.setAttribute('role','alert');m.style.cssText='padding:1rem 0;text-align:center;color:#8a2a1a;';form.appendChild(m);}
+        m.innerHTML='Something went wrong, and your application did not go through. Please email <a href="mailto:trade@solasgallery.com">trade@solasgallery.com</a> and we will take it from there.';
+      }
       form.addEventListener('submit',async function(e){
         e.preventDefault();
         var d=new FormData(form),o={};
@@ -1118,10 +1143,11 @@
           .map(function(k){return k+': '+o[k];}).join('\n');
         var message=(firm?'Firm: '+firm+'\n':'')+extras;
         try{
-          await fetch('/api/inquiry',{method:'POST',headers:{'content-type':'application/json'},
+          var r=await fetch('/api/inquiry',{method:'POST',headers:{'content-type':'application/json'},
             body:JSON.stringify({name:name,email:o.email||'',phone:o.phone||'',message:message,source:'Trade — Solas',listId:43})});
+          if(!r.ok) throw new Error('inquiry '+r.status);
           form.innerHTML='<p style="padding:2rem;text-align:center;font-size:1.1rem;">Thank you — your application has been received. We’ll be in touch shortly.</p>';
-        }catch(err){ alert('Something went wrong. Please email trade@solasgallery.com.'); }
+        }catch(err){ showErr(); }
       });
     })();
     </script>

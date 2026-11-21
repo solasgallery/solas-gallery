@@ -267,7 +267,7 @@ export default function Home() {
           and colored to the room, a wall proof on your client&rsquo;s own wall, and a firm
           price before anything is made.
         </p>
-        <Link className="sg-link" href="/trade">
+        <Link className="sg-link" href="/trade" prefetch={false}>
           The trade program
         </Link>
       </section>

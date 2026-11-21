@@ -15,7 +15,7 @@ export default function Footer() {
         <p className="solas-footer-sisters">
           <Link href="/journal">Journal</Link>
           {' · '}
-          <Link href="/trade">Trade</Link>
+          <Link href="/trade" prefetch={false}>Trade</Link>
           {' · '}
           <a href={HUB_EVENTS_URL} rel="noopener noreferrer">
             Events at HUB Salado

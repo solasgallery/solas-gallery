@@ -577,3 +577,26 @@ html { scroll-padding-top: 24px; }
 .sg-article .sg-lede { font: italic 400 clamp(1.35rem, 3.8vw, 1.7rem)/1.4 var(--serif); color: var(--ink); }
 .sg-article .sg-article-end { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--line); }
 @media (min-width: 768px) { .sg-article { padding: 96px 32px 128px; } }
+
+/* Gate 1 fixes (2026-11-21) */
+/* Keep "$750 minimum order." on one line next to the date. */
+.sg-rollout li { white-space: nowrap; }
+@media (max-width: 480px) { .sg-rollout li { white-space: normal; } }
+/* 44px tap targets for text links and the mobile menu button (real box height, underline stays under the text). */
+.sg-link,
+.solas-underlink {
+  display: inline-flex;
+  align-items: flex-end;
+  min-height: 44px;
+}
+.mobile-menu { min-height: 44px; min-width: 44px; padding-top: 24px; }
+/* Footer and announce-bar links: 44px touch height without changing the look. */
+.solas-footer-nap a,
+.solas-footer-only small a,
+a[href^="tel:"] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.solas-footer-sisters { display: flex; flex-wrap: wrap; align-items: center; column-gap: 8px; }
+.sg-announce a { display: block; padding: 8px 0; }
