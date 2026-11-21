@@ -13,7 +13,7 @@ import { images } from '@/lib/site'
 // campaign. Dates: "Dates to be announced." (no month names, no year-specific copy). Terms line: design projects reserve with the $295 design & creation
 // fee.
 const description =
-  'The Real Portrait Project at Solas Gallery in Salado, Texas: a limited campaign of portraits in the manner of the great photographers. Dates to be announced.'
+  'The Real Portrait Project at Solas Gallery in Salado, Texas: a campaign of portraits made in the manner of the great photographers. Dates to be announced.'
 
 export const metadata: Metadata = createLandingMetadata({
   title: 'The Real Portrait Project | Solas Gallery, Salado, TX',
@@ -36,7 +36,7 @@ export default function RealPortraitPage() {
     <>
     <JsonLd data={jsonLd} />
     <LandingPage
-      eyebrow="A limited campaign"
+      eyebrow="A portrait campaign"
       heading={
         <>
           The Real
@@ -47,7 +47,7 @@ export default function RealPortraitPage() {
       lede="Portraits in the manner of the great photographers. Pick the master looks you love."
       whisper="Dates to be announced."
       heroImage={images.portrait}
-      heroCaption="A limited campaign · Salado, Texas"
+      heroCaption="The Real Portrait Project · Salado, Texas"
       cta={{ href: '/portraits', label: 'Portrait design' }}
     >
       <section className="solas-portrait-section">
@@ -70,8 +70,8 @@ export default function RealPortraitPage() {
         <div className="solas-measure">
           <h2>What this is.</h2>
           <p>
-            A limited campaign, made in the studio in Salado. We will post the dates here
-            when they are set.
+            Made in the studio in Salado. We will post the dates here when they are
+            set.
           </p>
           <p>Design projects reserve with the $295 design &amp; creation fee.</p>
           <Link className="solas-underlink" href="/portraits">

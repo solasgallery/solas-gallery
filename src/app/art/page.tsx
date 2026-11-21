@@ -9,7 +9,7 @@ import { images } from '@/lib/site'
 export const metadata: Metadata = createLandingMetadata({
   title: 'Studio Originals & Commissions | Solas Gallery, Salado',
   description:
-    'Studio originals, one of one and hand-finished. Solas Editions and Flanagan Signature bespoke art from $1,500, commissions to $10,000 and above. Salado, Texas.',
+    'Studio originals, one of one and hand-finished. Solas Editions and Flanagan Signature bespoke art from $1,500, commissions $1,500–$10,000. Salado, Texas.',
   path: '/art',
   noindex: false,
   ogImage: '/og/art.jpg',
@@ -19,7 +19,7 @@ export const metadata: Metadata = createLandingMetadata({
 const jsonLd = pageJsonLd({
   title: 'Art',
   description:
-    'Studio originals, one of one and hand-finished. Solas Editions and Flanagan Signature bespoke art from $1,500, commissions to $10,000 and above. Salado, Texas.',
+    'Studio originals, one of one and hand-finished. Solas Editions and Flanagan Signature bespoke art from $1,500, commissions $1,500–$10,000. Salado, Texas.',
   path: '/art',
   image: '/og/art.jpg',
 })
@@ -66,7 +66,10 @@ export default function ArtPage() {
             archival pigment on canvas, finished by hand in our studio. No two pieces here
             are alike.
           </p>
-          <p>Studio originals from $1,500. Commissions to $10,000 and above.</p>
+          <p>
+            A commission design is retired once your piece is made. One of one.
+          </p>
+          <p>Studio originals from $1,500. Commissions $1,500–$10,000.</p>
           <Link className="solas-underlink" href="/begin">
             Inquire about a piece <span aria-hidden="true">↗</span>
           </Link>

@@ -56,8 +56,8 @@ export default function ProcessPage() {
         <div className="solas-measure">
           <h2>Tools.</h2>
           <p>
-            We use every tool we need, from the camera to the brush. Every piece is directed,
-            altered, and finished by hand, by a person. One of one.
+            We use every tool. Camera, brush, printer, AI. No tool decides here. A person
+            does. Every piece is directed, altered, and finished by hand. One of one.
           </p>
           <Link className="solas-underlink" href="/art">
             See the art <span aria-hidden="true">↗</span>

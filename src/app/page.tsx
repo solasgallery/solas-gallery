@@ -48,7 +48,7 @@ const ways = [
     label: 'Commissions from your images',
     title: 'Your photographs, made into the only one.',
     body: 'A photograph, a place, a memory you can only describe. We transform it by hand into a single piece that exists nowhere else, or bind a body of work into a FOLIO, an heirloom album made to be kept.',
-    price: 'Commissions from $1,500',
+    price: null,
     src: '/images/gallery/interior-02.jpg',
     alt: 'A large black and white framed piece hung above a console table.',
     links: [
@@ -60,7 +60,7 @@ const ways = [
     id: 'originals',
     label: 'Studio originals',
     title: 'Our art, made yours.',
-    body: 'Choose a piece from the studio floor. We size it and set its color to belong to your room. Studio original, one of one, hand-finished.',
+    body: 'Choose a piece from the studio floor. We size it and set its color to belong to your room. Two lines: Solas Editions, and Flanagan Signature bespoke art. Studio original, one of one, hand-finished.',
     price: 'Studio originals from $1,500',
     src: '/images/gallery/interior-05.jpg',
     alt: 'A set of tall, colorful abstract panels hanging on a white gallery wall.',
@@ -75,7 +75,7 @@ const steps = [
   },
   {
     title: 'Wall proof',
-    body: 'Ready within five business days. You see your piece on a photograph of your own wall, with a firm price, before anything is made.',
+    body: 'You see your piece on a photograph of your own wall, with a firm price, before anything is made.',
   },
   {
     title: 'Hand-finished',

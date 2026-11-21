@@ -74,7 +74,7 @@ export default function BabyFacesPage() {
 
         <section className="solas-page-copy">
           <div className="solas-measure">
-            <h2>They won&rsquo;t stay this small.</h2>
+            <h2>Your child, as art.</h2>
             <p>
               BabyFaces is for newborns and children. Just your child, photographed simply,
               with patience and care — in portraits made to hang on your wall for years to

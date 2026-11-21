@@ -122,8 +122,8 @@ export default function PortraitsPage() {
           ) : null}
           <p>
             A $295 design &amp; creation fee reserves your design project. It covers your
-            sitting and the creation of your images. Your first print is $395 (8×10 or
-            11×14), and your wall proof is $195, credited in full when you go ahead.
+            sitting and the creation of your images. Finished pieces are separate. Your
+            first print is $395 (8×10 or 11×14), and your wall proof is $195, credited in full when you go ahead.
           </p>
           {hasSittings ? (
             <p>

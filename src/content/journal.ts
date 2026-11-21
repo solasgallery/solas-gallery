@@ -108,7 +108,7 @@ export const articles: Article[] = [
       { type: 'h2', text: 'What shapes the cost' },
       {
         type: 'p',
-        text: 'Commissions at Solas begin at $1,500 and run to $10,000 and above. Studio originals, the pieces already on our floor, also begin at $1,500, and a piece resized and recolored for your room is priced by size.',
+        text: 'Commissions at Solas run from $1,500 to $10,000. Studio originals, the pieces already on our floor, also begin at $1,500, and a piece resized and recolored for your room is priced by size.',
       },
       {
         type: 'p',
@@ -151,10 +151,10 @@ export const articles: Article[] = [
         type: 'p',
         text: 'A straight-on photograph of the wall, its measurements, and whatever you are working from: a photograph, a color you love, or an idea you cannot describe yet. The design consult is where we sort out the rest, and it is free, online or in person.',
       },
-      { type: 'h2', text: 'Timing and cost' },
+      { type: 'h2', text: 'Cost' },
       {
         type: 'p',
-        text: 'A proof is ready within five business days. It costs $195, and that fee is credited in full when you go ahead. If you decide not to go ahead, the proof fee is not refunded. A first revision is included.',
+        text: 'A proof is $195, non-refundable, and credited in full when you go ahead. A first revision is included.',
       },
       { type: 'h2', text: 'After you approve' },
       {

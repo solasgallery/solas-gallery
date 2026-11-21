@@ -55,7 +55,7 @@ export default function InquiryForm({
     return (
       <div className="solas-form-thanks">
         <h3>Thank you.</h3>
-        <p>We received your inquiry. We will reply within one business day.</p>
+        <p>We received your inquiry. We will be in touch.</p>
       </div>
     )
   }

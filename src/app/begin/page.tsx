@@ -8,7 +8,7 @@ import { SITE } from '@/lib/site'
 export const metadata: Metadata = createLandingMetadata({
   title: 'Start a Commission or Portrait | Solas Gallery, Salado',
   description:
-    'Start a portrait, a commission from your images, a FOLIO album or a studio original with Solas Gallery in Salado, Texas. We reply within one business day.',
+    'Start a portrait, a commission from your images, a FOLIO album or a studio original with Solas Gallery in Salado, Texas. Tell us what you are holding.',
   path: '/begin',
   noindex: false,
   ogImage: '/og/commissions.jpg',
@@ -39,7 +39,7 @@ export default function BeginPage() {
         <InquiryForm
           source="Begin"
           headline="Begin here."
-          subtext="Tell us what you are holding. We will respond within one business day."
+          subtext="Tell us what you are holding."
           messagePlaceholder="What do you have in mind?"
           submitLabel="Begin"
         />

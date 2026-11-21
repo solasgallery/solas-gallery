@@ -51,8 +51,7 @@ export default function ConsultForm({ days = [] }: { days?: string[] }) {
     return (
       <div className="sg-form sg-form--thanks" role="status">
         <h3>
-          Thank you — we&rsquo;ll be in touch within one business day to set your free
-          design consult.
+          Thank you — we&rsquo;ll be in touch to set your free design consult.
         </h3>
       </div>
     )
@@ -65,8 +64,8 @@ export default function ConsultForm({ days = [] }: { days?: string[] }) {
       </div>
       <h3 id="consult-heading">Book a design consult</h3>
       <p className="sg-form-note">
-        {days.length ? 'Choose your preferred day. ' : ''}We will be in touch within one business day to set your
-        free design consult.
+        {days.length ? 'Choose your preferred day. ' : ''}We will be in touch to set your free design
+        consult.
       </p>
       <div className="sg-form-grid">
         <label>
