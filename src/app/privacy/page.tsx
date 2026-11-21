@@ -3,9 +3,9 @@ import { createLandingMetadata } from '@/lib/metadata'
 import { SITE } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
-  title: 'Privacy & SMS Terms',
+  title: 'Privacy Policy & SMS Terms | Solas Gallery, Salado, TX',
   description:
-    'Privacy policy and SMS terms for Solas Gallery LLC.',
+    'How Solas Gallery LLC in Salado, Texas collects, uses and protects your information, including our SMS terms, your choices and how to contact us with questions.',
   path: '/privacy',
   noindex: false,
 })

@@ -4,6 +4,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import { GtmNoscript, Tracking } from '@/components/Tracking'
 import { SITE } from '@/lib/site'
+import { DATE_REVALIDATE_SECONDS, sittingsLine, upcomingSittings } from '@/lib/dates'
 import './globals.css'
 import './makeover.css'
 
@@ -11,6 +12,9 @@ import './makeover.css'
 // next/font/google failed on Vercel's build machine (font fetch), so it is not used.
 const FONTS_HREF =
   'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap'
+
+// Dated elements (announcement bar) are filtered per request window, not per build.
+export const revalidate = DATE_REVALIDATE_SECONDS
 
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID
 
@@ -21,9 +25,6 @@ export const metadata: Metadata = {
     template: '%s | Solas Gallery — Salado, TX',
   },
   description: SITE.description,
-  alternates: {
-    canonical: '/',
-  },
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
@@ -38,10 +39,10 @@ export const metadata: Metadata = {
     description: SITE.description,
     images: [
       {
-        url: '/solas-og.jpg',
+        url: '/og/home.jpg',
         width: 1200,
         height: 630,
-        alt: SITE.title,
+        alt: 'Framed portraits hung around a doorway in the Solas Gallery.',
       },
     ],
   },
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: SITE.title,
     description: SITE.description,
-    images: ['/solas-og.jpg'],
+    images: ['/og/home.jpg'],
   },
   verification: {
     google: 'c_SsYTYO3P2VZcJrlGmw28Xei0LJVM0AUHkfJ_Xf74o',
@@ -58,10 +59,10 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': ['ArtGallery', 'PhotographyBusiness'],
+  '@type': ['ArtGallery', 'LocalBusiness'],
   '@id': `${SITE.url}/#business`,
   name: SITE.name,
-  image: `${SITE.url}/solas-og.jpg`,
+  image: `${SITE.url}/og/home.jpg`,
   description: SITE.description,
   foundingDate: SITE.established,
   address: {
@@ -74,6 +75,12 @@ const jsonLd = {
   },
   telephone: SITE.phoneDisplay,
   url: SITE.url,
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: SITE.geo.latitude,
+    longitude: SITE.geo.longitude,
+  },
+  openingHours: SITE.openingHours,
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
     dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
@@ -87,6 +94,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const sittings = upcomingSittings()
+  const announce = sittings.length ? sittingsLine(sittings, 'monthDay') : null
   return (
     <html lang="en">
       <head>
@@ -107,14 +116,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <GtmNoscript />
         <Tracking />
         <div className="solas-site">
-          <Nav />
+          <Nav announce={announce} />
           <main>{children}</main>
           <Footer />
         </div>
-        <Script
-          id="json-ld"
+        <script
           type="application/ld+json"
-          strategy="afterInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </body>

@@ -10,6 +10,10 @@ const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || 'cherie@solasgaller
 // Trade forms pass their own listId (43) and are not affected.
 const BREVO_LIST_ID = Number(process.env.BREVO_LIST_ID) || 51
 
+// Preview deployments (VERCEL_ENV=preview) run the real pipeline but tag the notification
+// subject and never add to the marketing list. Production is unchanged.
+const IS_PREVIEW = process.env.VERCEL_ENV === 'preview'
+
 const BREVO_HEADERS = {
   'accept': 'application/json',
   'content-type': 'application/json',
@@ -85,10 +89,10 @@ export async function POST(request: NextRequest) {
       LASTNAME: nameText.split(' ').slice(1).join(' ') || '',
       SMS: phoneText,
     }
-    let contactRes = await saveContact(emailText, attributes, targetList)
-    let contactOk = contactRes.ok
+    let contactRes: Response | null = IS_PREVIEW ? null : await saveContact(emailText, attributes, targetList)
+    let contactOk = IS_PREVIEW ? true : contactRes!.ok
 
-    if (!contactOk) {
+    if (!contactOk && contactRes) {
       const errorText = await contactRes.text()
       if (phoneText && contactRes.status === 400 && isPhoneRejection(errorText)) {
         console.warn('Brevo rejected the phone; saving contact without it:', errorText)
@@ -122,7 +126,7 @@ export async function POST(request: NextRequest) {
         },
         to: [{ email: NOTIFICATION_EMAIL, name: 'Cherie Flanagan' }],
         // Subject is plain text, not HTML; strip line breaks only.
-        subject: `New inquiry from ${nameText} — ${sourceText}`.replace(/[\r\n]+/g, ' '),
+        subject: `${IS_PREVIEW ? '[PREVIEW TEST] ' : ''}New inquiry from ${nameText} — ${sourceText}`.replace(/[\r\n]+/g, ' '),
         htmlContent: `
           <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; padding: 40px 20px;">
             <h2 style="font-size: 24px; color: #1C1C1A; margin-bottom: 24px;">New Website Inquiry</h2>

@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import LandingPage from '@/components/LandingPage'
 import JsonLd from '@/components/JsonLd'
+import { createLandingMetadata } from '@/lib/metadata'
 import { portraitServiceJsonLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
 
@@ -10,33 +11,20 @@ import { SITE } from '@/lib/site'
 // "Portraits from $350" confirmed by Tim (2026-11-18).
 
 const description =
-  'BabyFaces newborn and child portrait photography at Solas Gallery in Salado, Texas. Heirloom-quality baby portraits, milestone portraits, and family photography by Tim Flanagan. Serving Austin, Temple, Georgetown, and Central Texas.'
+  'BabyFaces newborn and child portraits at Solas Gallery in Salado, Texas. Heirloom portraits, milestone portraits and siblings, by Tim Flanagan. From $350.'
 
-export const metadata: Metadata = {
-  title: 'BabyFaces — Newborn & Child Portrait Photography',
+export const metadata: Metadata = createLandingMetadata({
+  title: 'BabyFaces Newborn & Child Portraits | Solas Gallery, TX',
   description,
-  alternates: {
-    canonical: '/portraits/babyfaces',
-  },
-  openGraph: {
-    title: 'BabyFaces — Newborn & Child Portrait Photography | Solas Gallery — Salado, TX',
-    description,
-    url: 'https://solasgallery.com/portraits/babyfaces',
-    type: 'website',
-    images: [{ url: '/solas-og.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'BabyFaces — Newborn & Child Portrait Photography | Solas Gallery — Salado, TX',
-    description,
-    images: ['/solas-og.jpg'],
-  },
-}
+  path: '/portraits/babyfaces',
+  noindex: false,
+  ogImage: '/og/portraits.jpg',
+  imageAlt: 'Family portraits displayed on tall hinged panels in the Solas Gallery.',
+})
 
 const jsonLd = portraitServiceJsonLd({
-  title: 'BabyFaces — Newborn & Child Portrait Photography',
-  description:
-    'BabyFaces newborn and child portrait photography at Solas Gallery in Salado, Texas. Heirloom-quality baby portraits, milestone portraits, and family photography by Tim Flanagan.',
+  title: 'BabyFaces Newborn & Child Portraits',
+  description,
   path: '/portraits/babyfaces',
 })
 

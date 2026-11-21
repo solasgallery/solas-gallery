@@ -9,26 +9,26 @@ import { images } from '@/lib/site'
 // The Real Portrait Project — a limited CAMPAIGN (2026-11-18), not the general
 // portrait offering (that is "Portrait design" at /portraits). Portraits in the
 // manner of the great photographers. No dates and no booking CTA until the next
-// campaign is scheduled (new year). This is the ONLY page that names the
-// campaign. Terms line: design projects reserve with the $295 design & creation
+// campaign is scheduled. This is the ONLY page that names the
+// campaign. Dates: "Dates to be announced." (no month names, no year-specific copy). Terms line: design projects reserve with the $295 design & creation
 // fee.
 const description =
-  'The Real Portrait Project at Solas Gallery: a limited campaign of portraits in the manner of the great photographers. The next campaign opens in the new year.'
+  'The Real Portrait Project at Solas Gallery in Salado, Texas: a limited campaign of portraits in the manner of the great photographers. Dates to be announced.'
 
 export const metadata: Metadata = createLandingMetadata({
-  title: 'The Real Portrait Project',
+  title: 'The Real Portrait Project | Solas Gallery, Salado, TX',
   description,
   path: '/real-portrait',
   noindex: false,
-  image: images.portrait.src,
-  imageAlt: images.portrait.alt,
+  ogImage: '/og/portraits.jpg',
+  imageAlt: 'Family portraits displayed on tall hinged panels in the Solas Gallery.',
 })
 
 const jsonLd = portraitServiceJsonLd({
   title: 'The Real Portrait Project',
   description,
   path: '/real-portrait',
-  image: images.portrait.src,
+  image: '/og/portraits.jpg',
 })
 
 export default function RealPortraitPage() {
@@ -45,7 +45,7 @@ export default function RealPortraitPage() {
         </>
       }
       lede="Portraits in the manner of the great photographers. Pick the master looks you love."
-      whisper="The next campaign opens in the new year."
+      whisper="Dates to be announced."
       heroImage={images.portrait}
       heroCaption="A limited campaign · Salado, Texas"
       cta={{ href: '/portraits', label: 'Portrait design' }}

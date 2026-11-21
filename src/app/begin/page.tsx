@@ -6,17 +6,18 @@ import { pageJsonLd } from '@/lib/jsonld'
 import { SITE } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
-  title: 'Begin',
+  title: 'Start a Commission or Portrait | Solas Gallery, Salado',
   description:
-    'Begin a conversation with Solas Gallery in Salado, Texas — portraits, art, or an evening at the table.',
+    'Start a portrait, a commission from your images, a FOLIO album or a studio original with Solas Gallery in Salado, Texas. We reply within one business day.',
   path: '/begin',
   noindex: false,
+  ogImage: '/og/commissions.jpg',
 })
 
 const jsonLd = pageJsonLd({
   title: 'Begin a Conversation',
   description:
-    'Begin a conversation with Solas Gallery in Salado, Texas — portraits, art, or an evening at the table.',
+    'Begin a conversation with Solas Gallery in Salado, Texas about a portrait, a commission from your images, a FOLIO album, or a studio original.',
   path: '/begin',
 })
 
@@ -31,7 +32,7 @@ export default function BeginPage() {
           <br />
           right thing.
         </h1>
-        <p>Portraits, art, or an evening — start here.</p>
+        <p>A portrait, a commission, a FOLIO, or a studio original — start here.</p>
       </section>
 
       <section className="solas-begin">

@@ -7,21 +7,21 @@ import { pageJsonLd } from '@/lib/jsonld'
 import { images } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
-  title: 'Art',
+  title: 'Studio Originals & Commissions | Solas Gallery, Salado',
   description:
-    'Studio originals — one of one, hand-finished, multimedia. Solas Editions and Flanagan Signature bespoke art, from $1,500. Commissions to $10,000 and above. Solas Gallery, Salado, Texas.',
+    'Studio originals, one of one and hand-finished. Solas Editions and Flanagan Signature bespoke art from $1,500, commissions to $10,000 and above. Salado, Texas.',
   path: '/art',
   noindex: false,
-  image: images.art.src,
-  imageAlt: images.art.alt,
+  ogImage: '/og/art.jpg',
+  imageAlt: 'A set of tall, colorful abstract panels hanging on a white gallery wall.',
 })
 
 const jsonLd = pageJsonLd({
   title: 'Art',
   description:
-    'Studio originals — one of one, hand-finished, multimedia. Solas Editions and Flanagan Signature bespoke art, from $1,500. Commissions to $10,000 and above. Solas Gallery, Salado, Texas.',
+    'Studio originals, one of one and hand-finished. Solas Editions and Flanagan Signature bespoke art from $1,500, commissions to $10,000 and above. Salado, Texas.',
   path: '/art',
-  image: images.art.src,
+  image: '/og/art.jpg',
 })
 
 export default function ArtPage() {

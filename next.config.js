@@ -6,12 +6,20 @@ const nextConfig = {
   async redirects() {
     return [
       { source: '/gallery', destination: '/visit', permanent: true },
-      { source: '/events', destination: '/gather', permanent: true },
-      // Headshots moved to HUBSalado (2026-11-18): point at hubsalado.com.
-      { source: '/portraits/headshots', destination: 'https://hubsalado.com', permanent: true },
-      // Trade events page pulled (2026-11-19): the listings were dateless placeholders.
-      { source: '/trade/events', destination: '/trade', permanent: true },
-      { source: '/trade/events.html', destination: '/trade', permanent: true },
+      // Events, venue rental and /gather moved to HUBSalado (2026-11-21). Permanent.
+      { source: '/events/venue-rental', destination: 'https://www.hubsalado.com/venue-rental', permanent: true },
+      { source: '/events/venue-rental/:path*', destination: 'https://www.hubsalado.com/venue-rental', permanent: true },
+      { source: '/events', destination: 'https://www.hubsalado.com/events', permanent: true },
+      { source: '/events/:path*', destination: 'https://www.hubsalado.com/events', permanent: true },
+      { source: '/gather', destination: 'https://www.hubsalado.com/events', permanent: true },
+      { source: '/gather/:path*', destination: 'https://www.hubsalado.com/events', permanent: true },
+      { source: '/trade/events', destination: 'https://www.hubsalado.com/events', permanent: true },
+      { source: '/trade/events.html', destination: 'https://www.hubsalado.com/events', permanent: true },
+      // Headshots moved to HUBSalado (2026-11-18).
+      { source: '/portraits/headshots', destination: 'https://www.hubsalado.com', permanent: true },
+      // Thin city landing pages consolidated (2026-11-21): one real page for the visit.
+      { source: '/area', destination: '/visit', permanent: true },
+      { source: '/area/:path*', destination: '/visit', permanent: true },
       // Short link for the Killarney event (2026-11-19). Temporary (307) so it can be repointed.
       { source: '/killarney', destination: 'https://buytickets.at/hubsalado/2496909', permanent: false },
     ]

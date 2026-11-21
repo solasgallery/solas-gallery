@@ -275,7 +275,7 @@ button, input, select, textarea { font: inherit; }
 }
 
 .solas-whisper {
-  color: #827a6c;
+  color: #5f584c;
   max-width: 240px;
   font: italic 15px/1.5 var(--serif);
   margin: 84px 0 0;
@@ -325,7 +325,7 @@ button, input, select, textarea { font: inherit; }
 }
 
 .solas-folio {
-  color: #968e81;
+  color: #6b6458;
   font: 500 11px var(--label);
   letter-spacing: 0.1em;
   position: absolute;

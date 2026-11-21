@@ -8,7 +8,7 @@ import { SITE } from '@/lib/site'
  * existing /api/inquiry route (Brevo contact + notification email). Finish and
  * day preferences ride in the message field so no API change is needed.
  */
-export default function ConsultForm() {
+export default function ConsultForm({ days = [] }: { days?: string[] }) {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -23,7 +23,9 @@ export default function ConsultForm() {
       name: field('name'),
       email: field('email'),
       phone: field('phone'),
-      message: `Finish: ${field('finish')} · Preferred day: ${field('day')}`,
+      message: days.length
+        ? `Finish: ${field('finish')} · Preferred day: ${field('day')}`
+        : `Finish: ${field('finish')}`,
       source: 'Portrait design consult',
     }
 
@@ -59,7 +61,7 @@ export default function ConsultForm() {
     <form className="sg-form" onSubmit={handleSubmit} aria-labelledby="consult-heading">
       <h3 id="consult-heading">Book a design consult</h3>
       <p className="sg-form-note">
-        Choose your preferred day. We will be in touch within one business day to set your
+        {days.length ? 'Choose your preferred day. ' : ''}We will be in touch within one business day to set your
         free design consult.
       </p>
       <div className="sg-form-grid">
@@ -83,15 +85,17 @@ export default function ConsultForm() {
             <option>Undecided</option>
           </select>
         </label>
-        <label className="sg-form-wide">
-          Preferred day
-          <select name="day" defaultValue="Any of the three">
-            <option>November 27</option>
-            <option>December 1</option>
-            <option>December 19</option>
-            <option>Any of the three</option>
-          </select>
-        </label>
+        {days.length ? (
+          <label className="sg-form-wide">
+            Preferred day
+            <select name="day" defaultValue="Any of the sittings">
+              {days.map((d) => (
+                <option key={d}>{d}</option>
+              ))}
+              <option>Any of the sittings</option>
+            </select>
+          </label>
+        ) : null}
       </div>
       <button type="submit" disabled={status === 'sending'}>
         {status === 'sending' ? 'Sending…' : 'Request my design consult'}

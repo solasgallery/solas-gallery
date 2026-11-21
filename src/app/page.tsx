@@ -1,88 +1,120 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import SiteImage from '@/components/SiteImage'
-import { HUB_URL, hours, MAP_EMBED_URL, SITE } from '@/lib/site'
+import Reviews from '@/components/Reviews'
+import JsonLd from '@/components/JsonLd'
+import { createLandingMetadata } from '@/lib/metadata'
+import {
+  DATE_REVALIDATE_SECONDS,
+  RESERVE_URL,
+  SITTING_CAP,
+  upcomingSittings,
+} from '@/lib/dates'
+import { hours, MAP_EMBED_URL, SITE } from '@/lib/site'
 
-// Homepage title/description come from the root layout (SITE.title) — the
-// title ranks for "art gallery Salado TX"; do not override it here.
-// Brand rule (2026-11-18): do not name AI anywhere on the homepage. The tools
-// paragraph lives on /process only.
+// Dated elements (sittings) come from src/lib/dates.ts and are filtered per request window.
+export const revalidate = DATE_REVALIDATE_SECONDS
 
-// Portrait design booking lives on /portraits (Tim, 2026-11-18): the homepage is
-// the Gallery. This page carries only a quiet door to /portraits — no fee, no dates.
+// Homepage = the Gallery. Brand rule (2026-11-18): do not name AI on the homepage;
+// the tools paragraph lives on /process only.
+// "Meet Art" was removed 2026-11-21; it is preserved in
+// ~/ClaudeProjects/website-rebuild-2026-11/meet-art-holding.md for a campaign.
+// Events and venue rental moved to hubsalado.com (2026-11-21).
+
+export const metadata: Metadata = {
+  ...createLandingMetadata({
+    title: SITE.title,
+    description: SITE.description,
+    path: '/',
+    noindex: false,
+    ogImage: '/og/home.jpg',
+    imageAlt: 'Framed portraits hung around a doorway in the Solas Gallery.',
+  }),
+}
 
 const ways = [
   {
-    title: 'From your image',
-    body: 'A photograph, a place, a memory you can only describe. We transform it by hand into a single piece that exists nowhere else.',
-    price: 'From $1,500',
+    id: 'portrait-design',
+    label: 'Portrait design',
+    title: 'Your people, as art.',
+    body: 'We design the portrait for your wall together: the room, the size, black and white or color. Then we make it in the studio, and finish it by hand.',
+    price: null as string | null,
     src: '/images/gallery/interior-03.jpg',
     alt: 'Family portraits displayed on tall hinged panels in the Solas Gallery.',
+    links: [{ href: '/portraits', label: 'How portrait design works' }],
   },
   {
-    title: 'Studio originals',
-    body: 'Abstracts and re-imaginings made in our studio. One of one. When it is gone, it is gone.',
-    price: 'As marked',
-    src: '/images/gallery/interior-05.jpg',
-    alt: 'A set of tall, colorful abstract panels hanging on a white gallery wall.',
-  },
-  {
-    title: 'Sized & colored for you',
-    body: 'Choose a piece from the studio floor. We resize it and adjust its color to belong to your room.',
-    price: 'Priced by size',
+    id: 'commissions',
+    label: 'Commissions from your images',
+    title: 'Your photographs, made into the only one.',
+    body: 'A photograph, a place, a memory you can only describe. We transform it by hand into a single piece that exists nowhere else, or bind a body of work into a FOLIO, an heirloom album made to be kept.',
+    price: 'Commissions from $1,500',
     src: '/images/gallery/interior-02.jpg',
     alt: 'A large black and white framed piece hung above a console table.',
+    links: [
+      { href: '/begin', label: 'Start a commission' },
+      { href: '/folio', label: 'FOLIO heirloom albums' },
+    ],
+  },
+  {
+    id: 'originals',
+    label: 'Studio originals',
+    title: 'Our art, made yours.',
+    body: 'Choose a piece from the studio floor. We size it and set its color to belong to your room. Studio original, one of one, hand-finished.',
+    price: 'Studio originals from $1,500',
+    src: '/images/gallery/interior-05.jpg',
+    alt: 'A set of tall, colorful abstract panels hanging on a white gallery wall.',
+    links: [{ href: '/art', label: 'See the art' }],
   },
 ]
 
 const steps = [
   {
-    title: 'A planning talk',
-    body: 'Free. Bring the room, the photograph, or the idea you cannot stop thinking about.',
+    title: 'Design consult',
+    body: 'Free, online or in person. Bring the room, the photograph, or the idea you cannot stop thinking about.',
   },
   {
-    title: 'The design proof — $195',
-    body: 'Ready within five business days, shown on a photograph of your own wall, with a firm price. Non-refundable, and credited in full when you go ahead.',
+    title: 'Wall proof',
+    body: 'Ready within five business days. You see your piece on a photograph of your own wall, with a firm price, before anything is made.',
   },
   {
-    title: 'First revision',
-    body: 'Included.',
+    title: 'Hand-finished',
+    body: 'Made and finished by hand in our studio, in Salado.',
   },
   {
-    title: 'Second revision — $95',
-    body: 'Credited if you go ahead. Refunded in full if you decide not to.',
+    title: 'Framed',
+    body: 'Framed for the piece and the room, chosen with you.',
   },
   {
-    title: 'Approval',
-    body: 'Your approval locks the design and the price.',
-  },
-  {
-    title: 'Making',
-    body: 'Half to begin. The balance at delivery.',
+    title: 'Hung',
+    body: 'Delivered and hung on your wall.',
   },
 ]
 
-const events = [
-  {
-    when: 'Thursday, December 10 · 6 PM',
-    title: 'Socrates in the City',
-    body: 'A book club for the questions that matter, at the gallery. Also Thursday, December 17.',
-  },
-  {
-    when: 'Early December',
-    title: 'The Christmas market',
-    body: 'At the gallery, alongside the 66th Annual Salado Christmas Stroll, December 11–13.',
-  },
-  {
-    when: 'Sunday, December 13 · 4:00 & 7:00 PM',
-    title: 'Christmas in Killarney',
-    body: 'Two shows on the Lamplighter stage.',
-  },
+const prices = [
+  { amount: '$295', label: 'design & creation fee' },
+  { amount: '$395', label: 'first print' },
+  { amount: '$195', label: 'proof credited in full' },
 ]
 
 export default function Home() {
+  const sittings = upcomingSittings()
+  const hasSittings = sittings.length > 0
+
+  const homeJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': `${SITE.url}/#website`,
+    url: SITE.url,
+    name: SITE.name,
+    publisher: { '@id': `${SITE.url}/#business` },
+  }
+
   return (
     <>
-      {/* ── 3. Hero ─────────────────────────────────────────────── */}
+      <JsonLd data={homeJsonLd} />
+
+      {/* Hero */}
       <section className="sg-hero" aria-labelledby="hero-heading">
         <div className="sg-hero-copy">
           <p className="sg-eyebrow">Solas Gallery · Salado, Texas</p>
@@ -91,15 +123,22 @@ export default function Home() {
             From your photos or ours, designed for your walls and done for you.
           </p>
           <p className="sg-plain">
-            Solas Gallery in Salado, Texas creates one-of-a-kind art — commissioned for
-            your home, or chosen from the studio floor.
+            Solas Gallery in Salado, Texas creates one-of-a-kind art: portraits of your
+            people, commissions from your own images, and studio originals made for your
+            room.
           </p>
           <div className="sg-ctas">
-            <Link className="sg-btn" href="/portraits">
-              Design your wall
-            </Link>
-            <Link className="sg-link" href="#commissions">
-              Start a commission
+            {hasSittings ? (
+              <Link className="sg-btn" href="#sittings">
+                Reserve a sitting
+              </Link>
+            ) : (
+              <Link className="sg-btn" href="/portraits#consult">
+                Book a design consult
+              </Link>
+            )}
+            <Link className="sg-link" href="#portrait-design">
+              Explore the gallery
             </Link>
           </div>
         </div>
@@ -112,94 +151,46 @@ export default function Home() {
         />
       </section>
 
-      {/* ── 4. Portrait design · a quiet door to /portraits ──────── */}
-      <section className="sg-section sg-sessions" id="portrait-design" aria-labelledby="portrait-design-heading">
+      {/* The trio */}
+      <section className="sg-section" id="ways" aria-labelledby="ways-heading">
         <header className="sg-section-head">
-          <p className="sg-eyebrow">Portraits</p>
-          <h2 id="portrait-design-heading">Portrait design</h2>
+          <p className="sg-eyebrow">Three ways to begin</p>
+          <h2 id="ways-heading">Art made from what you love.</h2>
           <p className="sg-plain">
-            A portrait display designed for your home. It starts with a free design consult,
-            online or in person, where we design the portrait for your wall together.
-          </p>
-          <div className="sg-ctas">
-            <Link className="sg-link" href="/portraits">
-              How portrait design works
-            </Link>
-          </div>
-        </header>
-      </section>
-
-      {/* ── 5. Studio originals ─────────────────────────────────── */}
-      <section className="sg-section sg-originals" id="originals" aria-labelledby="originals-heading">
-        <header className="sg-section-head">
-          <p className="sg-eyebrow">Studio originals</p>
-          <h2 id="originals-heading">Our art made yours.</h2>
-          <p className="sg-plain">
-            Studio originals — hand-finished, one of one, sized and colored for your room.
-          </p>
-          <p className="sg-plain">
-            Two lines: Solas Editions, and Flanagan Signature bespoke art.
-          </p>
-          <p className="sg-price">Multimedia originals and giclées, from $1,500.</p>
-        </header>
-        <div className="sg-squares">
-          <SiteImage
-            ratio="1:1"
-            src="/images/art/category-commission.jpg"
-            alt="A large abstract painting of trees in green and gold, hung on a gallery wall."
-            sizes="(min-width: 768px) 30vw, 100vw"
-          />
-          <SiteImage
-            ratio="1:1"
-            src="/images/art/category-prints.jpg"
-            alt="Tall multimedia panels of patterned color blocks, hung side by side."
-            sizes="(min-width: 768px) 30vw, 100vw"
-          />
-          <SiteImage
-            ratio="1:1"
-            src="/images/art/shadow-wing-7.jpg"
-            alt="A black and white study of sunflower petals in deep shadow."
-            sizes="(min-width: 768px) 30vw, 100vw"
-          />
-        </div>
-        <Link className="sg-link" href="/art">
-          See the art
-        </Link>
-      </section>
-
-      {/* ── 6. Three ways to own the only one ───────────────────── */}
-      <section className="sg-section" id="commissions" aria-labelledby="ways-heading">
-        <header className="sg-section-head">
-          <p className="sg-eyebrow">Commissions</p>
-          <h2 id="ways-heading">Three ways to own the only one</h2>
-          <p className="sg-plain">
-            Every piece we make is a studio original — one of one, mixed media, archival
-            pigment on canvas, finished by hand.
+            Begin with your people, your images, or our studio. Every piece is one of one
+            and finished by hand.
           </p>
         </header>
         <div className="sg-ways">
           {ways.map((way, index) => (
-            <article className="sg-way" key={way.title}>
+            <article className="sg-way" key={way.id} id={way.id}>
               <SiteImage
                 ratio="4:5"
                 src={way.src}
                 alt={way.alt}
-                sizes="(min-width: 768px) 30vw, 100vw"
+                sizes="(min-width: 1000px) 30vw, 100vw"
               />
-              <p className="sg-way-num">0{index + 1}</p>
+              <p className="sg-way-num">0{index + 1} · {way.label}</p>
               <h3>{way.title}</h3>
               <p>{way.body}</p>
-              <p className="sg-price">{way.price}</p>
+              {way.price ? <p className="sg-price">{way.price}</p> : null}
+              <div className="sg-way-links">
+                {way.links.map((l) => (
+                  <Link className="sg-link" href={l.href} key={l.href}>
+                    {l.label}
+                  </Link>
+                ))}
+              </div>
             </article>
           ))}
         </div>
       </section>
 
-      {/* ── 7. How a commission works ───────────────────────────── */}
-      <section className="sg-section sg-process" aria-labelledby="process-heading">
+      {/* Process + prices */}
+      <section className="sg-section sg-process" id="process" aria-labelledby="process-heading">
         <header className="sg-section-head">
-          <p className="sg-eyebrow">The proof process</p>
-          <h2 id="process-heading">How a commission works</h2>
+          <p className="sg-eyebrow">The process</p>
+          <h2 id="process-heading">From consult to hung.</h2>
           <p className="sg-plain">
             You see your piece on your own wall, at a firm price, before anything is made.
           </p>
@@ -212,100 +203,76 @@ export default function Home() {
             </li>
           ))}
         </ol>
-        <div className="sg-ctas">
-          <Link className="sg-btn" href="/begin">
-            Start a commission
-          </Link>
-          <a className="sg-link" href={`tel:${SITE.phoneTel}`}>
-            Or call {SITE.phoneDisplay}
-          </a>
-        </div>
-      </section>
-
-      {/* ── 8. Meet Art ─────────────────────────────────────────── */}
-      {/* PLACEHOLDER (W-01): Meet Art story fragments — Tim to replace with the canon mythology */}
-      <section className="sg-section sg-art" aria-labelledby="art-heading">
-        <div className="sg-art-inner">
-          <p className="sg-eyebrow">Who is Art?</p>
-          <h2 id="art-heading">Meet Art.</h2>
-          <p className="sg-plain sg-plain--dark">
-            Art is the spirit of the gallery — our name for the truth, beauty and goodness we
-            try to put on every wall.
-          </p>
-          <div className="sg-fragments">
-            <p>No one remembers Art arriving. Only that the light in the room changed.</p>
-            <p>Art keeps three things and gives them away freely: what is true, what is beautiful, what is good.</p>
-            <p>Art does not explain itself. Art waits, the way a painting waits, for you to notice.</p>
-            <p>Some say Art is older than Salado. Some say Art came in with the creek.</p>
-            <p>Everyone agrees on one thing: Art never shows up the same way twice.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 9. Made by hand here ────────────────────────────────── */}
-      {/* Tools are named on /process only — never on the homepage. */}
-      <section className="sg-section sg-hand" aria-labelledby="hand-heading">
-        <div className="sg-hand-copy">
-          <p className="sg-eyebrow">How it is made</p>
-          <h2 id="hand-heading">Made by hand, here.</h2>
-          <p>
-            Every piece is produced and finished by hand in our studio: mixed media,
-            archival pigment on canvas, hand-finished surfaces.
-          </p>
-          <p className="sg-pullquote">Finished by hand in our studio. Always.</p>
-          <Link className="sg-link" href="/process">
-            Our process
-          </Link>
-        </div>
-        <SiteImage
-          ratio="4:5"
-          src="/images/gallery/interior-04.jpg"
-          alt="A Solas Gallery hallway hung with large, hand-finished abstract work."
-          sizes="(min-width: 768px) 40vw, 100vw"
-        />
-      </section>
-
-      {/* ── 10. November & December at the gallery ──────────────── */}
-      <section className="sg-section" id="events" aria-labelledby="events-heading">
-        <header className="sg-section-head">
-          <p className="sg-eyebrow">At the gallery</p>
-          <h2 id="events-heading">November &amp; December</h2>
-          <p className="sg-plain">
-            Evenings and gatherings held at the gallery. Tickets and details live on HUBSalado.
-          </p>
-        </header>
-        {/* PLACEHOLDER (W-07, F-03, F-07): event one-liners, market dates, Killarney venue */}
-        <ul className="sg-events">
-          {events.map((event) => (
-            <li key={event.title}>
-              <p className="sg-event-when">{event.when}</p>
-              <h3>{event.title}</h3>
-              <p>{event.body}</p>
-              <a href={HUB_URL} rel="noopener noreferrer" className="sg-link">
-                Details and tickets at hubsalado.com
-              </a>
+        <ul className="sg-prices" aria-label="Prices">
+          {prices.map((p) => (
+            <li key={p.amount}>
+              <span className="sg-prices-amount">{p.amount}</span>{' '}
+              <span className="sg-prices-label">{p.label}</span>
             </li>
           ))}
         </ul>
+        <p className="sg-plain sg-prices-note">
+          The design &amp; creation fee covers your sitting and the creation of your
+          images. The wall proof is credited in full when you go ahead.
+        </p>
       </section>
 
-      {/* ── 11. For interior designers ──────────────────────────── */}
-      {/* PLACEHOLDER (W-06, F-06): designer copy; /trade page content */}
+      {/* Sittings */}
+      <section className="sg-section sg-sessions" id="sittings" aria-labelledby="sittings-heading">
+        <header className="sg-section-head">
+          <p className="sg-eyebrow">Portrait sittings</p>
+          <h2 id="sittings-heading">{hasSittings ? 'Sittings this season.' : 'Dates to be announced.'}</h2>
+          {hasSittings ? (
+            <p className="sg-plain">
+              Limited to {SITTING_CAP} portrait designs across all sittings. When a day is
+              full, it is full.
+            </p>
+          ) : (
+            <p className="sg-plain">
+              Our next portrait sittings will be announced here. Begin with a free design
+              consult in the meantime.
+            </p>
+          )}
+        </header>
+        {hasSittings ? (
+          <ul className="sg-rollout">
+            {sittings.map((s) => (
+              <li key={s.iso}>
+                <span>{s.long}</span>
+                {s.note ? s.note : ''}
+              </li>
+            ))}
+          </ul>
+        ) : null}
+        <div className="sg-ctas">
+          {hasSittings ? (
+            <a className="sg-btn" href={RESERVE_URL} rel="noopener noreferrer">
+              Reserve your sitting
+            </a>
+          ) : null}
+          <Link className="sg-link" href="/portraits#consult">
+            {hasSittings ? 'Prefer to talk first? Book a design consult' : 'Book a design consult'}
+          </Link>
+        </div>
+      </section>
+
+      <Reviews />
+
+      {/* Trade */}
       <section className="sg-section sg-trade" aria-labelledby="trade-heading">
         <p className="sg-eyebrow">To the trade</p>
         <h2 id="trade-heading">For interior designers</h2>
         <p>
-          We work quietly alongside designers and their clients: pieces commissioned, sized
-          and colored to the room, with proofs shown on your client&rsquo;s own wall and a
-          firm price before anything is made. A designer preview evening is planned for this
-          winter.
+          We work quietly alongside designers and decorators: pieces commissioned, sized
+          and colored to the room, a wall proof on your client&rsquo;s own wall, and a firm
+          price before anything is made.
         </p>
         <Link className="sg-link" href="/trade">
-          Trade inquiries
+          The trade program
         </Link>
       </section>
 
-      {/* ── 12. Visit ───────────────────────────────────────────── */}
+      {/* Visit */}
       <section className="sg-section sg-visit" id="visit" aria-labelledby="visit-heading">
         <div>
           <p className="sg-eyebrow">Visit</p>
@@ -315,20 +282,16 @@ export default function Home() {
             <dd>
               {SITE.name}
               <br />
-              {SITE.street}
+              {SITE.street}, {SITE.city}, {SITE.region} {SITE.postalCode}
               <br />
-              {SITE.city}, {SITE.region} {SITE.postalCode}
+              On Main Street, at the corner of Main Street and Rock Creek Drive
             </dd>
             <dt>Telephone</dt>
             <dd>
               <a href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a>
             </dd>
             <dt>Hours</dt>
-            <dd>
-              {hours}
-              <br />
-              And by appointment
-            </dd>
+            <dd>{hours}</dd>
           </dl>
         </div>
         <div className="sg-map">

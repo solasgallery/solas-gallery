@@ -7,21 +7,21 @@ import { pageJsonLd } from '@/lib/jsonld'
 import { images } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
-  title: 'FOLIO',
+  title: 'FOLIO Heirloom Albums by Solas Gallery | Salado, Texas',
   description:
-    'FOLIO albums from Solas Gallery — thick-paged, archival books for work that was made to be kept.',
+    'FOLIO heirloom albums from Solas Gallery in Salado, Texas: thick-paged, archival books for portraits, a house, a year, made to be kept for generations.',
   path: '/folio',
   noindex: false,
-  image: images.folio.src,
+  ogImage: '/og/folio.jpg',
   imageAlt: images.folio.alt,
 })
 
 const jsonLd = pageJsonLd({
   title: 'FOLIO Albums',
   description:
-    'FOLIO albums from Solas Gallery — thick-paged, archival books for work that was made to be kept.',
+    'FOLIO heirloom albums from Solas Gallery in Salado, Texas: thick-paged, archival books for portraits, a house, a year, made to be kept for generations.',
   path: '/folio',
-  image: images.folio.src,
+  image: '/og/folio.jpg',
 })
 
 export default function FolioPage() {
@@ -53,8 +53,7 @@ export default function FolioPage() {
           <span className="solas-credit">Kept.</span>
           <p>
             FOLIO is the album for a body of work — portraits, a house, a year —
-            printed and bound to last. This page is the home for albums once found
-            at boxomemories.com.
+            printed and bound to last.
           </p>
           <Link href="/begin">
             Begin a FOLIO <span aria-hidden="true">↗</span>
