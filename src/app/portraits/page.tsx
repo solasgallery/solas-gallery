@@ -127,8 +127,8 @@ export default function PortraitsPage() {
           </p>
           {hasSittings ? (
             <p>
-              Limited to {SITTING_CAP} portrait designs across all sittings. When a day is
-              full, it is full.
+              Limited to {SITTING_CAP} portrait designs across all sittings. Once a day is
+              full, we close it.
             </p>
           ) : null}
           {hasSittings ? (
@@ -160,9 +160,8 @@ export default function PortraitsPage() {
           No second shooters.
         </p>
         <p>
-          Thirty years behind a camera will teach you one thing worth knowing: the
-          best photographs happen in the space between who someone is and who they
-          are becoming.
+          Tim has made portraits for thirty years. The ones that last show who a
+          person is now, and who they are becoming.
         </p>
         <Link className="solas-underlink" href="/begin">
           Begin here <span aria-hidden="true">↗</span>

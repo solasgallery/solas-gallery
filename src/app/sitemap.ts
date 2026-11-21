@@ -12,7 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
   const posts = articles.map((a) => ({
     url: `${SITE.url}/journal/${a.slug}`,
-    lastModified: new Date(a.published),
     changeFrequency: 'yearly' as const,
     priority: 0.6,
   }))

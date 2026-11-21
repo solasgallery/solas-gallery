@@ -29,7 +29,7 @@ export default function ArtPage() {
     <>
     <JsonLd data={jsonLd} />
     <LandingPage
-      eyebrow="Art for a considered home"
+      eyebrow="Art made for your room"
       heading={
         <>
           Start with
@@ -48,10 +48,10 @@ export default function ArtPage() {
           <div className="solas-art-frame">
             <img src={images.art.src} alt={images.art.alt} width={750} height={750} />
           </div>
-          <p>Collected, not consumed</p>
+          <p>Studio original, one of one</p>
         </div>
         <div className="solas-art-copy">
-          <p className="solas-label">The walls of a considered home</p>
+          <p className="solas-label">Studio originals</p>
           <h2>
             Made to be kept.
             <br />

@@ -53,7 +53,7 @@ export default function RealPortraitPage() {
       <section className="solas-portrait-section">
         <div className="solas-portrait-copy">
           <p className="solas-label">In the manner of the masters</p>
-          <h2>Quiet. Direct. Kept.</h2>
+          <h2>Pick the look you love.</h2>
           <p>
             The Real Portrait Project is a limited campaign: portraits made in the manner
             of the great photographers. You pick the master looks you love, and we make

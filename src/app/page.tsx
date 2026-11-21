@@ -224,8 +224,8 @@ export default function Home() {
           <h2 id="sittings-heading">{hasSittings ? 'Sittings this season.' : 'Dates to be announced.'}</h2>
           {hasSittings ? (
             <p className="sg-plain">
-              Limited to {SITTING_CAP} portrait designs across all sittings. When a day is
-              full, it is full.
+              Limited to {SITTING_CAP} portrait designs across all sittings. Once a day is full,
+              we close it.
             </p>
           ) : (
             <p className="sg-plain">
@@ -276,7 +276,7 @@ export default function Home() {
       <section className="sg-section sg-visit" id="visit" aria-labelledby="visit-heading">
         <div>
           <p className="sg-eyebrow">Visit</p>
-          <h2 id="visit-heading">The door is open.</h2>
+          <h2 id="visit-heading">Come and see us.</h2>
           <dl>
             <dt>Address</dt>
             <dd>

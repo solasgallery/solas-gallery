@@ -568,23 +568,19 @@
 
             <!-- Services of Interest Section -->
             <div class="form-group">
-                <label class="required">Services of Interest</label>
+                <label>What are you interested in?</label>
                 <div class="checkbox-group">
                     <div class="checkbox-item">
-                        <input type="checkbox" id="service1" name="services" value="Gallery Inventory">
-                        <label for="service1">Gallery Inventory</label>
+                        <input type="checkbox" id="service1" name="services" value="Portrait design">
+                        <label for="service1">Portrait design</label>
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="service2" name="services" value="Custom Commissions">
-                        <label for="service2">Custom Commissions</label>
+                        <input type="checkbox" id="service2" name="services" value="Commissions">
+                        <label for="service2">Commissions</label>
                     </div>
                     <div class="checkbox-item">
-                        <input type="checkbox" id="service4" name="services" value="Custom Framing">
-                        <label for="service4">Custom Framing</label>
-                    </div>
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="service6" name="services" value="Installation">
-                        <label for="service6">Installation</label>
+                        <input type="checkbox" id="service3" name="services" value="Studio originals">
+                        <label for="service3">Studio originals</label>
                     </div>
                 </div>
             </div>
@@ -617,7 +613,7 @@
         <div class="footer-content">
             <p><strong>SOLAS GALLERY</strong></p>
             <p>2 Rock Creek Dr, Salado, TX 76571</p>
-            <p><a href="tel:+12549471881">(254) 947-1881</a> | <a href="mailto:trade@solasgallery.com">trade@solasgallery.com</a></p>
+            <p><a href="tel:+12549471881">(254) 947-1881</a> | Monday to Saturday, 10 to 5</p>
         </div>
     </footer>
 
@@ -632,7 +628,7 @@
       function showErr(){
         var m=document.getElementById('tradeFormError');
         if(!m){m=document.createElement('p');m.id='tradeFormError';m.setAttribute('role','alert');m.style.cssText='padding:1rem 0;text-align:center;color:#8a2a1a;';form.appendChild(m);}
-        m.innerHTML='Something went wrong, and your application did not go through. Please email <a href="mailto:trade@solasgallery.com">trade@solasgallery.com</a> and we will take it from there.';
+        m.innerHTML='Something went wrong, and your application did not go through. Please call us at <a href="tel:+12549471881">(254) 947-1881</a> and we will take it from there.';
       }
       form.addEventListener('submit',async function(e){
         e.preventDefault();
