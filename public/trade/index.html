@@ -1053,7 +1053,7 @@
           var r=await fetch('/api/inquiry',{method:'POST',headers:{'content-type':'application/json'},
             body:JSON.stringify({name:name,email:o.email||'',phone:o.phone||'',message:message,source:'Trade — Solas',hp:o.hp||''})});
           if(!r.ok) throw new Error('inquiry '+r.status);
-          form.innerHTML='<p style="padding:2rem;text-align:center;font-size:1.1rem;">Thank you — your application has been received. We’ll be in touch shortly.</p>';
+          form.innerHTML='<p style="padding:2rem;text-align:center;font-size:1.1rem;">Thank you — your application has been received. We’ll reply within five business days.</p>';
         }catch(err){ showErr(); }
       });
     })();
