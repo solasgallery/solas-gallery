@@ -596,6 +596,7 @@
                 <textarea id="practiceGoals" name="practiceGoals" required placeholder="Tell us about your practice, your aesthetic, and how we might collaborate..."></textarea>
             </div>
 
+            <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Leave this field empty<input type="text" name="hp" tabindex="-1" autocomplete="off"></label></div>
             <!-- Submit Button -->
             <div class="button-container">
                 <button type="submit">Submit Application</button>
@@ -636,12 +637,12 @@
         d.forEach(function(v,k){o[k]=v;});
         var name=o.name||o.fullName||'';
         var firm=o.company||o.firmName||'';
-        var extras=Object.keys(o).filter(function(k){return ['name','fullName','email','phone','company','firmName'].indexOf(k)<0;})
+        var extras=Object.keys(o).filter(function(k){return ['name','fullName','email','phone','company','firmName','hp'].indexOf(k)<0;})
           .map(function(k){return k+': '+o[k];}).join('\n');
         var message=(firm?'Firm: '+firm+'\n':'')+extras;
         try{
           var r=await fetch('/api/inquiry',{method:'POST',headers:{'content-type':'application/json'},
-            body:JSON.stringify({name:name,email:o.email||'',phone:o.phone||'',message:message,source:'Trade — Solas (Apply)',listId:43})});
+            body:JSON.stringify({name:name,email:o.email||'',phone:o.phone||'',message:message,source:'Trade — Solas (Apply)',hp:o.hp||''})});
           if(!r.ok) throw new Error('inquiry '+r.status);
           form.innerHTML='<p style="padding:2rem;text-align:center;font-size:1.1rem;">Thank you — your application has been received. We’ll be in touch shortly.</p>';
         }catch(err){ showErr(); }

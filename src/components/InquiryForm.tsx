@@ -30,6 +30,7 @@ export default function InquiryForm({
       phone: (form.elements.namedItem('phone') as HTMLInputElement)?.value || '',
       message: (form.elements.namedItem('message') as HTMLTextAreaElement)?.value || '',
       source,
+      hp: (form.elements.namedItem('hp') as HTMLInputElement)?.value || '',
     }
 
     try {
@@ -64,6 +65,9 @@ export default function InquiryForm({
       {headline ? <h2>{headline}</h2> : null}
       {subtext ? <p className="solas-form-subtext">{subtext}</p> : null}
       <form onSubmit={handleSubmit}>
+        <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, overflow: 'hidden' }}>
+        <label>Leave this field empty<input type="text" name="hp" tabIndex={-1} autoComplete="off" /></label>
+      </div>
         <label>
           Name
           <input type="text" name="name" required autoComplete="name" />

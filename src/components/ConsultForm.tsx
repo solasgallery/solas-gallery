@@ -27,6 +27,7 @@ export default function ConsultForm({ days = [] }: { days?: string[] }) {
         ? `Finish: ${field('finish')} · Preferred day: ${field('day')}`
         : `Finish: ${field('finish')}`,
       source: 'Portrait design consult',
+      hp: field('hp'),
     }
 
     try {
@@ -59,6 +60,9 @@ export default function ConsultForm({ days = [] }: { days?: string[] }) {
 
   return (
     <form className="sg-form" onSubmit={handleSubmit} aria-labelledby="consult-heading">
+      <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: 1, height: 1, overflow: 'hidden' }}>
+        <label>Leave this field empty<input type="text" name="hp" tabIndex={-1} autoComplete="off" /></label>
+      </div>
       <h3 id="consult-heading">Book a design consult</h3>
       <p className="sg-form-note">
         {days.length ? 'Choose your preferred day. ' : ''}We will be in touch within one business day to set your

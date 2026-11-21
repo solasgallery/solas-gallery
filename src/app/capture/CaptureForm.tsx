@@ -27,7 +27,7 @@ export default function CaptureForm() {
       phone: formData.get("phone") || "",
       message: "In-person visitor — captured via QR code",
       source: "in-person-qr",
-      website: "",
+      hp: formData.get("website") || "",
     }
 
     try {
