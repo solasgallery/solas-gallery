@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import InquiryForm from '@/components/InquiryForm'
 import JsonLd from '@/components/JsonLd'
 import { createLandingMetadata } from '@/lib/metadata'
@@ -32,6 +33,12 @@ export default function BeginPage() {
           <br />
           right thing.
         </h1>
+        {/* Moved from the homepage commissions panel (quiet pass, 2026-11-21). */}
+        <p className="sg-begin-lede">
+          A photograph, a place, a memory you can only describe. We transform it by hand
+          into a single piece that exists nowhere else, or bind a body of work into a{' '}
+          <Link href="/folio">FOLIO</Link>, an heirloom album made to be kept.
+        </p>
         <p>A portrait, a commission, a FOLIO, or a studio original — start here.</p>
       </section>
 
