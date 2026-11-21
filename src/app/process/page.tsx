@@ -8,19 +8,21 @@ import { pageJsonLd } from '@/lib/jsonld'
 // The tools paragraph lives here only — never on the homepage (brand rule 2026-11-18).
 
 const description =
-  'How every Solas piece is made: directed, altered, and finished by hand in our studio in Salado, Texas. One of one.'
+  'How every Solas piece is made: directed, altered, and finished by hand in our studio in Salado, Texas. Studio original, one of one, from design consult to hung.'
 
 const heroImage = {
   src: '/images/art/category-commission.jpg',
   alt: 'A large abstract painting of trees in green and gold, hung on a gallery wall.',
+  width: 750,
+  height: 750,
 }
 
 export const metadata: Metadata = createLandingMetadata({
-  title: 'Our Process',
+  title: 'How Solas Art Is Made | Solas Gallery, Salado, Texas',
   description,
   path: '/process',
   noindex: false,
-  image: heroImage.src,
+  ogImage: '/og/process.jpg',
   imageAlt: heroImage.alt,
 })
 
@@ -28,7 +30,7 @@ const jsonLd = pageJsonLd({
   title: 'Our Process',
   description,
   path: '/process',
-  image: heroImage.src,
+  image: '/og/process.jpg',
 })
 
 export default function ProcessPage() {

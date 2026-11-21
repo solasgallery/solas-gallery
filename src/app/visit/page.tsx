@@ -5,21 +5,21 @@ import { pageJsonLd } from '@/lib/jsonld'
 import { hours, images, MAP_EMBED_URL, SITE } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
-  title: 'Visit',
+  title: 'Visit Solas Gallery | 2 Rock Creek Dr, Salado, TX 76571',
   description:
-    'Visit Solas Gallery at 2 Rock Creek Dr, Salado, TX 76571. Gallery, portrait design, and gathering place. Est. 1995.',
+    'Visit Solas Gallery at 2 Rock Creek Dr, Salado, TX 76571, on Main Street at Rock Creek Drive. Open Monday to Saturday, 10 am to 5 pm. Call (254) 947-1881.',
   path: '/visit',
   noindex: false,
-  image: images.gather.src,
-  imageAlt: images.gather.alt,
+  ogImage: '/og/home.jpg',
+  imageAlt: 'Framed portraits hung around a doorway in the Solas Gallery.',
 })
 
 const jsonLd = pageJsonLd({
   title: 'Visit Solas Gallery',
   description:
-    'Visit Solas Gallery at 2 Rock Creek Dr, Salado, TX 76571. Gallery, portrait design, and gathering place. Est. 1995.',
+    'Visit Solas Gallery at 2 Rock Creek Dr, Salado, TX 76571, on Main Street at Rock Creek Drive. Open Monday to Saturday, 10 am to 5 pm. Call (254) 947-1881.',
   path: '/visit',
-  image: images.gather.src,
+  image: '/og/home.jpg',
 })
 
 export default function VisitPage() {
@@ -28,7 +28,7 @@ export default function VisitPage() {
       <JsonLd data={jsonLd} />
       <section className="solas-opening" aria-labelledby="visit-heading">
         <div className="solas-opening-image">
-          <img src={images.gather.src} alt={images.gather.alt} />
+          <img src={images.visit.src} alt={images.visit.alt} width={1600} height={829} />
           <div className="solas-light" />
           <span className="solas-caption">2 Rock Creek Dr · Salado</span>
         </div>
@@ -36,7 +36,7 @@ export default function VisitPage() {
           <p className="solas-label">
             2 Rock Creek Dr · Salado
             <br />
-            At the corner of Main Street and Rock Creek Drive
+            On Main Street at the corner of Main and Rock Creek
           </p>
           <h1 id="visit-heading">
             The door
@@ -57,8 +57,6 @@ export default function VisitPage() {
             <dt>Hours</dt>
             <dd>
               {hours}
-              <br />
-              And by appointment
             </dd>
             <dt>Address</dt>
             <dd>
@@ -66,7 +64,7 @@ export default function VisitPage() {
               <br />
               {SITE.city}, {SITE.region} {SITE.postalCode}
               <br />
-              At the corner of Main Street and Rock Creek Drive.
+              On Main Street at the corner of Main and Rock Creek.
             </dd>
             <dt>Telephone</dt>
             <dd>

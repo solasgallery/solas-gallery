@@ -11,7 +11,7 @@ export type LandingPageProps = {
   heading: ReactNode
   lede?: string
   whisper?: string
-  heroImage?: { src: string; alt: string }
+  heroImage?: { src: string; alt: string; width?: number; height?: number }
   /** CSS object-position for the hero crop, e.g. '25% 50%'. Defaults to centre. */
   heroPosition?: string
   heroCaption?: string
@@ -47,6 +47,8 @@ export default function LandingPage({
             <img
               src={heroImage.src}
               alt={heroImage.alt}
+              width={heroImage.width ?? 750}
+              height={heroImage.height ?? 750}
               style={heroPosition ? { objectPosition: heroPosition } : undefined}
             />
             <div className="solas-light" />

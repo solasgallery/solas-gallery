@@ -1,34 +1,25 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import JsonLd from '@/components/JsonLd'
+import { createLandingMetadata } from '@/lib/metadata'
 import { pageJsonLd } from '@/lib/jsonld'
 
-export const metadata: Metadata = {
-  title: 'Our Story',
-  description:
-    'Thirty years of light and shadow. The story of Tim and Cherie Flanagan, Solas Gallery, and a life built on Main Street in Salado, Texas.',
-  alternates: {
-    canonical: '/story',
-  },
-  openGraph: {
-    title: 'Our Story | Solas Gallery — Salado, TX',
-    description: 'Thirty years of light and shadow. The story of Tim and Cherie Flanagan, Solas Gallery, and a life built on Main Street in Salado, Texas.',
-    url: 'https://solasgallery.com/story',
-    type: 'website',
-    images: [{ url: '/solas-og.jpg', width: 1200, height: 630, alt: 'Solas Gallery' }],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Our Story | Solas Gallery — Salado, TX',
-    description: 'Thirty years of light and shadow. The story of Tim and Cherie Flanagan, Solas Gallery, and a life built on Main Street in Salado, Texas.',
-    images: ['/solas-og.jpg'],
-  },
-}
+const storyDescription =
+  'The story of Tim and Cherie Flanagan and Solas Gallery: thirty years of light and shadow, and a life built on Main Street in Salado, Texas. Visit us in person.'
+
+export const metadata: Metadata = createLandingMetadata({
+  title: 'Our Story | Tim & Cherie Flanagan | Solas Gallery, TX',
+  description: storyDescription,
+  path: '/story',
+  noindex: false,
+  ogImage: '/og/story.jpg',
+  imageAlt: 'The Solas Gallery building in Salado through the trees.',
+})
 
 const jsonLd = pageJsonLd({
   title: 'Our Story',
   description:
-    'Thirty years of light and shadow. The story of Tim and Cherie Flanagan, Solas Gallery, and a life built on Main Street in Salado, Texas.',
+    storyDescription,
   path: '/story',
 })
 
@@ -42,6 +33,8 @@ export default function StoryPage() {
         <img
           src="/images/story/hero-fallback.jpg"
           alt="The Solas Gallery building in Salado through the trees."
+          width={1400}
+          height={933}
           className="absolute inset-0 w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-deep/30" />
@@ -82,13 +75,13 @@ export default function StoryPage() {
               </p>
               <p>
                 Solas Gallery started as a small portrait studio on Main Street in
-                Salado, Texas — a town of maybe 2,000 people in the Hill Country
-                between Austin and Waco. It was not an obvious place to build a
+                Salado, Texas — a village of about 2,400 people on I-35 in Bell
+                County. It was not an obvious place to build a
                 creative life. But Cherie and I chose it, and it chose us back.
               </p>
               <p>
                 Over thirty years, the work expanded. Portraits became fine art.
-                Fine art became events. Events became community. The gallery became
+                Fine art became a gallery, and the gallery became community. It became
                 a place where people come not just to buy something for their walls,
                 but to experience something that slows them down.
               </p>
@@ -156,17 +149,17 @@ export default function StoryPage() {
             Today, Solas Gallery sits at the center of a small creative ecosystem:
             fine art and portraiture in the gallery, custom framing at{' '}
             <a
-              href="https://saladovillageframer.com"
+              href="https://www.saladovillageframer.com"
               className="text-stone hover:text-charcoal transition-colors border-b border-stone/40 hover:border-charcoal pb-px"
             >
               Salado Village Framer
             </a>
-            , live music and storytelling through{' '}
+            , live music, storytelling and events at{' '}
             <a
-              href="https://saladolamplighter.com"
+              href="https://www.hubsalado.com"
               className="text-stone hover:text-charcoal transition-colors border-b border-stone/40 hover:border-charcoal pb-px"
             >
-              Village Lamplighter
+              HUB Salado
             </a>
             , and a community that keeps showing up. It all started with one camera
             and one small town. Thirty years later, the light is still good.

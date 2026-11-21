@@ -20,7 +20,7 @@ function NavLink({
     return (
       <a href={link.href} rel="noopener noreferrer" onClick={onClick}>
         {link.label}
-        <span className="sr-only"> (opens hubsalado.com)</span>
+        <span className="sr-only"> (opens HUB Salado)</span>
       </a>
     )
   }
@@ -31,18 +31,17 @@ function NavLink({
   )
 }
 
-export default function Nav() {
+export default function Nav({ announce }: { announce: string | null }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
-  const showBooking = !CAMPAIGN_PATHS.includes(pathname ?? '')
+  const showBooking = !CAMPAIGN_PATHS.includes(pathname ?? '') && announce !== null
 
   return (
     <>
       {showBooking ? (
         <div className="sg-announce">
           <Link href="/portraits">
-            <strong>Portrait design</strong> sittings open, November 27, December 1,
-            December 19. Book a design consult.
+            <strong>Portrait design</strong> sittings: {announce}. Book a design consult.
           </Link>
         </div>
       ) : null}

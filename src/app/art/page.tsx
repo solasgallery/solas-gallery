@@ -7,21 +7,21 @@ import { pageJsonLd } from '@/lib/jsonld'
 import { images } from '@/lib/site'
 
 export const metadata: Metadata = createLandingMetadata({
-  title: 'Art',
+  title: 'Studio Originals & Commissions | Solas Gallery, Salado',
   description:
-    'Studio originals — one of one, hand-finished, multimedia. Solas Editions and Flanagan Signature bespoke art, from $1,500. Commissions to $10,000 and above. Solas Gallery, Salado, Texas.',
+    'Studio originals, one of one and hand-finished. Solas Editions and Flanagan Signature bespoke art from $1,500, commissions $1,500–$10,000. Salado, Texas.',
   path: '/art',
   noindex: false,
-  image: images.art.src,
-  imageAlt: images.art.alt,
+  ogImage: '/og/art.jpg',
+  imageAlt: 'A set of tall, colorful abstract panels hanging on a white gallery wall.',
 })
 
 const jsonLd = pageJsonLd({
   title: 'Art',
   description:
-    'Studio originals — one of one, hand-finished, multimedia. Solas Editions and Flanagan Signature bespoke art, from $1,500. Commissions to $10,000 and above. Solas Gallery, Salado, Texas.',
+    'Studio originals, one of one and hand-finished. Solas Editions and Flanagan Signature bespoke art from $1,500, commissions $1,500–$10,000. Salado, Texas.',
   path: '/art',
-  image: images.art.src,
+  image: '/og/art.jpg',
 })
 
 export default function ArtPage() {
@@ -29,7 +29,7 @@ export default function ArtPage() {
     <>
     <JsonLd data={jsonLd} />
     <LandingPage
-      eyebrow="Art for a considered home"
+      eyebrow="Art made for your room"
       heading={
         <>
           Start with
@@ -46,12 +46,12 @@ export default function ArtPage() {
       <section className="solas-art-section">
         <div className="solas-art-image">
           <div className="solas-art-frame">
-            <img src={images.art.src} alt={images.art.alt} />
+            <img src={images.art.src} alt={images.art.alt} width={750} height={750} />
           </div>
-          <p>Collected, not consumed</p>
+          <p>Studio original, one of one</p>
         </div>
         <div className="solas-art-copy">
-          <p className="solas-label">The walls of a considered home</p>
+          <p className="solas-label">Studio originals</p>
           <h2>
             Made to be kept.
             <br />
@@ -66,7 +66,10 @@ export default function ArtPage() {
             archival pigment on canvas, finished by hand in our studio. No two pieces here
             are alike.
           </p>
-          <p>Studio originals from $1,500. Commissions to $10,000 and above.</p>
+          <p>
+            A commission design is retired once your piece is made. One of one.
+          </p>
+          <p>Studio originals from $1,500. Commissions $1,500–$10,000.</p>
           <Link className="solas-underlink" href="/begin">
             Inquire about a piece <span aria-hidden="true">↗</span>
           </Link>

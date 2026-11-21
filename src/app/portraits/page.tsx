@@ -6,6 +6,16 @@ import JsonLd from '@/components/JsonLd'
 import { createLandingMetadata } from '@/lib/metadata'
 import { portraitServiceJsonLd } from '@/lib/jsonld'
 import { images, SITE } from '@/lib/site'
+import {
+  DATE_REVALIDATE_SECONDS,
+  RESERVE_URL,
+  SITTING_CAP,
+  sittingsLine,
+  upcomingSittings,
+} from '@/lib/dates'
+
+// Sitting dates come from src/lib/dates.ts; past days drop off at request time.
+export const revalidate = DATE_REVALIDATE_SECONDS
 
 // Portrait design — the general portrait offering (2026-11-18). Locked terms:
 // the $295 design & creation fee covers the sitting and the creation of the
@@ -13,24 +23,23 @@ import { images, SITE } from '@/lib/site'
 // included. Single print $395 (8×10 or 11×14). Nov 27 keeps the $750 minimum.
 // No "master looks" language and no campaign name here — the campaign lives on
 // /real-portrait only.
-const description =
-  'Portrait design at Solas Gallery in Salado, Texas: a portrait display designed for your home. A free design consult, then the sitting, the viewing, and your finished display. Sittings November 27, December 1 and December 19.'
+function buildDescription() {
+  const s = upcomingSittings()
+  const when = s.length ? ` Sittings ${sittingsLine(s, 'short')}.` : ' Dates to be announced.'
+  const tail = s.length ? '' : ' for your home'
+  return `Portrait design at Solas Gallery in Salado, TX: a free design consult, your sitting, the viewing and a finished display${tail}.${when}`
+}
 
-export const metadata: Metadata = createLandingMetadata({
-  title: 'Portrait Design',
-  description,
-  path: '/portraits',
-  noindex: false,
-  image: images.portrait.src,
-  imageAlt: images.portrait.alt,
-})
-
-const jsonLd = portraitServiceJsonLd({
-  title: 'Portrait Design',
-  description,
-  path: '/portraits',
-  image: images.portrait.src,
-})
+export function generateMetadata(): Metadata {
+  return createLandingMetadata({
+    title: 'Portrait Design for Your Home | Solas Gallery, Salado, TX',
+    description: buildDescription(),
+    path: '/portraits',
+    noindex: false,
+    ogImage: '/og/portraits.jpg',
+    imageAlt: 'Family portraits displayed on tall hinged panels in the Solas Gallery.',
+  })
+}
 
 const steps = [
   {
@@ -52,6 +61,14 @@ const steps = [
 ]
 
 export default function PortraitsPage() {
+  const sittings = upcomingSittings()
+  const hasSittings = sittings.length > 0
+  const jsonLd = portraitServiceJsonLd({
+    title: 'Portrait Design',
+    description: buildDescription(),
+    path: '/portraits',
+    image: '/og/portraits.jpg',
+  })
   return (
     <>
     <JsonLd data={jsonLd} />
@@ -65,10 +82,10 @@ export default function PortraitsPage() {
         </>
       }
       lede="It starts with a free design consult, online or in person, where we design the portrait for your wall together."
-      whisper="Booking is open now."
+      whisper={hasSittings ? 'Booking is open now.' : 'Sitting dates to be announced.'}
       heroImage={images.portrait}
       heroCaption="Portrait design · Salado, Texas"
-      folioMark="Nov 27 · Dec 1 · Dec 19"
+      folioMark={hasSittings ? sittingsLine(sittings, 'short') : undefined}
       cta={{ href: '#consult', label: 'Book a design consult' }}
       secondaryCta={{ href: `tel:${SITE.phoneTel}`, label: SITE.phoneDisplay }}
     >
@@ -89,39 +106,48 @@ export default function PortraitsPage() {
 
       <section className="solas-portrait-section">
         <div className="solas-portrait-copy">
-          <p className="solas-label">November 27 · December 1 · December 19</p>
-          <h2>Three sitting days.</h2>
-          <ul className="sg-rollout sg-rollout--dark">
-            <li>
-              <span>Friday, November 27</span> — $750 minimum order.
-            </li>
-            <li>
-              <span>Tuesday, December 1</span>
-            </li>
-            <li>
-              <span>Saturday, December 19</span>
-            </li>
-          </ul>
+          <p className="solas-label">
+            {hasSittings ? sittingsLine(sittings) : 'Dates to be announced'}
+          </p>
+          <h2>{hasSittings ? 'Sitting days.' : 'Dates to be announced.'}</h2>
+          {hasSittings ? (
+            <ul className="sg-rollout sg-rollout--dark">
+              {sittings.map((s) => (
+                <li key={s.iso}>
+                  <span>{s.long}</span>
+                  {s.note ? ` — ${s.note}` : ''}
+                </li>
+              ))}
+            </ul>
+          ) : null}
           <p>
             A $295 design &amp; creation fee reserves your design project. It covers your
-            sitting and the creation of your images. Finished prints are priced
-            separately: the first print is not included, and a single print is $395
-            (8×10 or 11×14).
+            sitting and the creation of your images. Finished pieces are separate. Your
+            first print is $395 (8×10 or 11×14), and your wall proof is $195, credited in full when you go ahead.
           </p>
-          <p>Booking is open now. When a day is full, it is full.</p>
+          {hasSittings ? (
+            <p>
+              Limited to {SITTING_CAP} portrait designs across all sittings.
+            </p>
+          ) : null}
+          {hasSittings ? (
+            <a className="solas-underlink" href={RESERVE_URL} rel="noopener noreferrer">
+              Reserve your sitting <span aria-hidden="true">↗</span>
+            </a>
+          ) : null}
           <Link className="solas-underlink" href="#consult">
             Book a design consult <span aria-hidden="true">↗</span>
           </Link>
         </div>
         <div className="solas-portrait-image">
-          <img src={images.portrait.src} alt={images.portrait.alt} />
+          <img src={images.portrait.src} alt={images.portrait.alt} width={750} height={750} />
           <span className="solas-image-number">$295</span>
         </div>
       </section>
 
       <section className="solas-page-copy">
         <div id="consult">
-          <ConsultForm />
+          <ConsultForm days={sittings.map((s) => s.monthDay)} />
         </div>
       </section>
 
@@ -133,9 +159,8 @@ export default function PortraitsPage() {
           No second shooters.
         </p>
         <p>
-          Thirty years behind a camera will teach you one thing worth knowing: the
-          best photographs happen in the space between who someone is and who they
-          are becoming.
+          Tim has made portraits for thirty years. The ones that last show who a
+          person is now, and who they are becoming.
         </p>
         <Link className="solas-underlink" href="/begin">
           Begin here <span aria-hidden="true">↗</span>

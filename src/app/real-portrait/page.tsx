@@ -9,26 +9,26 @@ import { images } from '@/lib/site'
 // The Real Portrait Project — a limited CAMPAIGN (2026-11-18), not the general
 // portrait offering (that is "Portrait design" at /portraits). Portraits in the
 // manner of the great photographers. No dates and no booking CTA until the next
-// campaign is scheduled (new year). This is the ONLY page that names the
-// campaign. Terms line: design projects reserve with the $295 design & creation
+// campaign is scheduled. This is the ONLY page that names the
+// campaign. Dates: "Dates to be announced." (no month names, no year-specific copy). Terms line: design projects reserve with the $295 design & creation
 // fee.
 const description =
-  'The Real Portrait Project at Solas Gallery: a limited campaign of portraits in the manner of the great photographers. The next campaign opens in the new year.'
+  'The Real Portrait Project at Solas Gallery in Salado, Texas: a campaign of portraits made in the manner of the great photographers. Dates to be announced.'
 
 export const metadata: Metadata = createLandingMetadata({
-  title: 'The Real Portrait Project',
+  title: 'The Real Portrait Project | Solas Gallery, Salado, TX',
   description,
   path: '/real-portrait',
   noindex: false,
-  image: images.portrait.src,
-  imageAlt: images.portrait.alt,
+  ogImage: '/og/portraits.jpg',
+  imageAlt: 'Family portraits displayed on tall hinged panels in the Solas Gallery.',
 })
 
 const jsonLd = portraitServiceJsonLd({
   title: 'The Real Portrait Project',
   description,
   path: '/real-portrait',
-  image: images.portrait.src,
+  image: '/og/portraits.jpg',
 })
 
 export default function RealPortraitPage() {
@@ -36,7 +36,7 @@ export default function RealPortraitPage() {
     <>
     <JsonLd data={jsonLd} />
     <LandingPage
-      eyebrow="A limited campaign"
+      eyebrow="A portrait campaign"
       heading={
         <>
           The Real
@@ -45,15 +45,15 @@ export default function RealPortraitPage() {
         </>
       }
       lede="Portraits in the manner of the great photographers. Pick the master looks you love."
-      whisper="The next campaign opens in the new year."
+      whisper="Dates to be announced."
       heroImage={images.portrait}
-      heroCaption="A limited campaign · Salado, Texas"
+      heroCaption="The Real Portrait Project · Salado, Texas"
       cta={{ href: '/portraits', label: 'Portrait design' }}
     >
       <section className="solas-portrait-section">
         <div className="solas-portrait-copy">
           <p className="solas-label">In the manner of the masters</p>
-          <h2>Quiet. Direct. Kept.</h2>
+          <h2>Pick the look you love.</h2>
           <p>
             The Real Portrait Project is a limited campaign: portraits made in the manner
             of the great photographers. You pick the master looks you love, and we make
@@ -61,7 +61,7 @@ export default function RealPortraitPage() {
           </p>
         </div>
         <div className="solas-portrait-image">
-          <img src={images.portrait.src} alt={images.portrait.alt} />
+          <img src={images.portrait.src} alt={images.portrait.alt} width={750} height={750} />
           <span className="solas-image-number">01</span>
         </div>
       </section>
@@ -70,8 +70,8 @@ export default function RealPortraitPage() {
         <div className="solas-measure">
           <h2>What this is.</h2>
           <p>
-            A limited campaign, made in the studio in Salado. Beyond the screen, a quiet
-            truth. Character over performance.
+            Made in the studio in Salado. We will post the dates here when they are
+            set.
           </p>
           <p>Design projects reserve with the $295 design &amp; creation fee.</p>
           <Link className="solas-underlink" href="/portraits">

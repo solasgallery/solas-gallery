@@ -190,6 +190,8 @@ html { scroll-padding-top: 24px; }
   letter-spacing: -0.02em;
 }
 .sg-hero-line {
+  max-width: 30ch;
+  text-wrap: balance;
   font: italic 400 clamp(1.4rem, 4.4vw, 2.1rem)/1.25 var(--serif);
   margin: 22px 0 0;
   color: var(--ink);
@@ -309,7 +311,7 @@ html { scroll-padding-top: 24px; }
 .sg-way-num {
   font: 500 11px var(--sans) !important;
   letter-spacing: 0.16em;
-  margin: 20px 0 8px;
+  margin: 28px 0 10px;
   color: var(--ink) !important;
 }
 .sg-way > p { margin-top: 0; margin-bottom: 0; }
@@ -524,3 +526,77 @@ html { scroll-padding-top: 24px; }
 .solas-page-copy .sg-steps li { margin: 0; max-width: none; }
 .solas-page-copy .sg-steps h3 { font: italic 400 1.35rem/1.15 var(--serif); margin: 0 0 4px; color: var(--ink); }
 .solas-page-copy .sg-steps p { margin: 0; }
+
+/* ── Rebuild 2026-11 additions ─────────────────────────────── */
+.sg-way-links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 20px; }
+.sg-prices {
+  list-style: none;
+  padding: 0;
+  margin: 48px 0 0;
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--ink);
+}
+.sg-prices li {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+.sg-section .sg-prices-amount { font: italic 400 clamp(1.9rem, 6vw, 2.6rem)/1 var(--serif); color: var(--ink); }
+.sg-section .sg-prices-label { font: 400 15px/1.5 var(--sans); color: var(--muted); letter-spacing: 0.02em; }
+.sg-prices-note { margin-top: 24px; }
+.sg-rollout li { grid-template-columns: 1fr; }
+@media (min-width: 768px) {
+  .sg-rollout li { grid-template-columns: 17rem 1fr; }
+  .sg-prices { grid-template-columns: repeat(3, 1fr); column-gap: 40px; border-top: 0; }
+  .sg-prices li { display: block; border-top: 1px solid var(--ink); border-bottom: 0; padding: 22px 0 0; }
+  .sg-prices-amount { display: block; margin-bottom: 10px; }
+}
+
+/* Reviews */
+.sg-review-list { display: grid; gap: 40px; margin-bottom: 32px; }
+.sg-review { margin: 0; padding-left: 22px; border-left: 1px solid var(--line); max-width: 640px; }
+.sg-review blockquote { margin: 0 0 12px; font: italic 400 clamp(1.25rem, 3.6vw, 1.6rem)/1.4 var(--serif); color: var(--ink); }
+.sg-section .sg-review figcaption { font: 500 11px/1.5 var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+@media (min-width: 1000px) { .sg-review-list { grid-template-columns: repeat(2, 1fr); gap: 56px 64px; } }
+
+/* Journal */
+.sg-journal-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); max-width: 760px; }
+.sg-journal-list li { padding: 32px 0; border-bottom: 1px solid var(--line); }
+.sg-journal-list h2 { font: italic 400 clamp(1.7rem, 4vw, 2.3rem)/1.15 var(--serif); margin: 0 0 8px; }
+.sg-journal-list p { font: 300 16px/1.7 var(--sans); color: var(--muted); margin: 0 0 12px; }
+.sg-byline { font: 500 11px/1.5 var(--sans); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.sg-article { max-width: 680px; margin: 0 auto; padding: 56px 16px 96px; }
+.sg-article h1 { font: italic 400 clamp(2.4rem, 8vw, 4rem)/1.05 var(--serif); letter-spacing: -0.01em; margin: 12px 0 18px; }
+.sg-article h2 { font: italic 400 clamp(1.7rem, 4.4vw, 2.2rem)/1.15 var(--serif); margin: 48px 0 12px; }
+.sg-article p, .sg-article li { font: 300 17px/1.75 var(--sans); color: #34322e; }
+.sg-article p { margin: 0 0 20px; }
+.sg-article ul { padding-left: 20px; margin: 0 0 20px; }
+.sg-article .sg-lede { font: italic 400 clamp(1.35rem, 3.8vw, 1.7rem)/1.4 var(--serif); color: var(--ink); }
+.sg-article .sg-article-end { margin-top: 56px; padding-top: 28px; border-top: 1px solid var(--line); }
+@media (min-width: 768px) { .sg-article { padding: 96px 32px 128px; } }
+
+/* Gate 1 fixes (2026-11-21) */
+/* Keep "$750 minimum order." on one line next to the date. */
+.sg-rollout li { white-space: nowrap; }
+@media (max-width: 480px) { .sg-rollout li { white-space: normal; } }
+/* 44px tap targets for text links and the mobile menu button (real box height, underline stays under the text). */
+.sg-link,
+.solas-underlink {
+  display: inline-flex;
+  align-items: flex-end;
+  min-height: 44px;
+}
+.mobile-menu { min-height: 44px; min-width: 44px; padding-top: 24px; }
+/* Footer and announce-bar links: 44px touch height without changing the look. */
+.solas-footer-nap a,
+.solas-footer-only small a,
+a[href^="tel:"] {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.solas-footer-sisters { display: flex; flex-wrap: wrap; align-items: center; column-gap: 8px; }
+.sg-announce a { display: block; padding: 8px 0; }

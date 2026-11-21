@@ -1,9 +1,9 @@
 export const SITE = {
   name: 'Solas Gallery',
-  url: 'https://solasgallery.com',
-  title: 'Solas Gallery | Portraits, Art, and a Place to Gather · Salado',
+  url: 'https://www.solasgallery.com',
+  title: 'Solas Gallery | Portraits, Commissions & Art, Salado TX',
   description:
-    'Solas Gallery, Salado, Texas. Personal art, designed for your home — commissioned for your walls or chosen from the studio floor, finished by hand. Est. 1995.',
+    'Solas Gallery in Salado, Texas: portrait design, commissions from your images, and studio originals. One of one, hand-finished, designed for your home.',
   street: '2 Rock Creek Dr',
   city: 'Salado',
   region: 'TX',
@@ -11,28 +11,41 @@ export const SITE = {
   phoneDisplay: '(254) 947-1881',
   phoneTel: '+12549471881',
   established: '1995',
+  /** Machine-readable hours, identical to the Google Business Profile. */
+  openingHours: 'Mo-Sa 10:00-17:00',
+  geo: { latitude: 30.9482421, longitude: -97.536423 },
 } as const
 
 /** Exact NAP line for the footer. */
-export const NAP = 'Solas Gallery · 2 Rock Creek Dr, Salado, TX 76571 · (254) 947-1881'
+export const NAP = 'Solas Gallery · 2 Rock Creek Dr · Salado, TX 76571 · (254) 947-1881'
 
 export const sisters = [
-  { name: 'Salado Village Framer', href: 'https://saladovillageframer.com' },
-  { name: 'HUB Salado', href: 'https://hubsalado.com' },
+  { name: 'Salado Village Framer', href: 'https://www.saladovillageframer.com' },
+  { name: 'HUB Salado', href: 'https://www.hubsalado.com' },
 ] as const
 
-export const HUB_URL = 'https://hubsalado.com'
+// Events and venue rental live on HUBSalado (2026-11-21).
+export const HUB_URL = 'https://www.hubsalado.com'
+export const HUB_EVENTS_URL = `${HUB_URL}/events`
+export const HUB_VENUE_URL = `${HUB_URL}/venue-rental`
 
 export const primaryNav = [
+  { href: '/#portrait-design', label: 'Portraits', external: false },
   { href: '/#commissions', label: 'Commissions', external: false },
   { href: '/#originals', label: 'Studio Originals', external: false },
-  { href: '/portraits', label: 'Portraits', external: false },
+  { href: '/journal', label: 'Journal', external: false },
   { href: '/story', label: 'Our Story', external: false },
-  { href: HUB_URL, label: 'Events', external: true },
+  { href: HUB_EVENTS_URL, label: 'Events', external: true },
   { href: '/visit', label: 'Visit', external: false },
 ] as const
 
 export const images = {
+  visit: {
+    src: '/images/folio-hero.jpg',
+    width: 1600,
+    height: 829,
+    alt: 'The entrance to Solas Gallery at dusk, warm light in the arched window above the stone steps.',
+  },
   home: {
     src: '/images/home/hero-home.jpg',
     alt: 'The Solas Gallery window wall at dusk, warm interior light reflected in the glass.',
@@ -47,11 +60,9 @@ export const images = {
   },
   folio: {
     src: '/images/folio-hero.jpg',
+    width: 1600,
+    height: 829,
     alt: 'The entrance to Solas Gallery at dusk, warm light in the arched window above the stone steps.',
-  },
-  gather: {
-    src: '/solas/gather.jpg',
-    alt: 'A gathering at Solas Gallery in Salado, Texas.',
   },
   stone: {
     src: '/images/placeholders/stone.svg',
@@ -71,14 +82,15 @@ export const indexableRoutes = [
   { path: '/', priority: 1, changeFrequency: 'weekly' as const },
   { path: '/portraits', priority: 0.9, changeFrequency: 'weekly' as const },
   { path: '/art', priority: 0.9, changeFrequency: 'weekly' as const },
-  { path: '/gather', priority: 0.8, changeFrequency: 'weekly' as const },
+  { path: '/journal', priority: 0.7, changeFrequency: 'weekly' as const },
   { path: '/visit', priority: 0.8, changeFrequency: 'monthly' as const },
-  { path: '/begin', priority: 0.8, changeFrequency: 'monthly' as const },
-  { path: '/real-portrait', priority: 0.9, changeFrequency: 'weekly' as const },
+  { path: '/begin', priority: 0.7, changeFrequency: 'monthly' as const },
+  { path: '/real-portrait', priority: 0.6, changeFrequency: 'monthly' as const },
   { path: '/folio', priority: 0.8, changeFrequency: 'monthly' as const },
   { path: '/process', priority: 0.6, changeFrequency: 'monthly' as const },
   { path: '/story', priority: 0.6, changeFrequency: 'monthly' as const },
-  { path: '/events/venue-rental', priority: 0.7, changeFrequency: 'monthly' as const },
   { path: '/portraits/babyfaces', priority: 0.6, changeFrequency: 'monthly' as const },
+  { path: '/trade', priority: 0.6, changeFrequency: 'monthly' as const },
+  { path: '/trade/faq', priority: 0.5, changeFrequency: 'monthly' as const },
   { path: '/privacy', priority: 0.3, changeFrequency: 'yearly' as const },
 ]

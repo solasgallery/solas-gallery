@@ -9,6 +9,8 @@ type LandingMetaInput = {
   noindex?: boolean
   image?: string
   imageAlt?: string
+  /** 1200x630 social image; defaults to /solas-og.jpg. */
+  ogImage?: string
 }
 
 export function createLandingMetadata({
@@ -17,13 +19,17 @@ export function createLandingMetadata({
   path,
   noindex = true,
   image = '/solas-og.jpg',
+  ogImage,
   imageAlt = SITE.name,
 }: LandingMetaInput): Metadata {
   const url = `${SITE.url}${path === '/' ? '' : path}`
-  const fullTitle = title.includes('Solas') ? title : `${title} | Solas Gallery — Salado, TX`
+  // `title` is the complete, final <title> (50-60 chars); no template suffix is added.
+  const fullTitle = title
+  const social = ogImage ?? '/solas-og.jpg'
+  void image
 
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: { canonical: path },
     robots: noindex
@@ -34,13 +40,13 @@ export function createLandingMetadata({
       description,
       url,
       type: 'website',
-      images: [{ url: image, width: 1200, height: 630, alt: imageAlt }],
+      images: [{ url: social, width: 1200, height: 630, alt: imageAlt }],
     },
     twitter: {
       card: 'summary_large_image',
       title: fullTitle,
       description,
-      images: [image],
+      images: [social],
     },
   }
 }

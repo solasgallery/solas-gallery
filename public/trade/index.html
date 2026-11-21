@@ -3,34 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trade Collective | Solas Gallery</title>
-    <meta name="description" content="Trade program for interior designers and decorators. Partnership opportunities with Central Texas art gallery. Commission structures, designer benefits, and professional art consultation services.">
-    <meta property="og:title" content="Trade Collective | Solas Gallery">
-    <meta property="og:description" content="Trade program for interior designers and decorators. Partnership opportunities with Central Texas art gallery. Commission structures, designer benefits, and professional art consultation services.">
+    <title>Trade Program for Interior Designers | Solas Gallery</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="canonical" href="https://www.solasgallery.com/trade">
+    <meta property="og:image" content="https://www.solasgallery.com/og/commissions.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.solasgallery.com/og/commissions.jpg">
+    <meta name="description" content="Trade program for interior designers and decorators at Solas Gallery in Salado, Texas. Three tiers at 10, 15 and 20%. Apply online, or call (254) 947-1881.">
+    <meta property="og:title" content="Trade Program for Interior Designers | Solas Gallery">
+    <meta property="og:description" content="Trade program for interior designers and decorators at Solas Gallery in Salado, Texas. Three tiers at 10, 15 and 20%. Apply online, or call (254) 947-1881.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://solasgallery.com/trade">
-    <meta name="keywords" content="art gallery trade program, interior designer partnership, Central Texas art, designer trade consideration, art consultation">
+    <meta property="og:url" content="https://www.solasgallery.com/trade">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Solas Gallery",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "2 Rock Creek Dr",
-        "addressLocality": "Salado",
-        "addressRegion": "Texas",
-        "postalCode": "76571",
-        "addressCountry": "US"
-      },
-      "telephone": "(254) 947-1881",
-      "email": "trade@solasgallery.com",
-      "url": "https://solasgallery.com",
-      "image": "https://solasgallery.com/images/solas-gallery-logo.png",
-      "description": "Trade program for interior designers and decorators in Central Texas",
-      "priceRange": "$$"
+      "@type": "WebPage",
+      "@id": "https://www.solasgallery.com/trade#webpage",
+      "url": "https://www.solasgallery.com/trade",
+      "name": "Trade Program for Interior Designers | Solas Gallery",
+      "about": { "@id": "https://www.solasgallery.com/#business" },
+      "isPartOf": { "@id": "https://www.solasgallery.com/#business" }
     }
     </script>
 
@@ -424,7 +421,7 @@
 
         .tier-commission {
             font-size: 2rem;
-            color: var(--solas-gold);
+            color: #6f6100;
             font-weight: 600;
             margin: 1rem 0;
             font-family: 'Cormorant Garamond', serif;
@@ -654,7 +651,7 @@
             gap: 2rem;
         }
 
-        .footer-section h4 {
+        .footer-section h3 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.2rem;
             letter-spacing: 0.08em;
@@ -780,38 +777,24 @@
             border-bottom-color: var(--solas-gold);
         }
     </style>
+    <style>
+        /* Gate 1 fixes: 44px tap targets, nav matches the 8-link site nav */
+        nav a { display: inline-flex; align-items: center; min-height: 44px; }
+        .nav-links, .nav-right { flex-wrap: wrap; gap: 0.25rem 1.5rem !important; }
+        .nav-links a, nav .nav-right a { padding-bottom: 0; }
+        input[type="checkbox"] { width: 24px !important; height: 24px !important; flex: none; }
+        .checkbox-item, .form-group.checkbox-group { min-height: 44px; }
+        .checkbox-item label, .form-group.checkbox-group label { padding: 10px 0; }
+        .breadcrumb a, .form-intro a { display: inline-block; padding: 12px 0; }
+        @media (max-width: 768px) {
+            nav { position: relative !important; flex-direction: column !important; padding: 0.75rem 1rem !important; gap: 0 !important; }
+            body { padding-top: 0 !important; }
+            .nav-links, nav .nav-right { flex-direction: row !important; flex-wrap: wrap; justify-content: center; gap: 0 1.25rem !important; }
+        }
+    </style>
 </head>
 <body>
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
 
-        // Fire trade_page_view event on page load
-        gtag('event', 'trade_page_view');
-    </script>
-
-    <!-- Meta Pixel -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-
-        // Replace YOUR_PIXEL_ID with actual Meta Pixel ID
-        fbq('init', 'YOUR_PIXEL_ID');
-        fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
-    </noscript>
 
     <!-- Navigation -->
     <nav>
@@ -819,11 +802,13 @@
             <a href="/">Solas Gallery</a>
         </div>
         <ul class="nav-links">
-            <li><a href="/art">Art</a></li>
-            <li><a href="/portraits">Portraits</a></li>
-            <li><a href="/events">Events</a></li>
-            <li><a href="/gallery">Gallery</a></li>
-            <li><a href="/story">Story</a></li>
+            <li><a href="/#portrait-design">Portraits</a></li>
+            <li><a href="/#commissions">Commissions</a></li>
+            <li><a href="/#originals">Studio Originals</a></li>
+            <li><a href="/journal">Journal</a></li>
+            <li><a href="/story">Our Story</a></li>
+            <li><a href="https://www.hubsalado.com/events">Events</a></li>
+            <li><a href="/visit">Visit</a></li>
             <li><a href="/trade" class="active">Trade</a></li>
         </ul>
     </nav>
@@ -833,60 +818,47 @@
         <div class="hero-content">
             <h1>Trade Collective</h1>
             <p>A partnership program for interior designers and decorators</p>
-            <a href="#application" class="cta-button">Apply for Trade Consideration</a>
+            <a href="#application" class="cta-button">Apply for Trade</a>
         </div>
     </section>
 
     <!-- About/Partnership Section -->
     <section class="about">
-        <h2>Designer Partnership Excellence</h2>
+        <h2>Working with designers</h2>
         <div class="about-content">
             <div class="about-text">
                 <h3>Designed for Your Practice</h3>
-                <p>The Solas Gallery Trade Collective offers curated partnership opportunities for interior designers, decorators, and design professionals who serve discerning clients. We understand the unique needs of your practice and provide dedicated support and professional pricing structures.</p>
-                <p>Our three-tier program accommodates practices of all sizes, from emerging designers to established studios. Each tier includes distinct benefits tailored to your business needs and project volume.</p>
+                <p>The Solas Gallery Trade Collective is for interior designers, decorators and other design professionals. Members get trade pricing on the work we make.</p>
+                <p>There are three tiers. Your tier depends on how much you buy over a rolling 12 months.</p>
             </div>
             <div class="about-highlights">
-                <h3 style="margin-top: 0;">Why Partner with Solas</h3>
+                <h3 style="margin-top: 0;">At a glance</h3>
                 <ul>
-                    <li>Curated collections for discerning clients</li>
-                    <li>Professional trade consideration structures</li>
-                    <li>Dedicated design consultation support</li>
-                    <li>Priority access to new acquisitions</li>
-                    <li>Flexible project-based arrangements</li>
-                    <li>Support for residential and commercial projects</li>
+                    <li>Portrait design: your people as art</li>
+                    <li>Commissions from your images, including heirloom folio and albums</li>
+                    <li>Studio originals: hand-finished, framed and hung</li>
+                    <li>Trade pricing of 10%, 15% or 20% by tier</li>
                 </ul>
             </div>
         </div>
     </section>
+</section>
 
     <!-- Services Grid -->
     <section class="services">
-        <h2>Trade Services & Support</h2>
+        <h2>What we make</h2>
         <div class="services-grid">
             <div class="service-card">
-                <h3>Design Consultation</h3>
-                <p>Professional guidance on art selection, color palettes, and spatial design integration. Our curators work directly with your design team to ensure perfect alignment with project vision and client aesthetic.</p>
+                <h3>Portrait design</h3>
+                <p>Your people as art, designed for the wall.</p>
             </div>
             <div class="service-card">
-                <h3>Custom Sourcing</h3>
-                <p>We find the right piece for your project from the studio floor, or commission one for the room. Whether you need a particular style, scale, or subject matter, we handle the research and curation.</p>
+                <h3>Commissions</h3>
+                <p>Art made from your images, including heirloom folio and albums.</p>
             </div>
             <div class="service-card">
-                <h3>Project Pricing</h3>
-                <p>Transparent, competitive trade consideration based on project scope and partnership tier. Simplified invoicing and flexible payment terms designed to support your project management workflow.</p>
-            </div>
-            <div class="service-card">
-                <h3>Priority Access</h3>
-                <p>First access to new work. Gallery events and collection previews for your practice.</p>
-            </div>
-            <div class="service-card">
-                <h3>Installation Support</h3>
-                <p>Professional handling, logistics coordination, and installation guidance. We work seamlessly with your teams to ensure flawless project delivery and client satisfaction.</p>
-            </div>
-            <div class="service-card">
-                <h3>Account Management</h3>
-                <p>Dedicated account support for ongoing relationships. Your primary contact understands your design aesthetic, client base, and project needs for streamlined collaboration.</p>
+                <h3>Studio originals</h3>
+                <p>Our art made yours. One of one, hand-finished, framed and hung.</p>
             </div>
         </div>
     </section>
@@ -894,52 +866,25 @@
     <!-- Partnership Tiers -->
     <section class="tiers">
         <h2>Partnership Tiers</h2>
-        <p class="tiers-intro">Your tier is set by your purchases over a rolling 12 months. All tiers include dedicated support and professional pricing.</p>
+        <p class="tiers-intro">Your tier is set by your purchases over a rolling 12 months.</p>
 
         <div class="tiers-grid">
             <div class="tier-card">
                 <h3>Trade</h3>
                 <p class="tier-commission">10%</p>
                 <p class="tier-threshold">$2,500+ a year</p>
-                <p class="tier-description">For emerging practices and occasional project needs.</p>
-                <ul class="tier-features">
-                    <li>Trade consideration on all pieces</li>
-                    <li>Quarterly collection updates</li>
-                    <li>Email consultation support</li>
-                    <li>Invoice payment terms</li>
-                    <li>Event invitations</li>
-                </ul>
             </div>
 
             <div class="tier-card featured">
                 <h3>Trade Plus</h3>
                 <p class="tier-commission">15%</p>
                 <p class="tier-threshold">$7,500+ a year</p>
-                <p class="tier-description">For active design practices with regular project flow.</p>
-                <ul class="tier-features">
-                    <li>All Trade benefits</li>
-                    <li>Priority new acquisition access</li>
-                    <li>Phone & in-person consultation</li>
-                    <li>Monthly collection features</li>
-                    <li>Custom sourcing service</li>
-                    <li>Dedicated account manager</li>
-                </ul>
             </div>
 
             <div class="tier-card">
                 <h3>Trade Premier</h3>
                 <p class="tier-commission">20%</p>
                 <p class="tier-threshold">$15,000+ a year</p>
-                <p class="tier-description">Premium partnership for high-volume studios and design firms.</p>
-                <ul class="tier-features">
-                    <li>All Trade Plus benefits</li>
-                    <li>First access to new collections</li>
-                    <li>Direct curator partnership</li>
-                    <li>Commissioned piece sourcing</li>
-                    <li>Private viewing events</li>
-                    <li>Flexible project agreements</li>
-                    <li>Private viewings for your clients</li>
-                </ul>
             </div>
         </div>
     </section>
@@ -951,18 +896,13 @@
         <div class="steps">
             <div class="step">
                 <div class="step-number">1</div>
-                <h3>Apply for Partnership</h3>
-                <p>Complete our simple application form telling us about your practice, project focus, and design aesthetic. We review applications and reach out within 5 business days.</p>
+                <h3>Apply</h3>
+                <p>Fill in the form below and tell us about your practice.</p>
             </div>
             <div class="step">
                 <div class="step-number">2</div>
-                <h3>Consultation & Placement</h3>
-                <p>Meet with our trade team to discuss your tier placement, project needs, and desired collection access. We tailor your partnership to match your business objectives.</p>
-            </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Seamless Collaboration</h3>
-                <p>Begin sourcing pieces and working with your dedicated account manager. Invoice payment terms and professional pricing keep every project simple.</p>
+                <h3>Talk with us</h3>
+                <p>Visit the gallery or call (254) 947-1881. Ask us — we'll tell you what we can do for your project.</p>
             </div>
         </div>
     </section>
@@ -970,9 +910,9 @@
     <!-- Application Form Section -->
     <section class="form-section" id="application">
         <h2>Apply Now</h2>
-        <p class="form-intro">Join the Solas Gallery Trade Collective. Tell us about your practice and design focus.</p>
+        <p class="form-intro">Tell us about your practice and your design focus.</p>
 
-        <form class="trade-form" id="tradeForm">
+        <form method="post" class="trade-form" id="tradeForm">
             <!-- Wired to Brevo via /api/inquiry → list 43 (Trade Collective Prospects) -->
 
             <div class="form-group">
@@ -996,7 +936,7 @@
             </div>
 
             <div class="form-group">
-                <label for="location">City / Service Area *</label>
+                <label for="location">City *</label>
                 <input type="text" id="location" name="location" required>
             </div>
 
@@ -1020,11 +960,7 @@
                 <textarea id="message" name="message" placeholder="Your design philosophy, client base, project types..."></textarea>
             </div>
 
-            <div class="form-group checkbox-group">
-                <input type="checkbox" id="subscribe" name="subscribe" value="yes">
-                <label for="subscribe">Add me to Solas Gallery trade updates and event invitations</label>
-            </div>
-
+            <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label>Leave this field empty<input type="text" name="hp" tabindex="-1" autocomplete="off"></label></div>
             <button type="submit" class="form-submit">Submit Application</button>
         </form>
     </section>
@@ -1041,12 +977,12 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h4>About Solas</h4>
-                <p>A gallery where every piece is made in our own studio in Salado, Texas — personal art, designed for your clients' homes.</p>
+                <h3>About Solas</h3>
+                <p>Portrait design, commissions and studio originals, made by hand in Salado, Texas.</p>
             </div>
 
             <div class="footer-section">
-                <h4>Trade Program</h4>
+                <h3>Trade Program</h3>
                 <ul class="footer-links">
                     <li><a href="/trade">Trade Collective</a></li>
                     <li><a href="/trade/faq">Trade FAQ</a></li>
@@ -1055,29 +991,26 @@
             </div>
 
             <div class="footer-section">
-                <h4>Gallery</h4>
+                <h3>Gallery</h3>
                 <ul class="footer-links">
                     <li><a href="/art">Art Collections</a></li>
                     <li><a href="/portraits">Portraits</a></li>
-                    <li><a href="/events">Events</a></li>
-                    <li><a href="/gallery">Gallery Locations</a></li>
+                            <li><a href="/visit">Visit the gallery</a></li>
                     <li><a href="/story">Our Story</a></li>
                 </ul>
             </div>
 
             <div class="footer-section">
-                <h4>Contact</h4>
-                <p><strong>Trade Inquiries:</strong></p>
-                <p>trade@solasgallery.com</p>
-                <p><strong>General:</strong></p>
+                <h3>Contact</h3>
                 <p>(254) 947-1881</p>
+                <p>Monday to Saturday, 10 to 5</p>
             </div>
         </div>
 
         <div class="footer-nap">
             <strong>Solas Gallery</strong>
-            2 Rock Creek Dr, Salado, Texas 76571<br>
-            (254) 947-1881 | trade@solasgallery.com
+            2 Rock Creek Dr, Salado, TX 76571<br>
+            (254) 947-1881 | Monday to Saturday, 10 to 5
         </div>
     </footer>
 
@@ -1090,38 +1023,37 @@
         formInputs.forEach(input => {
             input.addEventListener('focus', function() {
                 if (!formStartTracked) {
-                    gtag('event', 'trade_form_start');
                     formStartTracked = true;
                 }
             });
         });
 
-        // Track form submission for trade_form_submit event
-        document.querySelector('.trade-form').addEventListener('submit', function(e) {
-            gtag('event', 'trade_form_submit');
-            // Also fire Meta Pixel Lead event
-            fbq('track', 'Lead');
-        });
     </script>
     <!-- Brevo submission (list 43 = Trade Collective Prospects) -->
     <script>
     (function(){
       var form=document.getElementById('tradeForm');
       if(!form) return;
+      function showErr(){
+        var m=document.getElementById('tradeFormError');
+        if(!m){m=document.createElement('p');m.id='tradeFormError';m.setAttribute('role','alert');m.style.cssText='padding:1rem 0;text-align:center;color:#8a2a1a;';form.appendChild(m);}
+        m.innerHTML='Something went wrong, and your application did not go through. Please call us at <a href="tel:+12549471881">(254) 947-1881</a> and we will take it from there.';
+      }
       form.addEventListener('submit',async function(e){
         e.preventDefault();
         var d=new FormData(form),o={};
-        d.forEach(function(v,k){o[k]=v;});
+        d.forEach(function(v,k){o[k]=(k in o)?o[k]+', '+v:v;}); // keep every ticked box (e.g. services), not only the last
         var name=o.name||o.fullName||'';
         var firm=o.company||o.firmName||'';
-        var extras=Object.keys(o).filter(function(k){return ['name','fullName','email','phone','company','firmName'].indexOf(k)<0;})
+        var extras=Object.keys(o).filter(function(k){return ['name','fullName','email','phone','company','firmName','hp'].indexOf(k)<0;})
           .map(function(k){return k+': '+o[k];}).join('\n');
         var message=(firm?'Firm: '+firm+'\n':'')+extras;
         try{
-          await fetch('/api/inquiry',{method:'POST',headers:{'content-type':'application/json'},
-            body:JSON.stringify({name:name,email:o.email||'',phone:o.phone||'',message:message,source:'Trade — Solas',listId:43})});
-          form.innerHTML='<p style="padding:2rem;text-align:center;font-size:1.1rem;">Thank you — your application has been received. We’ll be in touch shortly.</p>';
-        }catch(err){ alert('Something went wrong. Please email trade@solasgallery.com.'); }
+          var r=await fetch('/api/inquiry',{method:'POST',headers:{'content-type':'application/json'},
+            body:JSON.stringify({name:name,email:o.email||'',phone:o.phone||'',message:message,source:'Trade — Solas',hp:o.hp||''})});
+          if(!r.ok) throw new Error('inquiry '+r.status);
+          form.innerHTML='<p style="padding:2rem;text-align:center;font-size:1.1rem;">Thank you — your application has been received. We’ll be in touch.</p>';
+        }catch(err){ showErr(); }
       });
     })();
     </script>

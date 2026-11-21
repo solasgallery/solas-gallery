@@ -1,3 +1,31 @@
+/* Metric-matched fallbacks (p2 LCP fix): sized from Next's capsize metrics so text
+   rendered before the Google Fonts arrive takes the same space after the swap. */
+@font-face {
+  font-family: "Cormorant Fallback";
+  src: local("Times New Roman"), local("TimesNewRomanPSMT"), local("Georgia");
+  size-adjust: 96.98%;
+  ascent-override: 95.27%;
+  descent-override: 29.59%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Cormorant Fallback";
+  font-style: italic;
+  src: local("Times New Roman Italic"), local("TimesNewRomanPS-ItalicMT"), local("Georgia Italic");
+  size-adjust: 96.98%;
+  ascent-override: 95.27%;
+  descent-override: 29.59%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Jost Fallback";
+  src: local("Arial"), local("ArialMT");
+  size-adjust: 96.01%;
+  ascent-override: 111.45%;
+  descent-override: 39.06%;
+  line-gap-override: 0%;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,9 +42,9 @@
   --gold: #141414;        /* former gold accent → black */
   --muted: #55524c;       /* body text on cream, 7.4:1 */
   --line: #1414142b;
-  --serif: "Cormorant Garamond", Georgia, serif;
-  --sans: "Jost", "Helvetica Neue", Arial, sans-serif;
-  --label: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Cormorant Garamond", "Cormorant Fallback", Georgia, serif;
+  --sans: "Jost", "Jost Fallback", "Helvetica Neue", Arial, sans-serif;
+  --label: "Jost", "Jost Fallback", "Helvetica Neue", Arial, sans-serif;
 }
 
 @layer base {
@@ -275,7 +303,7 @@ button, input, select, textarea { font: inherit; }
 }
 
 .solas-whisper {
-  color: #827a6c;
+  color: #5f584c;
   max-width: 240px;
   font: italic 15px/1.5 var(--serif);
   margin: 84px 0 0;
@@ -325,7 +353,7 @@ button, input, select, textarea { font: inherit; }
 }
 
 .solas-folio {
-  color: #968e81;
+  color: #6b6458;
   font: 500 11px var(--label);
   letter-spacing: 0.1em;
   position: absolute;
@@ -432,6 +460,8 @@ button, input, select, textarea { font: inherit; }
 }
 
 .solas-underlink {
+  min-height: 24px;
+  padding-bottom: 2px;
   border-bottom: 1px solid;
   gap: 14px;
   width: max-content;

@@ -68,7 +68,8 @@ export function portraitServiceJsonLd({
   description,
   path,
   image = '/solas-og.jpg',
-}: PageJsonLdInput) {
+  serviceType = 'Portrait design',
+}: PageJsonLdInput & { serviceType?: string }) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
@@ -81,49 +82,6 @@ export function portraitServiceJsonLd({
       '@type': 'State',
       name: 'Texas',
     },
-    serviceType: 'Portrait Photography',
-  }
-}
-
-/** Event venue schema for /events/venue-rental. */
-export function venueJsonLd() {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'EventVenue',
-    name: 'Solas Gallery — Event Venue',
-    description:
-      'An intimate art gallery venue on Main Street in Salado, Texas. Weddings, receptions, and private events for up to 100 guests.',
-    url: `${SITE.url}/events/venue-rental`,
-    image: `${SITE.url}/solas-og.jpg`,
-    address: baseAddress,
-    telephone: SITE.phoneDisplay,
-    maximumAttendeeCapacity: 100,
-  }
-}
-
-/** Geo-area landing page schema (noindex, but still structured). */
-export function areaJsonLd({
-  title,
-  description,
-  path,
-  areaName,
-}: PageJsonLdInput & { areaName: string }) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: title,
-    description,
-    url: `${SITE.url}${path}`,
-    image: `${SITE.url}/solas-og.jpg`,
-    provider: baseOrganization,
-    areaServed: {
-      '@type': 'City',
-      name: areaName,
-      containedInPlace: {
-        '@type': 'State',
-        name: 'Texas',
-      },
-    },
-    serviceType: 'Portrait Photography and Fine Art',
+    serviceType,
   }
 }

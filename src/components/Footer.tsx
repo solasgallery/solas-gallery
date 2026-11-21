@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { SITE, sisters } from '@/lib/site'
+import { HUB_EVENTS_URL, HUB_VENUE_URL, NAP, SITE } from '@/lib/site'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -9,19 +9,25 @@ export default function Footer() {
       <img src="/brand/solas.svg" alt="Solas Gallery" width={88} height={83} loading="lazy" />
       <div className="solas-footer-nap">
         <p>
-          {SITE.name} · {SITE.street}, {SITE.city}, {SITE.region} {SITE.postalCode} ·{' '}
+          {NAP.replace(` · ${SITE.phoneDisplay}`, '')} ·{' '}
           <a href={`tel:${SITE.phoneTel}`}>{SITE.phoneDisplay}</a>
         </p>
         <p className="solas-footer-sisters">
-          Neighbors on Rock Creek Drive:{' '}
-          {sisters.map((sister, index) => (
-            <span key={sister.href}>
-              {index > 0 ? ' · ' : null}
-              <a href={sister.href} rel="noopener noreferrer">
-                {sister.name}
-              </a>
-            </span>
-          ))}
+          <Link href="/journal">Journal</Link>
+          {' · '}
+          <Link href="/trade" prefetch={false}>Trade</Link>
+          {' · '}
+          <a href={HUB_EVENTS_URL} rel="noopener noreferrer">
+            Events at HUB Salado
+          </a>
+          {' · '}
+          <a href={HUB_VENUE_URL} rel="noopener noreferrer">
+            Venue rental at HUB Salado
+          </a>
+          {' · '}
+          <a href="https://www.saladovillageframer.com" rel="noopener noreferrer">
+            Salado Village Framer
+          </a>
         </p>
       </div>
       <small>
