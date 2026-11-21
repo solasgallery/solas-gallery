@@ -127,8 +127,7 @@ export default function PortraitsPage() {
           </p>
           {hasSittings ? (
             <p>
-              Limited to {SITTING_CAP} portrait designs across all sittings. Once a day is
-              full, we close it.
+              Limited to {SITTING_CAP} portrait designs across all sittings.
             </p>
           ) : null}
           {hasSittings ? (

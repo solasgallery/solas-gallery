@@ -1,3 +1,31 @@
+/* Metric-matched fallbacks (p2 LCP fix): sized from Next's capsize metrics so text
+   rendered before the Google Fonts arrive takes the same space after the swap. */
+@font-face {
+  font-family: "Cormorant Fallback";
+  src: local("Times New Roman"), local("TimesNewRomanPSMT"), local("Georgia");
+  size-adjust: 96.98%;
+  ascent-override: 95.27%;
+  descent-override: 29.59%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Cormorant Fallback";
+  font-style: italic;
+  src: local("Times New Roman Italic"), local("TimesNewRomanPS-ItalicMT"), local("Georgia Italic");
+  size-adjust: 96.98%;
+  ascent-override: 95.27%;
+  descent-override: 29.59%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Jost Fallback";
+  src: local("Arial"), local("ArialMT");
+  size-adjust: 96.01%;
+  ascent-override: 111.45%;
+  descent-override: 39.06%;
+  line-gap-override: 0%;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,9 +42,9 @@
   --gold: #141414;        /* former gold accent → black */
   --muted: #55524c;       /* body text on cream, 7.4:1 */
   --line: #1414142b;
-  --serif: "Cormorant Garamond", Georgia, serif;
-  --sans: "Jost", "Helvetica Neue", Arial, sans-serif;
-  --label: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Cormorant Garamond", "Cormorant Fallback", Georgia, serif;
+  --sans: "Jost", "Jost Fallback", "Helvetica Neue", Arial, sans-serif;
+  --label: "Jost", "Jost Fallback", "Helvetica Neue", Arial, sans-serif;
 }
 
 @layer base {

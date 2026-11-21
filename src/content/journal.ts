@@ -1,10 +1,10 @@
 /**
  * Solas Journal. Four craft articles, bylined Tim or Cherie Flanagan.
  *
- * DRAFTED FOR TIM/CHERIE TO READ BEFORE GO-LIVE (2026-11-21). Facts come from the existing
- * site, the operations manual and the rebuild brief; general craft guidance (hanging
- * heights, light, humidity) is standard practice, not a Solas claim. No client stories,
- * statistics or sitting dates appear here: sittings are linked, never listed.
+ * DRAFTED FOR TIM/CHERIE TO READ BEFORE GO-LIVE (2026-11-21). Every factual claim is traced
+ * in ~/ClaudeProjects/website-rebuild-2026-11/logs/fact-table-solas.md (live site, gallery
+ * STATUS, OM, BRIEF, or a cited public source for general care and hanging guidance).
+ * No client stories, statistics or sitting dates appear here: sittings are linked, never listed.
  */
 
 export type Block =
@@ -98,17 +98,17 @@ export const articles: Article[] = [
       { type: 'h2', text: 'Rules of thumb for size' },
       {
         type: 'p',
-        text: 'Over a sofa, console or bed, a single piece usually looks right at about two-thirds to three-quarters of the furniture width, hung several inches above it. On an open wall, go larger than feels comfortable on paper; a piece that is too small is a common mistake. In a hallway, where you pass close, smaller pieces hung in a line work better than one large one. These are starting points only. A wall proof shows the piece on your actual wall, and that settles it.',
+        text: 'Over a sofa, console or bed, designers usually suggest a single piece about half to three-quarters of the furniture width, with its lower edge roughly 7 to 10 inches above the furniture. On an open wall, the common advice is to go larger than you think. These are starting points only. A wall proof shows the piece on your actual wall, and that settles it.',
       },
       { type: 'h2', text: 'Height and light' },
       {
         type: 'p',
-        text: 'Galleries commonly hang work so the center sits around 57 inches from the floor, which is roughly eye level. Hang a little lower over furniture so the piece and the piece beneath it read as one group. Keep work out of direct sun, especially on the south and west sides of a Texas house.',
+        text: 'Galleries and museums commonly hang work so the center sits about 57 inches from the floor, roughly eye level. Over furniture, the furniture sets the height instead. Keep work out of direct sun on any wall, in any season.',
       },
       { type: 'h2', text: 'What shapes the cost' },
       {
         type: 'p',
-        text: 'Commissions at Solas begin at $1,500, and larger or more complex pieces can run to $10,000 and above. Size, materials and the complexity of the work all play a part. Studio originals, the pieces already on our floor, also begin at $1,500 and can be sized and colored for your room.',
+        text: 'Commissions at Solas begin at $1,500 and run to $10,000 and above. Studio originals, the pieces already on our floor, also begin at $1,500, and a piece resized and recolored for your room is priced by size.',
       },
       {
         type: 'p',
@@ -126,7 +126,7 @@ export const articles: Article[] = [
     seoTitle: 'What Is a Design Proof? | Solas Gallery Journal, Salado',
     title: 'What is a design proof?',
     description:
-      'A design proof shows your piece on a photograph of your own wall, at scale, with a firm price, before anything is made. Tim Flanagan explains how it works.',
+      'A design proof shows your piece on a photograph of your own wall, with a firm price, before anything is made. Tim Flanagan explains how it works and the cost.',
     author: 'Tim Flanagan',
     published: '2026-11-21',
     cta: { href: '/begin', label: 'Ask about a wall proof' },
@@ -134,7 +134,7 @@ export const articles: Article[] = [
       { type: 'lede', text: 'A design proof shows you the piece on your wall before it is made.' },
       {
         type: 'p',
-        text: 'It is the simplest part of our process to describe. We take a photograph of your own wall, place the proposed piece on it at true scale, and show you the result with a firm price. You decide by looking, not by imagining.',
+        text: 'It is the simplest part of our process to describe. We place the proposed piece on a photograph of your own wall and show you the result with a firm price. You decide by looking, not by imagining.',
       },
       { type: 'h2', text: 'What a proof settles' },
       {
@@ -154,7 +154,7 @@ export const articles: Article[] = [
       { type: 'h2', text: 'Timing and cost' },
       {
         type: 'p',
-        text: 'A proof is ready within five business days. It costs $195, and that fee is credited in full when you go ahead. If you decide not to, it is not refunded; it pays for the design work we did for you. A first revision is included.',
+        text: 'A proof is ready within five business days. It costs $195, and that fee is credited in full when you go ahead. If you decide not to go ahead, the proof fee is not refunded. A first revision is included.',
       },
       { type: 'h2', text: 'After you approve' },
       {
@@ -181,32 +181,32 @@ export const articles: Article[] = [
       { type: 'h2', text: 'Keep it out of direct sun' },
       {
         type: 'p',
-        text: 'Sunlight is the main enemy of color. Even archival pigments last longer away from direct light, and a south- or west-facing window in Texas delivers a lot of it. Choose a wall that gets bright but indirect light, and consider shades for windows that face the sun.',
+        text: 'Direct sunlight fades pigments, and light damage cannot be reversed. Choose a wall that never gets direct sun, remembering that the angle of the sun moves with the seasons. Bright, indirect light is fine.',
       },
       { type: 'h2', text: 'Watch heat and humidity swings' },
       {
         type: 'ul',
         items: [
-          'Do not hang a piece over a heat vent, above a fireplace, or on a wall that gets direct sun.',
-          'Avoid kitchens and bathrooms, where steam and grease build up.',
-          'Keep the house at a steady temperature, including when you are away. Large swings make canvas slacken and tighten.',
-          'Museums commonly aim for moderate humidity, around 40 to 60 percent, as a sensible target.',
+          'Do not hang a piece above a fireplace or near a heater or air-conditioning vent.',
+          'Avoid kitchens, where cooking oils settle on the surface, and steamy bathrooms.',
+          'Keep the house steady, including when you are away. Canvas slackens in humid weather and tightens in dry weather, and big swings stress it.',
+          'Conservators commonly suggest a relative humidity between 40 and 60 percent.',
         ],
       },
       { type: 'h2', text: 'Never store it in an attic, garage or car' },
       {
         type: 'p',
-        text: 'These spaces get far hotter than the rest of the house and swing between extremes. Heat can soften varnishes and adhesives and warp stretcher bars. If a piece must be stored, keep it indoors, upright, wrapped in clean paper or cloth, and off the floor.',
+        text: 'These spaces swing between extremes of heat and humidity, and heat speeds up the aging of paint and canvas. If a piece must be stored, keep it inside the house, in a room that stays steady.',
       },
       { type: 'h2', text: 'Dusting and cleaning' },
       {
         type: 'p',
-        text: 'Use a soft, dry brush or a clean microfiber cloth, with a light touch. Do not use water, glass cleaner or household sprays on a canvas surface. If something spills or marks the work, leave it alone and call us.',
+        text: 'Every few months, dust lightly with a wide, soft, dry brush, never a cloth. Do not use water, liquid cleaners or household sprays on a canvas surface. If something spills or marks the work, leave it alone and call us.',
       },
-      { type: 'h2', text: 'Let the wall breathe' },
+      { type: 'h2', text: 'Choose an inside wall' },
       {
         type: 'p',
-        text: 'A small rubber bumper on each lower corner leaves a little air behind the piece and keeps it from pressing against a cool or damp wall. If your piece is framed under glass, ask us about UV-filtering glazing when we frame it.',
+        text: 'Where you can, hang canvas on an inside wall of the house; outside walls run cooler and damper unless they are well insulated. If your piece is framed under glass, ask us about UV-filtering glazing when we frame it.',
       },
       {
         type: 'p',

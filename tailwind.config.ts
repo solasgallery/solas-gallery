@@ -15,8 +15,8 @@ const config: Config = {
         deep: '#141414',
       },
       fontFamily: {
-        display: ['Cormorant Garamond', 'serif'],
-        body: ['Jost', 'sans-serif'],
+        display: ['Cormorant Garamond', 'Cormorant Fallback', 'serif'],
+        body: ['Jost', 'Jost Fallback', 'sans-serif'],
       },
       fontSize: {
         'hero': ['clamp(2.5rem, 5vw, 4.5rem)', { lineHeight: '1.1', letterSpacing: '0.02em' }],

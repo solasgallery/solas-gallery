@@ -8,7 +8,9 @@ import { DATE_REVALIDATE_SECONDS, sittingsLine, upcomingSittings } from '@/lib/d
 import './globals.css'
 import './makeover.css'
 
-// Fonts load via a preconnected Google Fonts <link> (display=swap).
+// Fonts load via Google Fonts (display=swap), inserted by a tiny inline script so the
+// stylesheet does NOT block first paint (it was the homepage LCP's render delay, p2).
+// Metric-matched fallback faces in globals.css keep the swap from shifting layout.
 // next/font/google failed on Vercel's build machine (font fetch), so it is not used.
 const FONTS_HREF =
   'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap'
@@ -101,7 +103,15 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="stylesheet" href={FONTS_HREF} />
+        <link rel="preload" as="style" href={FONTS_HREF} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var l=document.createElement('link');l.rel='stylesheet';l.href='${FONTS_HREF}';document.head.appendChild(l)})()`,
+          }}
+        />
+        <noscript>
+          <link rel="stylesheet" href={FONTS_HREF} />
+        </noscript>
         {gtmId ? (
           <Script id="gtm" strategy="afterInteractive">
             {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

@@ -224,8 +224,7 @@ export default function Home() {
           <h2 id="sittings-heading">{hasSittings ? 'Sittings this season.' : 'Dates to be announced.'}</h2>
           {hasSittings ? (
             <p className="sg-plain">
-              Limited to {SITTING_CAP} portrait designs across all sittings. Once a day is full,
-              we close it.
+              Limited to {SITTING_CAP} portrait designs across all sittings.
             </p>
           ) : (
             <p className="sg-plain">

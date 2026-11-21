@@ -75,8 +75,8 @@ export default function StoryPage() {
               </p>
               <p>
                 Solas Gallery started as a small portrait studio on Main Street in
-                Salado, Texas — a town of maybe 2,000 people in the Hill Country
-                between Austin and Waco. It was not an obvious place to build a
+                Salado, Texas — a village of about 2,400 people on I-35 in Bell
+                County. It was not an obvious place to build a
                 creative life. But Cherie and I chose it, and it chose us back.
               </p>
               <p>
