@@ -61,7 +61,7 @@ export default function RealPortraitPage() {
           </p>
         </div>
         <div className="solas-portrait-image">
-          <img src={images.portrait.src} alt={images.portrait.alt} />
+          <img src={images.portrait.src} alt={images.portrait.alt} width={750} height={750} />
           <span className="solas-image-number">01</span>
         </div>
       </section>

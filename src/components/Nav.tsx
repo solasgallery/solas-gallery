@@ -20,7 +20,7 @@ function NavLink({
     return (
       <a href={link.href} rel="noopener noreferrer" onClick={onClick}>
         {link.label}
-        <span className="sr-only"> (opens HUBSalado)</span>
+        <span className="sr-only"> (opens HUB Salado)</span>
       </a>
     )
   }

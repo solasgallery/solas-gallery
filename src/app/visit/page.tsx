@@ -28,7 +28,7 @@ export default function VisitPage() {
       <JsonLd data={jsonLd} />
       <section className="solas-opening" aria-labelledby="visit-heading">
         <div className="solas-opening-image">
-          <img src={images.visit.src} alt={images.visit.alt} />
+          <img src={images.visit.src} alt={images.visit.alt} width={1600} height={829} />
           <div className="solas-light" />
           <span className="solas-caption">2 Rock Creek Dr · Salado</span>
         </div>

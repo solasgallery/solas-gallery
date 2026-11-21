@@ -1,6 +1,6 @@
 export const SITE = {
   name: 'Solas Gallery',
-  url: 'https://solasgallery.com',
+  url: 'https://www.solasgallery.com',
   title: 'Solas Gallery | Portraits, Commissions & Art in Salado, TX',
   description:
     'Solas Gallery in Salado, Texas: portrait design, commissions from your images, and studio originals. One of one, hand-finished, designed for your home.',
@@ -20,7 +20,7 @@ export const SITE = {
 export const NAP = 'Solas Gallery · 2 Rock Creek Dr · Salado, TX 76571 · (254) 947-1881'
 
 export const sisters = [
-  { name: 'Salado Village Framer', href: 'https://saladovillageframer.com' },
+  { name: 'Salado Village Framer', href: 'https://www.saladovillageframer.com' },
   { name: 'HUB Salado', href: 'https://www.hubsalado.com' },
 ] as const
 
@@ -42,6 +42,8 @@ export const primaryNav = [
 export const images = {
   visit: {
     src: '/images/folio-hero.jpg',
+    width: 1600,
+    height: 829,
     alt: 'The entrance to Solas Gallery at dusk, warm light in the arched window above the stone steps.',
   },
   home: {
@@ -58,6 +60,8 @@ export const images = {
   },
   folio: {
     src: '/images/folio-hero.jpg',
+    width: 1600,
+    height: 829,
     alt: 'The entrance to Solas Gallery at dusk, warm light in the arched window above the stone steps.',
   },
   stone: {
@@ -87,5 +91,6 @@ export const indexableRoutes = [
   { path: '/story', priority: 0.6, changeFrequency: 'monthly' as const },
   { path: '/portraits/babyfaces', priority: 0.6, changeFrequency: 'monthly' as const },
   { path: '/trade', priority: 0.6, changeFrequency: 'monthly' as const },
+  { path: '/trade/faq', priority: 0.5, changeFrequency: 'monthly' as const },
   { path: '/privacy', priority: 0.3, changeFrequency: 'yearly' as const },
 ]

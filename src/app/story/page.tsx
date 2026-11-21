@@ -33,6 +33,8 @@ export default function StoryPage() {
         <img
           src="/images/story/hero-fallback.jpg"
           alt="The Solas Gallery building in Salado through the trees."
+          width={1400}
+          height={933}
           className="absolute inset-0 w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-deep/30" />
@@ -147,7 +149,7 @@ export default function StoryPage() {
             Today, Solas Gallery sits at the center of a small creative ecosystem:
             fine art and portraiture in the gallery, custom framing at{' '}
             <a
-              href="https://saladovillageframer.com"
+              href="https://www.saladovillageframer.com"
               className="text-stone hover:text-charcoal transition-colors border-b border-stone/40 hover:border-charcoal pb-px"
             >
               Salado Village Framer
@@ -157,7 +159,7 @@ export default function StoryPage() {
               href="https://www.hubsalado.com"
               className="text-stone hover:text-charcoal transition-colors border-b border-stone/40 hover:border-charcoal pb-px"
             >
-              HUBSalado
+              HUB Salado
             </a>
             , and a community that keeps showing up. It all started with one camera
             and one small town. Thirty years later, the light is still good.

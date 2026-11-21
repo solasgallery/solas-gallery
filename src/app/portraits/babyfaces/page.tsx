@@ -51,7 +51,7 @@ export default function BabyFacesPage() {
         eyebrow="A Solas Gallery experience"
         heading="BabyFaces"
         lede="Tiny faces. Timeless portraits."
-        heroImage={{ src: '/images/portraits/babyfaces-hero.jpg', alt: 'BabyFaces newborn portrait' }}
+        heroImage={{ src: '/images/portraits/babyfaces-hero.jpg', alt: 'BabyFaces newborn portrait', width: 750, height: 750 }}
         heroCaption="BabyFaces · Salado, Texas"
         cta={{ href: '/begin', label: 'Begin your inquiry' }}
         secondaryCta={{ href: `tel:${SITE.phoneTel}`, label: SITE.phoneDisplay }}

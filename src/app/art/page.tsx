@@ -46,7 +46,7 @@ export default function ArtPage() {
       <section className="solas-art-section">
         <div className="solas-art-image">
           <div className="solas-art-frame">
-            <img src={images.art.src} alt={images.art.alt} />
+            <img src={images.art.src} alt={images.art.alt} width={750} height={750} />
           </div>
           <p>Collected, not consumed</p>
         </div>

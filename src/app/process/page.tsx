@@ -13,6 +13,8 @@ const description =
 const heroImage = {
   src: '/images/art/category-commission.jpg',
   alt: 'A large abstract painting of trees in green and gold, hung on a gallery wall.',
+  width: 750,
+  height: 750,
 }
 
 export const metadata: Metadata = createLandingMetadata({

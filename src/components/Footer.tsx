@@ -18,14 +18,14 @@ export default function Footer() {
           <Link href="/trade">Trade</Link>
           {' · '}
           <a href={HUB_EVENTS_URL} rel="noopener noreferrer">
-            Events at HUBSalado
+            Events at HUB Salado
           </a>
           {' · '}
           <a href={HUB_VENUE_URL} rel="noopener noreferrer">
-            Venue rental at HUBSalado
+            Venue rental at HUB Salado
           </a>
           {' · '}
-          <a href="https://saladovillageframer.com" rel="noopener noreferrer">
+          <a href="https://www.saladovillageframer.com" rel="noopener noreferrer">
             Salado Village Framer
           </a>
         </p>
