@@ -4,8 +4,6 @@ import { useEffect } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import { inferCtaEvent, trackCta } from '@/lib/tracking'
 
-const gtmId = process.env.NEXT_PUBLIC_GTM_ID
-
 export function Tracking() {
   useEffect(() => {
     function onClick(event: MouseEvent) {
@@ -25,7 +23,8 @@ export function Tracking() {
   return <Analytics />
 }
 
-export function GtmNoscript() {
+/** Rendered from the server layout, which decides gtmId (production only). */
+export function GtmNoscript({ gtmId }: { gtmId?: string }) {
   if (!gtmId) return null
   return (
     <noscript>
