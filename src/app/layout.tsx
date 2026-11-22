@@ -18,7 +18,8 @@ const FONTS_HREF =
 // Dated elements (announcement bar) are filtered per request window, not per build.
 export const revalidate = DATE_REVALIDATE_SECONDS
 
-const gtmId = process.env.NEXT_PUBLIC_GTM_ID
+/** GTM loads on production only, so previews, local builds and audits never reach analytics (same rule as the Framer). */
+const gtmId = process.env.VERCEL_ENV === 'production' ? process.env.NEXT_PUBLIC_GTM_ID : undefined
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
@@ -123,7 +124,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         ) : null}
       </head>
       <body>
-        <GtmNoscript />
+        <GtmNoscript gtmId={gtmId} />
         <Tracking />
         <div className="solas-site">
           <Nav announce={announce} />
