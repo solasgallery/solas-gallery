@@ -693,3 +693,27 @@ a[href^="tel:"] {
 /* /begin: the commissions line moved from the homepage (quiet pass) */
 .solas-policy-hero .sg-begin-lede { max-width: 560px; margin: 40px 0 0; font: 300 17px/1.7 var(--sans); color: #d9d2c6; }
 .sg-begin-lede a { color: var(--cream); border-bottom: 1px solid var(--cream); }
+
+/* Trade (/trade, 2026-11-25): the locked one-pager, mirrored from the Framer page. No form. */
+.sg-trade-copy { padding-bottom: 64px; }
+.sg-trade-copy h2:not(:first-child) { margin-top: 72px; }
+.sg-trade-table { width: 100%; border-collapse: collapse; margin: 8px 0 28px; font: 300 15px/1.5 var(--sans); color: var(--muted); }
+.sg-trade-table th,
+.sg-trade-table td { border-bottom: 1px solid var(--line); padding: 14px 16px 14px 0; text-align: left; vertical-align: top; }
+.sg-trade-table thead th { font: 500 11px/1.4 var(--label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); border-bottom-color: var(--ink); }
+.sg-trade-table tbody th { font: italic 400 1.45rem/1.15 var(--serif); color: var(--ink); white-space: nowrap; }
+.sg-trade-steps { margin: 0 0 28px; padding-left: 22px; }
+.sg-trade-steps b { font-weight: 500; color: var(--ink); }
+.solas-page-copy .sg-trade-joint { border-left: 1px solid var(--ink); padding-left: 22px; font: italic 400 1.35rem/1.45 var(--serif); color: var(--ink); }
+.sg-trade-enroll { padding-top: 0; }
+.solas-page-copy .sg-trade-ways { font: italic 400 clamp(1.6rem, 4vw, 2.3rem)/1.3 var(--serif); color: var(--ink); }
+.sg-trade-ways a { display: inline-flex; align-items: center; min-height: 44px; }
+@media (max-width: 640px) {
+  .sg-trade-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .sg-trade-table, .sg-trade-table tbody, .sg-trade-table tr, .sg-trade-table th, .sg-trade-table td { display: block; width: 100%; }
+  .sg-trade-table tr { border-top: 1px solid var(--ink); padding: 18px 0 14px; }
+  .sg-trade-table th, .sg-trade-table td { border: 0; padding: 3px 0; }
+  .sg-trade-table td::before { content: attr(data-label) ": "; font: 500 11px/1.4 var(--label); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink); }
+  .sg-trade-ways span { display: none; }
+  .sg-trade-ways a { display: flex; }
+}

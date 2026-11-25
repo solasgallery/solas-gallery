@@ -20,15 +20,19 @@ const nextConfig = {
       // Thin city landing pages consolidated (2026-11-21): one real page for the visit.
       { source: '/area', destination: '/visit', permanent: true },
       { source: '/area/:path*', destination: '/visit', permanent: true },
+      // One trade page (2026-11-25, mirrors the Framer): the application form and FAQ are retired;
+      // enroll is by email or phone. 301s, as on the Framer.
+      { source: '/trade/apply', destination: '/trade#enroll', statusCode: 301 },
+      { source: '/trade/apply.html', destination: '/trade#enroll', statusCode: 301 },
+      { source: '/trade/faq', destination: '/trade', statusCode: 301 },
+      { source: '/trade/faq.html', destination: '/trade', statusCode: 301 },
+      { source: '/trade/index.html', destination: '/trade', statusCode: 301 },
       // Short link for the Killarney event (2026-11-19). Temporary (307) so it can be repointed.
       { source: '/killarney', destination: 'https://buytickets.at/hubsalado/2496909', permanent: false },
     ]
   },
   async rewrites() {
     return [
-      { source: '/trade', destination: '/trade/index.html' },
-      { source: '/trade/apply', destination: '/trade/apply.html' },
-      { source: '/trade/faq', destination: '/trade/faq.html' },
       // Universal Studio lives in its own Vercel project (solasgallery/universal-studio)
       { source: '/universal-studio', destination: 'https://studio.solasgallery.com/universal-studio' },
       { source: '/universal-studio/:path*', destination: 'https://studio.solasgallery.com/universal-studio/:path*' },

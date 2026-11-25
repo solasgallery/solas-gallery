@@ -1,7 +1,7 @@
 // Run: npm run build first, then `node --test tests/`.
 // FS6-03: if the lead email reached Cherie but the Brevo contact save failed, /api/inquiry returns 200
 // {success, received, saved:false} (and the email says the contact was not saved). Only a failed lead email is a 500.
-// FS6-05: the static trade forms keep every ticked "services" box. FS6-07: every form is method="post".
+// FS6-07: every form is method="post". Trade (2026-11-25): /trade has no form; apply/faq 301 to it; the old trade source is rejected.
 // Brevo is a local HTTP stub via BREVO_API_BASE: no real Brevo calls.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -26,7 +26,7 @@ const post = (body) =>
     headers: { 'content-type': 'application/json', 'x-forwarded-for': `10.8.0.${++n}` },
     body: JSON.stringify(body),
   }).then(async (r) => ({ status: r.status, json: await r.json().catch(() => null) }));
-const lead = { name: 'AUDIT TEST', email: 'audit@example.com', phone: '', message: 'hi', source: 'Trade — Solas', hp: '' };
+const lead = { name: 'AUDIT TEST', email: 'audit@example.com', phone: '', message: 'hi', source: 'Begin', hp: '' };
 
 test.before(async () => {
   stub = createServer((req, res) => {
@@ -69,7 +69,7 @@ for (const m of ['500', 'drop']) {
     assert.equal(r.json.saved, false);
     const smtp = calls.filter((c) => c.kind === 'smtp');
     assert.equal(smtp.length, 1, 'lead email still sent');
-    assert.match(smtp[0].body.htmlContent, /NOT saved to Brevo \(list 43\)/);
+    assert.match(smtp[0].body.htmlContent, /NOT saved to Brevo \(list 51\)/);
   });
 }
 
@@ -81,17 +81,18 @@ for (const m of ['500', 'drop']) {
   });
 }
 
-test('static trade forms: method=post and every ticked service is kept (FS6-05/07)', () => {
-  for (const f of ['public/trade/apply.html', 'public/trade/index.html']) {
-    const html = readFileSync(join(root, f), 'utf8');
-    for (const tag of html.match(/<form\b[^>]*>/g)) assert.match(tag, /method="post"/, `${f}: ${tag}`);
-    const line = html.match(/d\.forEach\(function\(v,k\)\{[^\n]*?\}\);/)[0];
-    const d = new FormData();
-    d.append('name', 'A'); d.append('services', 'Portrait design'); d.append('services', 'Commissions');
-    const o = {};
-    new Function('d', 'o', line)(d, o);
-    assert.equal(o.services, 'Portrait design, Commissions', f);
+test('trade: no form on /trade, apply and faq 301 to it, old trade source rejected', async () => {
+  const r = await fetch(`http://127.0.0.1:${PORT}/trade`);
+  assert.equal(r.status, 200);
+  const html = await r.text();
+  assert.equal((html.match(/<form\b/g) || []).length, 0, '/trade has no form');
+  for (const [from, to] of [['/trade/apply', '/trade#enroll'], ['/trade/apply.html', '/trade#enroll'], ['/trade/faq', '/trade'], ['/trade/faq.html', '/trade']]) {
+    const x = await fetch(`http://127.0.0.1:${PORT}${from}`, { redirect: 'manual' });
+    assert.equal(x.status, 301, from);
+    assert.equal(new URL(x.headers.get('location'), 'http://x').pathname + (new URL(x.headers.get('location'), 'http://x').hash), to, from);
   }
+  const old = await post({ ...lead, source: 'Trade — Solas' });
+  assert.equal(old.status, 400);
 });
 
 test('rendered forms are method=post', async () => {

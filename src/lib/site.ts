@@ -91,6 +91,5 @@ export const indexableRoutes = [
   { path: '/story', priority: 0.6, changeFrequency: 'monthly' as const },
   { path: '/portraits/babyfaces', priority: 0.6, changeFrequency: 'monthly' as const },
   { path: '/trade', priority: 0.6, changeFrequency: 'monthly' as const },
-  { path: '/trade/faq', priority: 0.5, changeFrequency: 'monthly' as const },
   { path: '/privacy', priority: 0.3, changeFrequency: 'yearly' as const },
 ]

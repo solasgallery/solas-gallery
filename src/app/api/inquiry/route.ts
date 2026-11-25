@@ -8,8 +8,6 @@ const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || 'cherie@solasgaller
 // Brevo list "Website Inquiries" (ID 51, created 2026-11-18). The Vercel env var
 // BREVO_LIST_ID is set to the same ID; this default covers a missing var.
 const BREVO_LIST_ID = Number(process.env.BREVO_LIST_ID) || 51
-// Trade Collective Prospects (same list the trade forms used on main).
-const TRADE_LIST_ID = 43
 // Overridable only so the route can be tested against a local stub; defaults to Brevo.
 const BREVO_API_BASE = process.env.BREVO_API_BASE || 'https://api.brevo.com'
 
@@ -19,8 +17,6 @@ const SOURCE_LISTS: Record<string, number> = {
   'Portrait design consult': BREVO_LIST_ID,
   'Begin': BREVO_LIST_ID,
   'in-person-qr': BREVO_LIST_ID,
-  'Trade — Solas': TRADE_LIST_ID,
-  'Trade — Solas (Apply)': TRADE_LIST_ID,
 }
 
 const MAX = { name: 100, email: 254, phone: 40, message: 6000, body: 20000 }
