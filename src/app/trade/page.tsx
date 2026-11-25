@@ -5,7 +5,7 @@ import { pageJsonLd } from '@/lib/jsonld'
 import { tradeCopy as t } from '@/data/trade-copy'
 
 const description =
-  'Trade pricing on original art for interior designers: 10%, 15% or 20% off by annual spend, rolling 12 months. One enrollment also covers Salado Village Framer.'
+  'Trade pricing on original art and custom framing, for designers and the trade: 10%, 15% or 20% off by tier. One enrollment covers Salado Village Framer too.'
 
 const hero = {
   alt: 'A room in Solas Gallery: silver and gold wall pieces on white boards, and round painted panels on a green wall through the doorway.',
@@ -14,7 +14,7 @@ const hero = {
 }
 
 export const metadata: Metadata = createLandingMetadata({
-  title: 'Framing Trade Program for Interior Designers | Solas Gallery',
+  title: 'Trade Program for Designers and the Trade | Solas Gallery',
   description,
   path: '/trade',
   noindex: false,
@@ -23,7 +23,7 @@ export const metadata: Metadata = createLandingMetadata({
 })
 
 const jsonLd = pageJsonLd({
-  title: 'Framing Trade Program',
+  title: 'Trade Program',
   description,
   path: '/trade',
   image: '/og/commissions.jpg',
@@ -62,9 +62,6 @@ export default function TradePage() {
           <div className="solas-actions">
             <a href="#enroll">
               Enroll <span aria-hidden="true">↓</span>
-            </a>
-            <a href={t.pdf} download>
-              Download the one-pager (PDF)
             </a>
           </div>
         </div>
@@ -128,9 +125,6 @@ export default function TradePage() {
             <span aria-hidden="true"> · </span>
             <a href={`tel:${t.phoneTel}`}>{t.phoneDisplay}</a>
           </p>
-          <a className="solas-underlink" href={t.pdf} download>
-            Download the one-pager (PDF) <span aria-hidden="true">↓</span>
-          </a>
         </div>
       </section>
     </>
