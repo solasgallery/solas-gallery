@@ -704,6 +704,7 @@ a[href^="tel:"] {
 .sg-trade-table tbody th { font: italic 400 1.45rem/1.15 var(--serif); color: var(--ink); white-space: nowrap; }
 .sg-trade-steps { margin: 0 0 28px; padding-left: 22px; }
 .sg-trade-steps b { font-weight: 500; color: var(--ink); }
+.solas-page-copy .sg-trade-art { font: italic 400 clamp(1.5rem, 3.6vw, 2rem)/1.35 var(--serif); color: var(--ink); margin: 0 0 72px; }
 .solas-page-copy .sg-trade-joint { border-left: 1px solid var(--ink); padding-left: 22px; font: italic 400 1.35rem/1.45 var(--serif); color: var(--ink); }
 .sg-trade-enroll { padding-top: 0; }
 .solas-page-copy .sg-trade-ways { font: italic 400 clamp(1.6rem, 4vw, 2.3rem)/1.3 var(--serif); color: var(--ink); }

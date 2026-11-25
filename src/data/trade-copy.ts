@@ -8,29 +8,34 @@
  *  - joint line: "at Solas Gallery" → "at Salado Village Framer", and the clause naming what the other
  *    business offers, "trade pricing on original art", → "trade pricing on custom framing" (the one-pager's
  *    own lede phrase), so the line stays true about the Framer.
- * Do not reword; change the one-pager first.
+ * Tim's decision (Nov 25): Solas offers trade pricing on original art under the trade program, at the
+ * matched tiers. So, on this page only: the plain `art` statement is added; the tiers heading drops
+ * "framing"; the tier note and "What the discount covers" add original art at Solas Gallery.
+ * Do not reword further; change the one-pager first.
  */
 export const tradeCopy = {
   kicker: "Solas Gallery · To the trade",
   title: "Framing Trade Program",
   lede: "Trade pricing on custom framing, for the designers who frame for their clients.",
+  /** Tim's decision, Nov 25: the plain statement that the tiers apply to original art at Solas. */
+  art: "At Solas Gallery, the trade tiers apply to original art purchases: Trade 10%, Trade Plus 15% and Trade Premier 20% off, at $2,500+, $7,500+ and $15,000+ a year, rolling 12 months.",
   whoQualifies: {
     h: "Who qualifies",
     p: "Active, registered interior designers framing for client projects — business license or ASID / IDS membership. Annual renewal. Trade pricing is for client work — not personal use, not resale at retail.",
   },
   tiers: {
-    h: "Tiers — annual framing spend",
+    h: "Tiers — annual spend",
     cols: ["Tier", "Minimum / year", "Discount", "Perks"],
     rows: [
       ["Trade", "$2,500+", "10% off", "Trade pricing + a dedicated point of contact"],
       ["Trade Plus", "$7,500+", "15% off", "All Trade perks + free local delivery & pickup (30 mi) + priority scheduling"],
       ["Trade Premier", "$15,000+", "20% off", "All Plus perks + priority rush at no extra fee + first look at new moulding lines"],
     ],
-    note: "Your year runs rolling 12 months from enrollment; your tier is reviewed at renewal. Spend counts custom framing orders (materials + labor).",
+    note: "Your year runs rolling 12 months from enrollment; your tier is reviewed at renewal. Spend counts custom framing orders (materials + labor) and, at Solas Gallery, original art purchases.",
   },
   covers: {
     h: "What the discount covers",
-    p: "Custom framing — materials and labor. Excludes retail gifts, rush fees (except Premier), delivery fees (except Plus / Premier), and already-discounted items.",
+    p: "Custom framing — materials and labor — and, at Solas Gallery, original art. Excludes retail gifts, rush fees (except Premier), delivery fees (except Plus / Premier), and already-discounted items.",
   },
   howItWorks: {
     h: "How it works",

@@ -5,7 +5,7 @@ import { pageJsonLd } from '@/lib/jsonld'
 import { tradeCopy as t } from '@/data/trade-copy'
 
 const description =
-  'Trade pricing on custom framing for registered interior designers: 10%, 15% or 20% off by annual framing spend. One enrollment covers Salado Village Framer.'
+  'Trade pricing on original art for interior designers: 10%, 15% or 20% off by annual spend, rolling 12 months. One enrollment also covers Salado Village Framer.'
 
 const hero = {
   alt: 'A room in Solas Gallery: silver and gold wall pieces on white boards, and round painted panels on a green wall through the doorway.',
@@ -72,6 +72,7 @@ export default function TradePage() {
 
       <section className="solas-page-copy sg-trade-copy">
         <div className="solas-measure">
+          <p className="sg-trade-art">{t.art}</p>
           <h2>{t.whoQualifies.h}</h2>
           <p>{t.whoQualifies.p}</p>
 
